@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="Author" content="John Griswold">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>C/C++/COM Coding Style</title>
+</head>
+
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td valign="top"><table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><img src="../../images/bearpawc3.gif" alt="Jupiter" WIDTH="80" HEIGHT="100"></td>
+        <td><h1 align="center">C/C++/COM</h1>
+        <h2>Coding Guidelines</h2>
+        </td>
+      </tr>
+    </table>
+    </td>
+    <td align="right" valign="top"><table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><img src="images/b-left-d.gif" alt="&lt;-" WIDTH="32" HEIGHT="32"></td>
+        <td><img src="images/b-up-d.gif" alt="^" WIDTH="32" HEIGHT="32"></td>
+        <td><a href="1hotlist.htm"><img src="images/b-right.gif" alt="-&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+      </tr>
+      <tr>
+        <td align="right"><img src="images/b-left2-d.gif" alt="&lt;&lt;" WIDTH="32" HEIGHT="32"></td>
+        <td><img src="images/b-top-d.gif" alt="^^" WIDTH="32" HEIGHT="32"></td>
+        <td align="right"><a href="c_1.htm"><img src="images/b-right2.gif" alt="&gt;&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<p align="center">This page was last updated <a href="1changes.htm"><!--webbot bot="Timestamp" s-type="EDITED" s-format="%B %d, %Y" startspan -->May 24, 2009<!--webbot bot="Timestamp" endspan i-checksum="11181" --></a></p>
+
+<hr>
+
+<ul>
+  <li><a href="1hotlist.htm"><font size="5"><b>Hot List</b></font></a> - Required Standards<ul>
+      <li><a href="c_file.htm#std - file prefix comments">Always prefix file with standard
+        copyright&nbsp;notice and revision&nbsp;history</a></li>
+      <li><a href="c_file.htm#std - file suffixes">Use Standard File Suffixes</a></li>
+      <li><a href="c_format.htm#std - four character tab">Each indentation should be a four
+        character tab</a></li>
+      <li><a href="c_format.htm#std - indent level">Indent one level for each new level of logic</a></li>
+      <li><a href="c_format.htm#std - brace alignment">Align braces with the control statement</a></li>
+      <li><a href="c_format.htm#std - brace alone line">Put braces on a line by themselves</a></li>
+    </ul>
+  </li>
+  <li><a href="1intro.htm">Why a Style Guide?</a></li>
+  <li><a href="1conven.htm">Document Conventions</a></li>
+  <li><a href="c_1.htm"><font size="5">Generic Guidelines</font></a><ul>
+      <li><a href="c_file.htm"><font size="4">File Basics</font></a><ul>
+          <li><a href="c_file.htm#File Names">File Names</a></li>
+          <li><a href="c_file.htm#Reasonable Limits">Reasonable Limits</a></li>
+          <li><a href="c_file.htm#Standard File Contents">Standard File Contents</a></li>
+          <li><a href="c_file.htm#Header Files">Header Files</a></li>
+        </ul>
+      </li>
+      <li><a href="c_format.htm"><font size="4">Formatting</font></a><ul>
+          <li><a href="c_format.htm#White Space">White Space</a><ul>
+              <li><a href="c_format.htm#Indentation">Indentation</a></li>
+              <li><a href="c_format.htm#Blank Lines">Blank Lines</a></li>
+              <li><a href="c_format.htm#Spaces">Spaces</a></li>
+            </ul>
+          </li>
+          <li><a href="c_format.htm#Code Blocks">Code Blocks</a></li>
+          <li><a href="c_format.htm#Statements">Statements</a><ul>
+              <li><a href="c_format.htm#Continued Statements">Continued Statements</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="c_comment.htm"><font size="4">Comments</font></a> </li>
+      <li><a href="c_decl.htm"><font size="4">Declarations and Definitions</font></a><ul>
+          <li><a href="c_decl.htm#Naming">Naming</a><ul>
+              <li><a href="c_decl.htm#General naming guidelines">General naming guidelines</a></li>
+              <li><a href="c_decl.htm#Structure names">Structure, typedef and class names</a></li>
+              <li><a href="c_decl.htm#Variable Names">Variable Names</a></li>
+            </ul>
+          </li>
+          <li><a href="c_decl.htm#Declarations">Declarations</a><ul>
+              <li><a href="c_decl.htm#Non-Hardware Dependent Declarations">Non-Hardware Dependent
+                Declarations</a></li>
+              <li><a href="c_decl.htm#Global Variable Declarations">Global Variable Declarations</a></li>
+              <li><a href="c_decl.htm#Function Declarations">Function Declarations</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="c_const.htm"><font size="4">Constants</font></a><ul>
+          <li><a href="c_const.htm#Numeric Literals">Numeric Literals</a></li>
+          <li><a href="c_const.htm#String Literals">String Literals</a></li>
+        </ul>
+      </li>
+      <li><a href="c_expr.htm"><font size="4">Expressions</font></a></li>
+      <li><a href="c_perf.htm"><font size="4">Performance</font></a></li>
+    </ul>
+  </li>
+  <li><a href="cpp_1.htm"><font size="5">C++ Guidelines</font></a><ul>
+      <li><a href="cpp_file.htm"><font size="4">File Basics</font></a></li>
+      <li><a href="cpp_class.htm"><font size="4">Class Specification</font></a><ul>
+          <li><a href="cpp_class.htm#Member Declaration Order">Member Declaration</a></li>
+          <li><a href="cpp_class.htm#Constructors">Constructors</a></li>
+          <li><a href="cpp_class.htm#Destructors">Destructors</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="com_1.htm"><font size="5">COM Guidelines</font></a><ul>
+      <li><a href="com_file.htm"><font size="4">Files</font></a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><img src="images/b-left-d.gif" alt="&lt;-" WIDTH="32" HEIGHT="32"></td>
+    <td><img src="images/b-up-d.gif" alt="^" WIDTH="32" HEIGHT="32"></td>
+    <td><a href="1hotlist.htm"><img src="images/b-right.gif" alt="-&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+  </tr>
+  <tr>
+    <td><img src="images/b-left2-d.gif" alt="&lt;&lt;" WIDTH="32" HEIGHT="32"></td>
+    <td><img src="images/b-top-d.gif" alt="^^" WIDTH="32" HEIGHT="32"></td>
+    <td><a href="c_1.htm"><img src="images/b-right2.gif" alt="&gt;&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+  </tr>
+</table>
+<!--webbot bot="Include" U-Include="../_private/change.htm" TAG="BODY" startspan -->
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="12"></td>
+  </tr>
+  <tr>
+    <td align="right"><font face="Arial" size="1" color="#999999" style="font-family: sans-serif; font-size: 10px">Last modified: 
+	25 May 2009</font><br>
+    <a style="text-decoration: none" target="_self" href="../9copyright.htm"><font face="Arial" size="1" color="#CCCCCC" style="font-family: sans-serif; font-size: 9px">copyright
+    2004 Bear Consulting Group</font></a></td>
+  </tr>
+</table>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right">
+	
+
+<script language="JavaScript" src="../../javascript/remotelog.js"></script>
+
+
+
+</td>
+  </tr>
+</table>
+<!--webbot bot="Include" endspan i-checksum="38072" -->
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   </body>
+</html>

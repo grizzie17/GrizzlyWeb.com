@@ -1,0 +1,602 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>Style Guide - Generic - Formatting</title>
+</head>
+
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td valign="top"><table border="0">
+      <tr>
+        <td colspan="3"><font size="2">Coding Guidelines</font></td>
+      </tr>
+      <tr>
+        <td width="20"></td>
+        <td colspan="2"><b>Generic Guidelines</b></td>
+      </tr>
+      <tr>
+        <td width="20"></td>
+        <td width="20"></td>
+        <td><font size="6"><strong>Formatting</strong></font></td>
+      </tr>
+    </table>
+    </td>
+    <td align="right" valign="top"><table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><a href="c_file.htm" target><img src="images/b-left.gif" alt="&lt;-" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="c_1.htm" target><img src="images/b-up.gif" alt="^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="c_comment.htm" target><img src="images/b-right.gif" alt="-&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+      </tr>
+      <tr>
+        <td><a href="0std.htm" target><img src="images/b-left2.gif" alt="&lt;&lt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="0std.htm" target><img src="images/b-top.gif" alt="^^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="cpp_1.htm" target><img src="images/b-right2.gif" alt="&gt;&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<ul>
+  <li><a href="#White Space">White Space</a><ul>
+      <li><a href="#Indentation">Indentation</a></li>
+      <li><a href="#Blank Lines">Blank Lines</a></li>
+      <li><a href="#Spaces">Spaces</a></li>
+    </ul>
+  </li>
+  <li><a href="#Code Blocks">Code Blocks</a></li>
+  <li><a href="#Statements">Statements</a><ul>
+      <li><a href="#Continued Statements">Continued Statements</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<p>The primary reason that we concern ourselves with formatting is to make the code more
+humanly understandable.</p>
+
+<h1><a name="White Space"></a>White Space</h1>
+
+<p>White space, which is defined as the space surrounding statements, expressions, and
+comments, is important in enhancing the readability of code. As an example of what white
+space can do to help readability, the following is a simple function that many beginning C
+programmers write to take an integer and convert it into a string of numeric characters.
+We have been generous in at least keeping basically single statements on a line by them
+selves. </p>
+
+<table border="0" cellpadding="8" cellspacing="0">
+  <tr>
+    <td bgcolor="#CCFFCC"><font size="2"><code>void itoa(int n,char s[]){<br>
+    int i,sign;<br>
+    if((sign=n)&lt;0)n=-n;<br>
+    i=0;<br>
+    do{s[i++]='0'+n%10;}while(0&lt;(n/=10));<br>
+    if(sign&lt;0)s[i++]='-';<br>
+    s[i]=EOS;<br>
+    reverse(s);<br>
+    }</code></font></td>
+  </tr>
+</table>
+
+<p>Without changing anything but adding white space (and a couple of carriage-returns) the
+function becomes much more understandable.</p>
+
+<table border="0" cellpadding="8" cellspacing="0">
+  <tr>
+    <td bgcolor="#CCFFCC"><pre><font size="2"><samp>void    itoa
+        (
+        int     n,
+        char    s[]
+        )
+{
+    int i, sign;
+
+    if ( (sign = n) &lt; 0 )
+        n = -n;
+
+    i=0;
+    do
+    {
+        s[i++] = '0' + n % 10;
+    } while ( 0 &lt; (n /= 10 ) );
+
+    if ( sign &lt; 0 )
+        s[i++] = '-';
+    s[i] = EOS;
+
+    reverse(s);
+}</samp></font></pre>
+    </td>
+  </tr>
+</table>
+
+<p>More work should be done on this function to improve its readability, such as improving
+names and adding comments, but before we added white space it was difficult to tell what
+needed to be done to improve the function. For that matter it was difficult to tell what
+the function did.</p>
+
+<h2><a name="Indentation"></a>Indentation</h2>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FF6666"><h3><a name="std - four character tab"></a>Each indentation should be a four character tab</h3>
+    </td>
+    <td valign="top" bgcolor="#DDDDDD">Each indentation should be four columns. The most
+    important aspect of indentation is to be consistent.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FF6666"><h3><a name="std - indent level"></a>Indent one level for each new level of logic</h3>
+    </td>
+    <td valign="top" bgcolor="#DDDDDD">Indentation is used to clarify the control flow through
+    the code. <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre><tt>if ( 0 == gameOver )
+    if ( YOU == playerToMove )
+        printf( &quot;Your move\n&quot; );</tt></pre>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#66CCFF"><i>Continued statements
+    should use double indentation</i></td>
+    <td valign="top" bgcolor="#DDDDDD">Statements that span more than one line should use a
+    double indentation on the second and subsequent lines. An example of double indentation
+    is: <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>if ( 0 == gameOver
+        &amp;&amp;  YOU == playerToMove )
+    printf( &quot;Your move\n&quot; );</pre>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Avoid nesting indentation
+    more than five</td>
+    <td valign="top" bgcolor="#DDDDDD">The body of compound statements (if statements and loop
+    structures, etc.) should not be nested to a total depth of more than five.</td>
+  </tr>
+</table>
+
+<h2><a name="Blank Lines"></a>Blank Lines</h2>
+
+<p>Blank lines can be used to delineate sections of code. There are several rules that
+should be used which include: </p>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><b><i>Follow variable
+    declarations with at least one blank line</i></b> </td>
+    <td valign="top" bgcolor="#DDDDDD">Put one or two blank lines after the list of variable
+    declarations within a function before the code.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#66CCFF"><i>Divide your code into
+    logical paragraphs with delineating blank lines</i></td>
+    <td valign="top" bgcolor="#DDDDDD">Divide your code in functions into logical paragraphs.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Blank line before comment</td>
+    <td valign="top" bgcolor="#DDDDDD">Put a blank line before comments unless the preceding
+    line contains only an open brace (&quot;{&quot;).</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Surround struct, union and
+    class declarations with blank lines</td>
+    <td valign="top" bgcolor="#DDDDDD">Put a blank line before and after struct, or union, or
+    class declarations. The only exception should be when there is a comment immediately
+    preceding the declaration (which there should be).</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Separate function definitions
+    with at least two blank lines</td>
+    <td valign="top" bgcolor="#DDDDDD">Separate function definitions with at least two blank
+    lines.</td>
+  </tr>
+</table>
+
+<h2><a name="Spaces"></a>Spaces</h2>
+
+<p>In addition to the spaces used for indentation, spaces may be used to isolate arguments
+and expression components. </p>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><b><i>Follow language
+    keywords with a space</i></b> </td>
+    <td valign="top" bgcolor="#DDDDDD">'C' keywords (e.g., if, while, for, ...) should be
+    followed by at least a single space. <p>The only exception is the sizeof() operator which
+    follows the same rules as a function.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><b><i>Separate function
+    arguments with spaces</i></b> </td>
+    <td valign="top" bgcolor="#DDDDDD">Function arguments should have at least one space
+    following the comma. The arguments should also be separated from the parenthesis with a
+    space.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#99CCFF"><i>Surround binary operators
+    with spaces</i> <p><i>(Exceptions: structure/class member operators (</i>&quot;<b><tt>.</tt></b>&quot;,
+    &quot;<b><tt>-&gt;</tt></b>&quot;, &quot;<b><tt>::</tt></b>&quot;<i>))</i></td>
+    <td valign="top" bgcolor="#DDDDDD">To clearly delineate binary operators from the rest of
+    the expression they should be surrounded by spaces. <p>The exceptions are the (&quot;<b><tt>.</tt></b>&quot;
+    and &quot;<b><tt>-&gt;</tt></b>&quot;) structure member operators along with the (&quot;<b><tt>::</tt></b>&quot;)
+    class member operator, which should not be surrounded with spaces.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#99CCFF"><i>Do NOT use spaces to
+    delineate unary operators</i></td>
+    <td valign="top" bgcolor="#DDDDDD">Avoid putting spaces between unary operators and their
+    single operand.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Surround the logical binary
+    operators with double spaces</td>
+    <td valign="top" bgcolor="#DDDDDD">To clearly delineate the logical binary operators
+    (&quot;<tt>&amp;&amp;</tt>&quot;, &quot;<tt>||</tt>&quot;) from the rest of the expression
+    they should be surrounded by double spaces</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Separate for-loop expressions
+    with spaces</td>
+    <td valign="top" bgcolor="#DDDDDD">For-loop expressions should have at least one space
+    following the semicolon. The expressions should also be separated from the parenthesis
+    with a space</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Line up variables in
+    declarations</td>
+    <td valign="top" bgcolor="#DDDDDD">Use spaces or tabs to line up variables in lists of
+    declarations.</td>
+  </tr>
+</table>
+
+<h1><a name="Code Blocks"></a>Code Blocks</h1>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FF6666"><h3><a name="std - brace alignment"></a>Align braces with the control statement</h3>
+    </td>
+    <td valign="top" bgcolor="#DDDDDD">Blocks of code in C/C++ are delimited by braces
+    (&quot;{&quot; and &quot;}&quot;). The braces should be aligned with the control statement
+    and NOT the indented statements. <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>control_statement
+{
+    statements;
+}</pre>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FF6666"><h3><a name="std - brace alone line"></a>Put braces on a line by themselves</h3>
+    <p><i>(exception: &quot;while&quot; of &quot;do/while&quot; loop &amp; tag-name for a
+    structure typedef)</i></td>
+    <td valign="top" bgcolor="#DDDDDD">The braces should <b>not </b>be placed on the same line
+    with the control statement. The only exception is the &quot;while&quot; of a do/while loop
+    and the tag name for a typedef. <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>struct name
+{
+    declarations;
+};
+
+typedef struct TagName
+{
+    declarations;
+} TagName;          <font color="#666600"><i>rule exception</i></font>
+
+if ( condition )
+{
+    statements;
+} 
+
+while ( condition )
+{
+    statements;
+} 
+
+do
+{
+    statements;
+} while ( condition );  <font color="#666600"><i>rule exception</i></font>
+
+switch ( expression )
+{
+case labela :
+case labelb :
+    ...
+    break;
+case labelc :
+    ...
+    break;
+default :
+    ...
+    break;
+}</pre>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#66CCFF"><i>Use braces for multiply
+    nested statements</i></td>
+    <td valign="top" bgcolor="#DDDDDD">It is a good practice to use braces to delimit code for
+    the iteration and branch constructs whenever there is the slightest chance that code
+    clarity is improved. A general rule is if the iteration or branch construct contains more
+    than a single statement then enclose them in braces. For example: <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>if ( <i>condition </i>)
+    while ( <i>some condition</i> )
+        if ( <i>another condition</i> )
+            <i>statement</i>;</pre>
+        </td>
+      </tr>
+    </table>
+    <p>Even though the nested construct above is legal it is definitely clearer and less
+    ambiguous when written using braces.</p>
+    <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>if ( <i>condition</i> )
+{
+    while ( <i>some condition</i> )
+    {
+        if ( <i>another condition</i> )
+            <i>statement</i>;
+    }
+}</pre>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#66CCFF"><i>Use braces for all blocks
+    of an if/else-if chain when one block requires braces</i></td>
+    <td valign="top" bgcolor="#DDDDDD">It is very often desirable to use braces on all blocks
+    of an if/else-if chain whenever one or more if statements require braces in the chain. <p>As
+    an example:</p>
+    <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>if ( <i>condition</i> )
+    <i>statement</i>;
+else if ( <i>some condition</i> )
+{
+    <i>statement-2</i>;
+    <i>statement-3</i>;
+}</pre>
+        </td>
+      </tr>
+    </table>
+    <p>Instead use:</p>
+    <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>if ( <i>condition</i> )
+{
+    <i>statement</i>;
+}
+else if ( <i>some condition</i> )
+{
+    <i>statement-2</i>;
+    <i>statement-3</i>;
+}</pre>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<h1><a name="Statements"></a>Statements</h1>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><b><i>Non-Multiple Statement
+    Lines</i></b> </td>
+    <td valign="top" bgcolor="#DDDDDD">Each line of source code should contain, at most, a
+    single executable statement. Statements may however be continued on multiple lines. For
+    this purpose the controlling portion of a loop or branch is considered to be a separate
+    statement. <h3>Good Statements</h3>
+    <table border="1" cellpadding="4" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>statement;</pre>
+        </td>
+        <td>single statement</td>
+      </tr>
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>state
+    ment;</pre>
+        </td>
+        <td>simple continued statement</td>
+      </tr>
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>label:
+    statement;</pre>
+        </td>
+        <td>label on line by itself</td>
+      </tr>
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>if ( condition )
+    statement;</pre>
+        </td>
+        <td>if on separate line</td>
+      </tr>
+    </table>
+    <h3>Bad Statements</h3>
+    <table border="1" cellpadding="4" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>statement1; statement2;</pre>
+        </td>
+        <td>more than one statement</td>
+      </tr>
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>if ( condition ) statement;</pre>
+        </td>
+        <td>statement on line with if</td>
+      </tr>
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>case label: statement;</pre>
+        </td>
+        <td>statement on line with label</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><b><i>Comment empty
+    statements</i></b> </td>
+    <td valign="top" bgcolor="#DDDDDD">There are times when you need to have an empty
+    statement, such as some loops where the real work is done in the loop construct. Its also
+    a good idea to have the empty statement on a line by itself. <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>while ( *pDest++ = *pSrc++ )
+    ;  // empty</pre>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<h2><a name="Continued Statements"></a>Continued Statements</h2>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#66CCFF"><i>Always break long
+    expressions at operators</i></td>
+    <td valign="top" bgcolor="#DDDDDD">Attempt to break the expression based on operator
+    precedence. In general try to start the continued line with the operator. There are times
+    when an expression should be broken onto more than the minimum number of lines so that
+    each line contains a clear lexical portion of the expression. <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>if ( 0 == gameOver
+        &amp;&amp;  YOU == playerToMove )
+    printf( &quot;Your move\n&quot; );</pre>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Don't be afraid to begin the
+    continued line with the assignment operator</td>
+    <td valign="top" bgcolor="#DDDDDD"><table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>someLongVariableOrExpression
+        = someExpression * thatIsContinued;</pre>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Examples of specific
+    continued statement situations</td>
+    <td valign="top" bgcolor="#DDDDDD">When the ternary question operator (?:) is continued it
+    should be divided something like: <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>c = ( a == b )
+        ? d + f( a )
+        : f( b ) - d;</pre>
+        </td>
+      </tr>
+    </table>
+    <p>One other note about continued lines is the way a for loop should be continued. If any
+    of the 'for' control structures need to be continued, then each should be placed on a line
+    by itself.</p>
+    <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>for ( initialization;
+        condition;
+        increment )
+    statement;</pre>
+        </td>
+      </tr>
+    </table>
+    <p>When continuing a function call the continued lines should line up with the open
+    parenthesis (or at least the nearest indentation).</p>
+    <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>result = package_someFunc( argumentOne, argumentTwo,
+                            argumentThree, argFour,
+                            argumentFive );</pre>
+        </td>
+      </tr>
+    </table>
+    <p>Or if the function name is long enough (when accompanied by the preceding
+    expression(s)) to prevent the first argument from being included on the same line as the
+    function name, then double indent past the beginning of the function name to place the
+    open parenthesis and align the arguments with the open parenthesis.</p>
+    <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>someRealLongName = somePackage_someFunctionWithLongName
+                    (
+                    argumentOne, argumentTwo, 
+                    argumentThree,
+                    argumentFour, argumentFive
+                    );</pre>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><a href="c_file.htm" target><img src="images/b-left.gif" alt="&lt;-" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="c_1.htm" target><img src="images/b-up.gif" alt="^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="c_comment.htm" target><img src="images/b-right.gif" alt="-&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+  </tr>
+  <tr>
+    <td><a href="0std.htm" target><img src="images/b-left2.gif" alt="&lt;&lt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="0std.htm" target><img src="images/b-top.gif" alt="^^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="cpp_1.htm" target><img src="images/b-right2.gif" alt="&gt;&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+  </tr>
+</table>
+<!--webbot bot="Include" U-Include="../_private/change.htm" TAG="BODY" startspan -->
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="12"></td>
+  </tr>
+  <tr>
+    <td align="right"><font face="Arial" size="1" color="#999999" style="font-family: sans-serif; font-size: 10px">Last modified: 
+	25 May 2009</font><br>
+    <a style="text-decoration: none" target="_self" href="../9copyright.htm"><font face="Arial" size="1" color="#CCCCCC" style="font-family: sans-serif; font-size: 9px">copyright
+    2004 Bear Consulting Group</font></a></td>
+  </tr>
+</table>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right">
+	
+
+<script language="JavaScript" src="../../javascript/remotelog.js"></script>
+
+
+
+</td>
+  </tr>
+</table>
+<!--webbot bot="Include" endspan i-checksum="38072" -->
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   </body>
+</html>

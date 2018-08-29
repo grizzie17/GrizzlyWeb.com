@@ -1,0 +1,45 @@
+User-agent: *
+
+Disallow: /_fpclass
+Disallow: /_private
+Disallow: /_themes
+Disallow: /_vti_cnf
+Disallow: /_vti_log
+Disallow: /_vti_pvt
+Disallow: /_vti_script
+Disallow: /_vti_txt
+
+Disallow: /cgi-bin
+Disallow: /email
+Disallow: /fpdb
+Disallow: /image
+
+Disallow: /w3svc340
+
+Disallow: /_private
+Disallow: /commentary/_vti
+Disallow: /company/_private
+Disallow: /company/_vti
+Disallow: /company/images
+Disallow: /demo/
+DIsallow: /javascript
+Disallow: /links/_private
+Disallow: /links/_vti
+Disallow: /links/images
+Disallow: /links/location/_private
+Disallow: /links/location/_vti
+Disallow: /links/scripts
+Disallow: /links/submit
+Disallow: /support/_vti
+Disallow: /webmaster/_private
+Disallow: /webmaster/_vti
+Disallow: /webmaster/submiturl
+Disallow: /webmaster/javascripts/examples
+Disallow: /webmaster/dhtml/examples
+Disallow: /webmaster/html/examples
+Disallow: /webmaster/asp/examples
+
+Disallow: /rocketcitywings/cgi-bin
+Disallow: /rocketcitywings/links
+Disallow: /rocketcitywings/members
+Disallow: /rocketcitywings/scripts

@@ -1,0 +1,214 @@
+<!-- BEGIN HIDE -->
+<!---------------------------------------------------------------------+\
+|
+|					  Written by Grizzly WebMaster
+|					a division of Bear Consulting Group
+|
+|	Public Domain:
+|	Redistribution and use of this software is freely permitted.
+|	This software should be considered as unowned and without
+|	copyright restrictions, nor should any individual or company
+|	claim exclussive copyright.  This software is provided "as is"
+|	and without any express or implied warranties, including, without
+|	limitation, the implied warranties or merchantibility and fitness
+|	for a particular purpose.
+|
+|	Grizzly WebMaster assumes NO responsibility for the use or
+|	reliability of software altered by the user.
+|
+|	The information in this document is subject to change without
+|	notice and should not be construed as a commitment by
+|	Grizzly WebMaster.	
+|
+\+---------------------------------------------------------------------->
+<!-- END HIDE -->
+<html>
+
+<head>
+<title>Refresh JavaScript Example</title>
+<!-- BEGIN HIDE -->
+<meta name="ROBOTS" content="noindex">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<script language="JavaScript">
+<!--
+function fetchDocumentCookie( oDoc, sName )
+{
+	var sValue = "";
+	var index = 0;
+
+	if( oDoc.cookie )
+		index = oDoc.cookie.indexOf( sName + "=" );
+	else
+		index = -1;
+
+	if ( index < 0 )
+	{
+		sValue = "";
+	}
+	else
+	{
+		var countbegin = (oDoc.cookie.indexOf( "=", index ) + 1);
+		if ( 0 < countbegin )
+		{
+			var countend = oDoc.cookie.indexOf( ";", countbegin );
+			if ( countend < 0 )
+				countend = oDoc.cookie.length;
+			sValue = oDoc.cookie.substring( countbegin, countend );
+		}
+		else
+		{
+			sValue = "";
+		}
+	}
+	return sValue;
+}
+
+function fetchNamedCookie( sName )
+{
+	return fetchDocumentCookie( document, sName );
+}
+
+var gStopped = false;
+function limitRefresh()
+{
+	var nCount;
+	var s;
+	var n;
+	
+	s = fetchNamedCookie( "refreshcount" );
+	if ( 0 < s.length )
+	{
+		n = new Number(s);
+		nCount = 0 + n.valueOf();
+	}
+	else
+		nCount = 0;
+	window.status = "refresh count = " + nCount;
+	nCount = nCount + 1;
+	if ( 15 < nCount )
+	{
+		gStopped = true;
+		//return true;
+	}
+	else
+	{
+		var	expDate = new Date();
+		// set the expiration for five seconds
+		expDate.setTime( expDate.getTime() + 5*1000 );
+
+		document.cookie = "refreshcount=" + nCount + "; expires=" + expDate.toGMTString();
+		//return false;
+	}
+
+}
+limitRefresh();
+//-->
+</script>
+<!-- END HIDE -->
+<noscript>
+<!--
+	We have the "refresh" meta-tag in case the user's browser does
+	not correctly support JavaScript or has JavaScript disabled.
+
+	Notice that this is nested within a "noscript" block.
+-->
+<meta http-equiv="refresh" content="2">
+
+</noscript>
+
+<script language="JavaScript">
+<!--
+
+var sURL = unescape(window.location.pathname);
+
+function doLoad()
+{
+	// <!-- BEGIN HIDE -->
+	if ( gStopped )
+		return;
+	// <!-- END HIDE -->
+	// the timeout value should be the same as in the "refresh" meta-tag
+	setTimeout( "refresh()", 2*1000 );
+}
+
+function refresh()
+{
+	//	This version of the refresh function will cause a new
+	//	entry in the visitor's history.  It is provided for
+	//	those browsers that only support JavaScript 1.0.
+	//
+	window.location.href = sURL;
+}
+//-->
+</script>
+
+<script language="JavaScript1.1">
+<!--
+function refresh()
+{
+	//	This version does NOT cause an entry in the browser's
+	//	page view history.  Most browsers will always retrieve
+	//	the document from the web-server whether it is already
+	//	in the browsers page-cache or not.
+	//	
+	window.location.replace( sURL );
+}
+//-->
+</script>
+
+<script language="JavaScript1.2">
+<!--
+function refresh()
+{
+	//	This version of the refresh function will be invoked
+	//	for browsers that support JavaScript version 1.2
+	//
+	
+	//	The argument to the location.reload function determines
+	//	if the browser should retrieve the document from the
+	//	web-server.  In our example all we need to do is cause
+	//	the JavaScript block in the document body to be
+	//	re-evaluated.  If we needed to pull the document from
+	//	the web-server again (such as where the document contents
+	//	change dynamically) we would pass the argument as 'true'.
+	//	
+	window.location.reload( false );
+}
+//-->
+</script>
+</head>
+
+<!--
+	Use the "onload" event to start the refresh process.
+-->
+<body onload="doLoad()">
+
+<script language="JavaScript">
+<!--
+	// we put this here so we can see something change
+	document.write('<b>' + (new Date).toLocaleString() + '</b>');
+//-->
+</script>
+
+<!-- BEGIN HIDE -->
+<hr>
+<p>Notice that the time updates every couple of seconds.</p>
+<script language="JavaScript">
+<!--
+	document.writeln("<p>The browser history contains " + history.length + " pages</p>");
+	if ( gStopped )
+	{
+		document.writeln("<h3>Stopped</h3>");
+		document.write("<p>There is special &quot;hidden&quot; code ");
+		document.write("that stopped the page refreshing ");
+		document.write("after about half a minute. ");
+		document.writeln("View the source directly if you want to see it.</p>");
+	}
+//-->
+</script>
+<!-- END HIDE -->
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   </body>
+
+</html>

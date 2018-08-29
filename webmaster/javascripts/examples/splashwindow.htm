@@ -1,0 +1,92 @@
+<!-- BEGIN HIDE -->
+<!---------------------------------------------------------------------+\
+|
+|					  Written by Grizzly WebMaster
+|					a division of Bear Consulting Group
+|
+|	Public Domain:
+|	Redistribution and use of this software is freely permitted.
+|	This software should be considered as unowned and without
+|	copyright restrictions, nor should any individual or company
+|	claim exclussive copyright.  This software is provided "as is"
+|	and without any express or implied warranties, including, without
+|	limitation, the implied warranties or merchantibility and fitness
+|	for a particular purpose.
+|
+|	Grizzly WebMaster assumes NO responsibility for the use or
+|	reliability of software altered by the user.
+|
+|	The information in this document is subject to change without
+|	notice and should not be construed as a commitment by
+|	Grizzly WebMaster.	
+|
+\+---------------------------------------------------------------------->
+<!-- END HIDE -->
+<html>
+
+<head>
+<!--
+	You should create the title of this splash window document
+	with something that is meaningful for the top of the
+	splash window.
+-->
+<title>Splash Window - example</title>
+<!-- BEGIN HIDE -->
+<meta name="ROBOTS" content="noindex">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<!-- END HIDE -->
+<script language="JavaScript">
+<!--
+
+var bLoaded = false;
+
+function doLoad()
+{
+	//	first make absolutely sure that our splash window
+	//	has focus (is on top).
+	window.focus();
+	
+	//	set a simple time-out that will close the window
+	//	automatically.
+	//
+	//	You could also have code in the default document
+	//	'onload' event to close 'this' window.
+	setTimeout( "window.close()", 7*1000 );
+	
+	//	Identify that we have loaded the page.
+	bLoaded = true;
+}
+
+//
+//	We use the 'onblur' event to close the splash window if
+//	the splash window is no longer on top.  We could have
+//	forced the splash window to remain on top by calling
+//	window.focus() in the 'onblur' event.
+//
+function doBlur()
+{
+	if ( bLoaded )
+		window.close();
+}
+
+//-->
+</script>
+</head>
+
+<!--
+	We use the 'onload' event to start the time-out.  This
+	is because we want to make sure that the window is fully
+	loaded and visible before we begin our time-out sequence.
+	
+	We call a blur event handling function.  See above.
+-->
+<body onload="doLoad()" onblur="doBlur()">
+
+<p align="center"><b>This is the splash window</b></p>
+<p align="center">It will go away in about<br>seven seconds</p>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </body>
+
+</html>

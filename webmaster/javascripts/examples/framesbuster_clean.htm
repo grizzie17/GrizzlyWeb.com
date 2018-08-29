@@ -1,0 +1,56 @@
+<html>
+
+<head>
+<title>Frames Buster Example-1 Sans-Comments</title>
+<!-- BEGIN HIDE -->
+<meta name="ROBOTS" content="noindex">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<!-- END HIDE -->
+<meta http-equiv="window-target" content="_top">
+<script language="JavaScript">
+<!--
+var sThisURL = unescape(window.location.pathname);
+
+function doFramesBuster()
+{
+	if ( top.location != self.location )
+		breakFrames();
+}
+
+function breakFrames()
+{
+	setTimeout( "top.location.href = sThisURL", 1.5*1000 );
+}
+//-->
+</script>
+<script language="JavaScript1.1">
+<!--
+function breakFrames()
+{
+	top.location.replace( sThisURL );
+}
+
+if ( "MSIE" == navigator.appName )
+	doFramesBuster();
+
+//-->
+</script>
+</head>
+
+<body onload="doFramesBuster()">
+
+<p>Document that should be displayed without any frames</p>
+<!-- BEGIN HIDE -->
+<script language="JavaScript">
+<!--
+	document.write("<p>Please note that this window's browser history contains ");
+	document.writeln( window.history.length + " pages</p>");
+//-->
+</script>
+<!-- END HIDE -->
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 </body>
+
+</html>

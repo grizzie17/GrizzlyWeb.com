@@ -1,0 +1,465 @@
+#fields: char-code special version class description
+#
+#= ASCII
+#0		-	ctrl	NUL (Null)
+#1		-	ctrl	SOH (Start of heading)
+#2		-	ctrl	STX (Start text)
+#3		-	ctrl	ETX (End text)
+#4		-	ctrl	EOT (End of transmission)
+#5		-	ctrl	ENQ (Enquiry)
+#6		-	ctrl	ACK (Acknowledge)
+#7		-	ctrl	BEL (Bell, sound)
+#8		-	ctrl	BS (Backspace)
+9		1	ascii,ctrl,space	Tab
+10		1	ascii,ctrl,space	Linefeed
+#11		-	ctrl	VT (Vertical tab)
+#12		-	ctrl	FF (Formfeed)
+13		1	ascii,ctrl,space	Carriage return
+#14		-	ctrl	SO (Shift Out)
+#15		-	ctrl	SI (Shift In)
+#16		-	ctrl	DLE (Data Link Escape)
+#17		-	ctrl	DC1 (X-ON)
+#18		-	ctrl	DC2
+#19		-	ctrl	DC3 (X-OFF)
+#20		-	ctrl	DC4
+#21		-	ctrl	NAK (Negative Acknowledgement)
+#22		-	ctrl	SYN (Synchronous idle)
+#23		-	ctrl	ETB (End Transmission Blocks)
+#24		-	ctrl	CAN (Cancel)
+#25		-	ctrl	EM (End of Medium)
+#26		-	ctrl	SUB (Substitute)
+#27		-	ctrl	ESC (Escape)
+#28		-	ctrl	FS (File Separator)
+#29		-	ctrl	GS (Group Separator)
+#30		-	ctrl	RS (Record Separator)
+#31		-	ctrl	US (Unit Separator)
+32	 	1	ascii,space	Space
+33	!	1	ascii,punct	Exclamation
+34	&quot;	1	ascii,punct,quote	Double quote
+35	#	1	ascii,punct,math	Number sign
+36	$	1	ascii,punct,money	Dollar
+37	%	1	ascii,punct,math,money	Percent
+38	&amp;	1	ascii,punct,math	Ampersand, and-sign
+39	'	1	ascii,punct,accent,quote	Apostrophe, Tick
+40	(	1	ascii,money,brace	Open parenthesis
+41	)	1	ascii,money,brace	Close parenthesis
+42	*	1	ascii,punct,math	Asterisk
+43	+	1	ascii,punct,math	Plus sign
+44	,	1	ascii,punct,math,money	Comma
+45	-	1	ascii,punct,math,dash	Hyphen, Minus
+46	.	1	ascii,punct,math,money	Period, Decimal point
+47	/	1	ascii,punct,math,dash	Solidus, Forward slash
+48	0	1	ascii,number	Digit zero
+49	1	1	ascii,number	Digit one
+50	2	1	ascii,number	Digit two
+51	3	1	ascii,number	Digit three
+52	4	1	ascii,number	Digit four
+53	5	1	ascii,number	Digit five
+54	6	1	ascii,number	Digit six
+55	7	1	ascii,number	Digit seven
+56	8	1	ascii,number	Digit eight
+57	9	1	ascii,number	Digit nine
+58	:	1	ascii,punct	Colon
+59	;	1	ascii,punct	Semicolon
+60	&lt;	1	ascii,math,brace	Less than sign, open angle bracket
+61	=	1	ascii,math,dash	Equal sign, assignment
+62	&gt;	1	ascii,math,brace	Greater than sign, close angle bracket
+63	?	1	ascii,punct	Question mark
+64	@	1	ascii,punct	At sign
+65	A	1	ascii,letter	Latin Capital A
+66	B	1	ascii,letter	Latin Capital B
+67	C	1	ascii,letter	Latin Capital C
+68	D	1	ascii,letter	Latin Capital D
+69	E	1	ascii,letter	Latin Capital E
+70	F	1	ascii,letter	Latin Capital F
+71	G	1	ascii,letter	Latin Capital G
+72	H	1	ascii,letter	Latin Capital H
+73	I	1	ascii,letter	Latin Capital I
+74	J	1	ascii,letter	Latin Capital J
+75	K	1	ascii,letter	Latin Capital K
+76	L	1	ascii,letter	Latin Capital L
+77	M	1	ascii,letter	Latin Capital M
+78	N	1	ascii,letter	Latin Capital N
+79	O	1	ascii,letter	Latin Capital O
+80	P	1	ascii,letter	Latin Capital P
+81	Q	1	ascii,letter	Latin Capital Q
+82	R	1	ascii,letter	Latin Capital R
+83	S	1	ascii,letter	Latin Capital S
+84	T	1	ascii,letter	Latin Capital T
+85	U	1	ascii,letter	Latin Capital U
+86	V	1	ascii,letter	Latin Capital V
+87	W	1	ascii,letter	Latin Capital W
+88	X	1	ascii,letter	Latin Capital X
+89	Y	1	ascii,letter	Latin Capital Y
+90	Z	1	ascii,letter	Latin Capital Z
+91	[	1	ascii,brace	Open square bracket
+92	\	1	ascii,punct,dash	Reverse solidus, Back slash
+93	]	1	ascii,brace	Close square bracket
+94	^	1	ascii,accent	Circumflex accent, Carrot
+95	_	1	ascii,dash,space	Low line, Underscore
+96	`	1	ascii,accent	Grave accent, Back tick
+97	a	1	ascii,letter	Latin Small a
+98	b	1	ascii,letter	Latin Small b
+99	c	1	ascii,letter	Latin Small c
+100	d	1	ascii,letter	Latin Small d
+101	e	1	ascii,letter	Latin Small e
+102	f	1	ascii,letter	Latin Small f
+103	g	1	ascii,letter	Latin Small g
+104	h	1	ascii,letter	Latin Small h
+105	i	1	ascii,letter	Latin Small i
+106	j	1	ascii,letter	Latin Small j
+107	k	1	ascii,letter	Latin Small k
+108	l	1	ascii,letter	Latin Small l
+109	m	1	ascii,letter	Latin Small m
+110	n	1	ascii,letter	Latin Small n
+111	o	1	ascii,letter	Latin Small o
+112	p	1	ascii,letter	Latin Small p
+113	q	1	ascii,letter	Latin Small q
+114	r	1	ascii,letter	Latin Small r
+115	s	1	ascii,letter	Latin Small s
+116	t	1	ascii,letter	Latin Small t
+117	u	1	ascii,letter	Latin Small u
+118	v	1	ascii,letter	Latin Small v
+119	w	1	ascii,letter	Latin Small w
+120	x	1	ascii,letter	Latin Small x
+121	y	1	ascii,letter	Latin Small y
+122	z	1	ascii,letter	Latin Small z
+123	{	1	ascii,brace	Open curly bracket, Open brace
+124	|	1	ascii,punct,dash	Vertical line
+125	}	1	ascii,brace	Close curly bracket, Close brace
+126	~	1	ascii,accent,math	Tilde
+#127	DEL	-	ctrl	Delete
+#
+#= Extended Punctuation (Non-Unicode, Historic)
+#
+130	&sbquo;	-/4	quote	Single low-9 quotation mark (8218)
+131	&fnof;	-/4	letter,math	Latin small f with hook, Function (402)
+132	&bdquo;	-/4	quote	Double Low-9 quotation mark (8222)
+133	&hellip;	-/4	punct	Ellipsis, Three dot leader (8230)
+134	&dagger;	-/4	punct,format	Dagger mark (8224)
+135	&Dagger;	-/4	punct,format	Double dagger (8225)
+136	&circ;	-/4	accent	Modifier letter circumflex accent (710)
+137	&permil;	-/4	punct,math,money	Per Mille, Per thousand sign (8240)
+138	&Scaron;	-/4	letter	Latin capital S with caron (352)
+139	&lsaquo;	-/4	quote,brace	Single left-pointing angle quotation mark (8249)
+140	&OElig;	-/4	letter,lig	Latin capital ligature OE (338)
+145	&lsquo;	-/4	quote	Left single quotation mark (8216)
+146	&rsquo;	-/4	quote	Right single quotation mark (8217)
+147	&ldquo;	-/4	quote	Left double quotation mark (8220)
+148	&rdquo;	-/4	quote	Right double quotation mark (8221)
+149	&bull;	-/4	punct,math	Bullet (8226)
+150	&ndash;	-/4	punct,dash	En dash (8211)
+151	&mdash;	-/4	punct,dash	Em dash (8212)
+152	&tilde;	-/4	accent	Small tilde (732)
+153	&trade;	-/4	publish	Trademark (8482)
+154	&scaron;	-/4	letter	Latin small s with caron (353)
+155	&rsaquo;	-/4	quote,brace	Right single angle quotation mark (8250)
+156	&oelig;	-/4	letter,lig	Latin small ligature oe (339)
+159	&Yuml;	-/4	letter	Capital Y umlaut (376)
+#
+#= Latin-1
+#
+160	&nbsp;	2/3.2	latin-1,punct,space	Non-breaking space
+161	&iexcl;	2/3.2	latin-1,punct	Inverted exclamation mark
+162	&cent;	2/3.2	latin-1,money	Cent sign
+163	&pound;	2/3.2	latin-1,money	Pound sterling sign
+164	&curren;	2/3.2	latin-1,money	General currency sign
+165	&yen;	2/3.2	latin-1,money	Yen sign
+166	&brvbar;	2/3.2	latin-1,punct,dash	Broken vertical bar
+167	&sect;	2/3.2	latin-1,format	Section mark
+168	&uml;	2/3.2	latin-1,accent	Umlaut, Diaeresis
+169	&copy;	2/3.2	latin-1,publish	Copyright sign
+170	&ordf;	2/3.2	latin-1,accent	Feminine ordinal indicator
+171	&laquo;	2/3.2	latin-1,brace,quote	Left-pointing double angle quotation mark
+172	&not;	2/3.2	latin-1,math	Not sign
+173	&shy;	2/3.2	latin-1,punct,dash	Soft hyphen
+174	&reg;	2/3.2	latin-1,publish	Registered trademark sign
+175	&macr;	2/3.2	latin-1,accent,dash	Macron accent
+176	&deg;	2/3.2	latin-1,math	Degree sign
+177	&plusmn;	2/3.2	latin-1,math	Plus-minus sign
+178	&sup2;	2/3.2	latin-1,number	Superscript 2
+179	&sup3;	2/3.2	latin-1,number	Superscript 3
+180	&acute;	2/3.2	latin-1,accent	Accute accent
+181	&micro;	2/3.2	latin-1,math	Micron sign
+182	&para;	2/3.2	latin-1,format	Paragraph mark, Pilcrow sign
+183	&middot;	2/3.2	latin-1,punct,money,math	Middle dot
+184	&cedil;	2/3.2	latin-1,accent	Cedilla
+185	&sup1;	2/3.2	latin-1,number	Superscript 1
+186	&ordm;	2/3.2	latin-1,accent	Masculine ordinal indicator
+187	&raquo;	2/3.2	latin-1,brace,quote	Right-pointing double angle quotation mark
+188	&frac14;	2/3.2	latin-1,number	1/4 fraction
+189	&frac12;	2/3.2	latin-1,number	1/2 fraction
+190	&frac34;	2/3.2	latin-1,number	3/4 fraction
+191	&iquest;	2/3.2	latin-1,punct	Inverted question mark
+192	&Agrave;	2	latin-1,letter	Capital A grave accent
+193	&Aacute;	2	latin-1,letter	Capital A acute accent
+194	&Acirc;	2	latin-1,letter	Capital A circumflex accent
+195	&Atilde;	2	latin-1,letter	Capital A tilde
+196	&Auml;	2	latin-1,letter	Capital A umlaut mark
+197	&Aring;	2	latin-1,letter	Capital A ring
+198	&AElig;	2	latin-1,letter,lig	Capital AE ligature
+199	&Ccedil;	2	latin-1,letter	Capital C cedilla
+200	&Egrave;	2	latin-1,letter	Capital E grave accent
+201	&Eacute;	2	latin-1,letter	Capital E acute accent
+202	&Ecirc;	2	latin-1,letter	Capital E circumflex accent
+203	&Euml;	2	latin-1,letter	Capital E umlaut mark
+204	&Igrave;	2	latin-1,letter	Capital I grave accent
+205	&Iacute;	2	latin-1,letter	Capital I acute accent
+206	&Icirc;	2	latin-1,letter	Capital I circumflex accent
+207	&Iuml;	2	latin-1,letter	Capital I umlaut mark
+208	&ETH;	2	latin-1,letter,lig	Capital ETH
+209	&Ntilde;	2	latin-1,letter	Capital N tilde
+210	&Ograve;	2	latin-1,letter	Capital O grave accent
+211	&Oacute;	2	latin-1,letter	Capital O acute accent
+212	&Ocirc;	2	latin-1,letter	Capital O circumflex accent
+213	&Otilde;	2	latin-1,letter	Capital O tilde
+214	&Ouml;	2	latin-1,letter	Capital O umlaut mark
+215	&times;	2/3.2	latin-1,math	Times, multiply
+216	&Oslash;	2	latin-1,letter	Capital O slash
+217	&Ugrave;	2	latin-1,letter	Capital U grave accent
+218	&Uacute;	2	latin-1,letter	Capital U acute accent
+219	&Ucirc;	2	latin-1,letter	Capital U circumflex accent
+220	&Uuml;	2	latin-1,letter	Capital U umlaut mark
+221	&Yacute;	2	latin-1,letter	Capital Y acute accent
+222	&THORN;	2	latin-1,letter,lig	Capital Thorn
+223	&szlig;	2	latin-1,letter,lig	Small sharp s, sz ligature
+224	&agrave;	2	latin-1,letter	small a grave accent
+225	&aacute;	2	latin-1,letter	small a acute accent
+226	&acirc;	2	latin-1,letter	small a circumflex accent
+227	&atilde;	2	latin-1,letter	small a tilde
+228	&auml;	2	latin-1,letter	small a umlaut mark
+229	&aring;	2	latin-1,letter	small a ring
+230	&aelig;	2	latin-1,letter,lig	small ae ligature
+231	&ccedil;	2	latin-1,letter	small c cedilla
+232	&egrave;	2	latin-1,letter	small e grave accent
+233	&eacute;	2	latin-1,letter	small e acute accent
+234	&ecirc;	2	latin-1,letter	small e circumflex accent
+235	&euml;	2	latin-1,letter	small e umlaut mark
+236	&igrave;	2	latin-1,letter	small i grave accent
+237	&iacute;	2	latin-1,letter	small i acute accent
+238	&icirc;	2	latin-1,letter	small i circumflex accent
+239	&iuml;	2	latin-1,letter	small i umlaut mark
+240	&eth;	2	latin-1,letter,lig	small eth
+241	&ntilde;	2	latin-1,letter	small n tilde
+242	&ograve;	2	latin-1,letter	small o grave accent
+243	&oacute;	2	latin-1,letter	small o acute accent
+244	&ocirc;	2	latin-1,letter	small o circumflex accent
+245	&otilde;	2	latin-1,letter	small o tilde
+246	&ouml;	2	latin-1,letter	small o umlaut mark
+247	&divide;	2/3.2	latin-1,math	Division mark
+248	&oslash;	2	latin-1,letter	small o slash
+249	&ugrave;	2	latin-1,letter	small u grave accent
+250	&uacute;	2	latin-1,letter	small u acute accent
+251	&ucirc;	2	latin-1,letter	small u circumflex accent
+252	&uuml;	2	latin-1,letter	small u umlaut mark
+253	&yacute;	2	latin-1,letter	small y acute accent
+254	&thorn;	2	latin-1,letter,lig	small thorn
+255	&yuml;	2	latin-1,letter	small y umlaut mark
+#
+#= Latin Extended-A
+#
+338	&OElig;	4	latin-ex,letter,lig	Latin capital ligature OE
+339	&oelig;	4	latin-ex,letter,lig	Latin small ligature oe
+352	&Scaron;	4	latin-ex,letter	Latin capital S with caron
+353	&scaron;	4	latin-ex,letter	Latin small s with caron
+376	&Yuml;	4	latin-ex,letter	Latin capital Y with umlaut
+#
+#= Latin Extended-B
+#
+402	&fnof;	4	latin-ex,letter,math	Latin small f with hook, Function, Florin
+#
+#= Spacing Modifier Letters
+#
+710	&circ;	4	accent	Modifier letter circumflex accent
+732	&tilde;	4	accent	Small tilde
+#
+#= Greek
+#
+913	&Alpha;	4	greek	Greek capital alpha
+914	&Beta;	4	greek	Greek capital beta
+915	&Gamma;	4	greek	Greek capital gamma
+916	&Delta;	4	greek	Greek capital delta
+917	&Epsilon;	4	greek	Greek capital epsilon
+918	&Zeta;	4	greek	Greek capital zeta
+919	&Eta;	4	greek	Greek capital eta
+920	&Theta;	4	greek	Greek capital theta
+921	&Iota;	4	greek	Greek capital iota
+922	&Kappa;	4	greek	Greek capital kappa
+923	&Lambda;	4	greek	Greek capital lambda
+924	&Mu;	4	greek	Greek capital mu
+925	&Nu;	4	greek	Greek capital nu
+926	&Xi;	4	greek	Greek capital xi
+927	&Omicron;	4	greek	Greek capital omicron
+928	&Pi;	4	greek	Greek capital pi
+929	&Rho;	4	greek	Greek capital rho
+#930	&Sigmaf;	4	greek	Greek capital sigmaf
+931	&Sigma;	4	greek	Greek capital sigma
+932	&Tau;	4	greek	Greek capital tau
+933	&Upsilon;	4	greek	Greek capital upsilon
+934	&Phi;	4	greek	Greek capital phi
+935	&Chi;	4	greek	Greek capital chi
+936	&Psi;	4	greek	Greek capital psi
+937	&Omega;	4	greek	Greek capital omega
+945	&alpha;	4	greek	Greek small alpha
+946	&beta;	4	greek	Greek small beta
+947	&gamma;	4	greek	Greek small gamma
+948	&delta;	4	greek,math	Greek small delta
+949	&epsilon;	4	greek,math	Greek small epsilon
+950	&zeta;	4	greek	Greek small zeta
+951	&eta;	4	greek	Greek small eta
+952	&theta;	4	greek	Greek small theta
+953	&iota;	4	greek	Greek small iota
+954	&kappa;	4	greek	Greek small kappa
+955	&lambda;	4	greek	Greek small lambda
+956	&mu;	4	greek	Greek small mu
+957	&nu;	4	greek	Greek small nu
+958	&xi;	4	greek	Greek small xi
+959	&omicron;	4	greek	Greek small omicron
+960	&pi;	4	math,greek	Greek small pi
+961	&rho;	4	greek	Greek small rho
+962	&sigmaf;	4	greek	Greek small sigmaf
+963	&sigma;	4	greek	Greek small sigma
+964	&tau;	4	greek	Greek small tau
+965	&upsilon;	4	greek	Greek small upsilon
+966	&phi;	4	greek	Greek small phi
+967	&chi;	4	greek	Greek small chi
+968	&psi;	4	greek	Greek small psi
+969	&omega;	4	greek	Greek small omega
+977	&thetasym;	4	greek	Greek small theta symbol
+978	&upsih;	4	greek	Greek upsilon with hook symbol
+982	&piv;	4	greek	Greek pi symbol
+#
+#= General Punctuation
+#
+8194	&ensp;	4	punct,space	En space
+8195	&emsp;	4	punct,space	Em space
+8196	 	-	space	Three-per-Em space
+8197		-	space	Four-per-Em space
+8198		-	space	Six-per-Em space
+8199		-	space	Figure space
+8200		-	space	Punctuation space
+8201	&thinsp;	4	punct,space	Thin space
+8202		-	space	Hair space
+8203		-	space	Zero width space
+8204	&zwnj;	4	punct,space	Zero width non-joiner
+8205	&zwj;	4	punct	Zero width joiner
+8206	&lrm;	4	punct,space	Left-to-right mark
+8207	&rlm;	4	punct,space	Right-to-left mark
+8208		-	dash	Hyphen
+8209		-	dash	Non-breaking hyphen
+8210		-	dash	Figure dash
+8211	&ndash;	4	punct,dash	En dash
+8212	&mdash;	4	punct,dash	Em dash
+8216	&lsquo;	4	punct,quote	Left single quotation mark
+8217	&rsquo;	4	punct,quote	Right single quotation mark
+8218	&sbquo;	4	punct,quote	Single low-9 quotation mark
+8220	&ldquo;	4	punct,quote	Left double quotation mark
+8221	&rdquo;	4	punct,quote	Right double quotation mark
+8222	&bdquo;	4	punct,quote	Double low-9 quotation mark
+8224	&dagger;	4	punct,format	Dagger
+8225	&Dagger;	4	punct,format	Double dagger
+#
+#
+8226	&bull;	4	punct,math	Bullet, Black small circle
+8230	&hellip;	4	punct	Ellipsis, three dot leader
+8240	&permil;	4	punct,money,math	Per mille, Per thousand sign
+8242	&prime;	4	punct,math	Prime, Minutes, Feet
+8243	&Prime;	4	punct,math	Double prime, Seconds, Inches
+8249	&lsaquo;	4	quote,brace	Single left-pointing angle quotation mark
+8250	&rsaquo;	4	quote,brace	Single right-pointing angle quotation mark
+8254	&oline;	4	punct,dash,format	Overline, Spacing overscore
+8260	&frasl;	4	punct,math,dash	Fraction slash
+#
+#
+8308		-	number,math	Superscript 4
+8309		-	number,math	Superscript 5
+8321		-	number,math	Subscript 1
+8322		-	number,math	Subscript 2
+8323		-	number,math	Subscript 3
+#
+#
+#
+8364	&euro;	4	money	Euro
+#
+#= Letterlike Symbols
+#
+8465	&image;	4	letter	Blackletter capital I, Imaginary part
+8472	&weierp;	4	letter	Script capital P, Power set, Weierstrass p
+8476	&real;	4	letter	Blackletter capital R, Real part
+8482	&trade;	4	publish	Trademark sign
+8501	&alefsym;	4	letter	Alef symbol, First transfinite cardinal
+#
+#= Arrows
+#
+8592	&larr;	4	arrows	Left arrow
+8593	&uarr;	4	arrows	Up arrow
+8594	&rarr;	4	arrows	Right arrow
+8595	&darr;	4	arrows	Down arrow
+8596	&harr;	4	arrows	Left and right arrow
+8629	&crarr;	4	arrows	Downwards arrow with corner leftwards, Carriage return symbol
+8656	&lArr;	4	arrows	Left double arrow
+8657	&uArr;	4	arrows	Up double arrow
+8658	&rArr;	4	arrows	Right double arrow
+8659	&dArr;	4	arrows	Down double arrow
+8660	&hArr;	4	arrows	Left and right double arrow
+#
+#= Mathematical Operators
+#
+8704	&forall;	4	math	For all
+8706	&part;	4	math	Partial differential
+8707	&exist;	4	math	There exists
+8709	&empty;	4	math	Empty set, Null set, Diameter
+8711	&nabla;	4	math	Nabla, Backward difference
+8712	&isin;	4	math	Element of
+8713	&notin;	4	math	Not an element of
+8715	&ni;	4	math	Contains as member
+8719	&prod;	4	math	Product sign
+8721	&sum;	4	math	N-ary summation
+8722	&minus;	4	math,dash,money	Minus sign
+8727	&lowast;	4	math	Asterisk operator
+8730	&radic;	4	math	Square root, Radical sign
+8733	&prop;	4	math	Proportional to
+8734	&infin;	4	math	Infinity
+8736	&ang;	4	math	Angle
+8743	&and;	4	math	Logical and, Wedge
+8744	&or;	4	math	Logical or, Vee
+8745	&cap;	4	math	Intersection, cap
+8746	&cup;	4	math	Union, cup
+8747	&int;	4	math	Integral
+8756	&there4;	4	math	Therefore
+8764	&sim;	4	math	Tilde operator, Varies with, Similar to
+8773	&cong;	4	math	Approximately equal to
+8776	&asymp;	4	math	Almost equal, Asymptotic to
+8800	&ne;	4	math	Not equal
+8801	&equiv;	4	math	Equivalent, Identical to
+8804	&le;	4	math	Less than or equal
+8805	&ge;	4	math	Greater than or equal
+8834	&sub;	4	math	Subset of
+8835	&sup;	4	math	Superset of
+8836	&nsub;	4	math	Not a subset of
+8838	&sube;	4	math	Subset of or equal to
+8839	&supe;	4	math	Superset of or equal to
+8853	&oplus;	4	math	Circled plus, Direct Sum
+8855	&otimes;	4	math	Circled times, Vector product
+8869	&perp;	4	math	Orthogonal to, Perpendicular
+8901	&sdot;	4	math	Dot operator
+#
+#= Miscellaneous Technical
+#
+8968	&lceil;	4	shape	Left Ceiling, Apl upstile
+8969	&rceil;	4	shape	Right ceiling
+8970	&lfloor;	4	shape	Left floor, Apl downstile
+8971	&rfloor;	4	shape	Right floor
+9001	&lang;	4	brace	Left-pointing angle bracket
+9002	&rang;	4	brace	Right-pointing angle bracket
+#
+#= Geometric Shapes
+#
+9674	&loz;	4	shape	Lozenge
+#
+#= Miscellaneous Symbols
+#
+9824	&spades;	4	shape	Spades suit
+9827	&clubs;	4	shape	Clubs suit, shamrock
+9829	&hearts;	4	shape	Hearts suit
+9830	&diams;	4	shape	Diamonds suit

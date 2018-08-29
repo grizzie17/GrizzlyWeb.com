@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="Author" content="John Griswold">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>Style Guide - Generic - Comments</title>
+</head>
+
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td valign="top"><table border="0">
+      <tr>
+        <td colspan="3"><font size="2">Coding Guidelines</font></td>
+      </tr>
+      <tr>
+        <td width="20"></td>
+        <td colspan="2"><b>Generic Guidelines</b></td>
+      </tr>
+      <tr>
+        <td width="20"></td>
+        <td width="20"></td>
+        <td><font size="6"><strong>Comments</strong></font></td>
+      </tr>
+    </table>
+    </td>
+    <td align="right" valign="top"><table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><a href="c_format.htm" target><img src="images/b-left.gif" alt="&lt;-" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="c_1.htm" target><img src="images/b-up.gif" alt="^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="c_decl.htm" target><img src="images/b-right.gif" alt="-&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+      </tr>
+      <tr>
+        <td><a href="0std.htm" target><img src="images/b-left2.gif" alt="&lt;&lt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="0std.htm" target><img src="images/b-top.gif" alt="^^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="cpp_1.htm" target><img src="images/b-right2.gif" alt="&gt;&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<p><i>&quot;When the code and the comments disagree, both are probably wrong.&quot; --
+Norm Schryer</i></p>
+
+<p>Complete and accurate commentary is vitally important for any program to be
+maintainable. Four types of comments are common; initial, section, module (or function)
+and in-line (or code) commentary. Each has its own purpose, importance, and guidelines.</p>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="30%" bgcolor="#FF6666"><h3>Always prefix file with
+    standard copyright&nbsp;notice and revision&nbsp;history</h3>
+    </td>
+    <td valign="top" width="70%" bgcolor="#DDDDDD">The file should always begin with the
+    standard copyright notice comment block. There should also be a revision history comment
+    block near the beginning of the file, describing all changes to the file. <p><i>The
+    easiest way to setup a file for the standard comments is to use the development <a href="#Use File Templates">template files</a>.</i></td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="30%" bgcolor="#FFFF66"><b><i>Write comments as you
+    create your code</i></b> </td>
+    <td valign="top" width="70%" bgcolor="#DDDDDD">Always write comments when you are creating
+    the code. This is when you best know what you are doing. If you wait until later, you may
+    forget details or may never find time.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="30%" bgcolor="#FFFF66"><b><i>Describe what is
+    happening</i></b></td>
+    <td valign="top" width="70%" bgcolor="#DDDDDD">Comments should describe what is happening,
+    how it is being done, what parameters mean, which globals are used and which are modified,
+    and any restrictions or bugs. Avoid, comments that are clear from the code, as such
+    information rapidly gets out of date. Comments that disagree with the code are of negative
+    value. Short comments should be <i>what comments</i>, such as &quot;compute mean
+    value&quot;, rather than <i>how comments</i> such as &quot;sum of values divided by
+    n&quot;.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="30%" bgcolor="#66CCFF"><i>Do not comment each line,
+    describe blocks of code instead</i></td>
+    <td valign="top" width="70%" bgcolor="#DDDDDD">C is not assembler; putting a comment at
+    the top of a 3-10 line section telling what it does overall is often more useful than a
+    comment on each line describing micrologic.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="30%" bgcolor="#CCCCCC">Standalone comments should be
+    aligned with surrounding code</td>
+    <td valign="top" width="70%" bgcolor="#DDDDDD">Comments that stand alone on one or more
+    lines should be indented at the same level as the surrounding code.</td>
+  </tr>
+</table>
+
+<hr>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><a href="c_format.htm" target><img src="images/b-left.gif" alt="&lt;-" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="c_1.htm" target><img src="images/b-up.gif" alt="^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="c_decl.htm" target><img src="images/b-right.gif" alt="-&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+  </tr>
+  <tr>
+    <td><a href="0std.htm" target><img src="images/b-left2.gif" alt="&lt;&lt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="0std.htm" target><img src="images/b-top.gif" alt="^^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="cpp_1.htm" target><img src="images/b-right2.gif" alt="&gt;&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+  </tr>
+</table>
+<!--webbot bot="Include" U-Include="../_private/change.htm" TAG="BODY" startspan -->
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="12"></td>
+  </tr>
+  <tr>
+    <td align="right"><font face="Arial" size="1" color="#999999" style="font-family: sans-serif; font-size: 10px">Last modified: 
+	25 May 2009</font><br>
+    <a style="text-decoration: none" target="_self" href="../9copyright.htm"><font face="Arial" size="1" color="#CCCCCC" style="font-family: sans-serif; font-size: 9px">copyright
+    2004 Bear Consulting Group</font></a></td>
+  </tr>
+</table>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right">
+	
+
+<script language="JavaScript" src="../../javascript/remotelog.js"></script>
+
+
+
+</td>
+  </tr>
+</table>
+<!--webbot bot="Include" endspan i-checksum="38072" -->
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              </body>
+</html>

@@ -1,0 +1,123 @@
+<!-- BEGIN HIDE -->
+<!---------------------------------------------------------------------+\
+|
+|					  Written by Grizzly WebMaster
+|					a division of Bear Consulting Group
+|
+|	Public Domain:
+|	Redistribution and use of this software is freely permitted.
+|	This software should be considered as unowned and without
+|	copyright restrictions, nor should any individual or company
+|	claim exclussive copyright.  This software is provided "as is"
+|	and without any express or implied warranties, including, without
+|	limitation, the implied warranties or merchantibility and fitness
+|	for a particular purpose.
+|
+|	Grizzly WebMaster assumes NO responsibility for the use or
+|	reliability of software altered by the user.
+|
+|	The information in this document is subject to change without
+|	notice and should not be construed as a commitment by
+|	Grizzly WebMaster.	
+|
+\+---------------------------------------------------------------------->
+<!-- END HIDE -->
+<html>
+
+<head>
+<title>Email Address Hide Example</title>
+<!-- BEGIN HIDE -->
+<meta name="ROBOTS" content="noindex">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<!-- END HIDE -->
+<script type="text/javascript" language="JavaScript">
+<!--
+var g_i = 0;
+function mgen( sName, sText )
+{
+	document.write('<span id="mm' + sName + '">---</span>');
+	setTimeout('fixm( "'+sName+'", "'+sText+'" )', 0.05*1000*(g_i+1) );
+	++g_i;
+}
+
+var g_at = '&#64;';
+var g_sDom = 'Your' + 'Domain' + 'Name' + '&#46;' + 'com';
+
+function fixm( sName, sText )
+{
+	var sA;
+	var aa;
+	var i;
+	if ( sName.indexOf( "|" ) )
+	{
+		aa = sName.split( "|" );
+		sA = aa[0];
+		for ( i = 1; i < aa.length; i++ )
+			sA += g_at + aa[i];
+	}
+	else
+	{
+		sA = sName + g_at + g_sDom;
+	}
+	if ( 0 < sA.indexOf( " " ) )
+	{
+		aa = sA.split( " " );
+		sA = aa[0];
+		for ( i = 1; i < aa.length; ++i )
+			sA += "&#46" + aa[i];
+	}
+	var sT;
+	if ( 0 < sText.length )
+		sT = sText;
+	else
+		sT = sA;
+	var sMLink;
+	sMLink = '<a h' + 're' + 'f="' + 'mai' + 'lto&#58;' + sA + '">' + sT + '</' + 'a>';
+	var sID = 'mm' + sName;
+	if ( document.layers )
+	{
+		var	oInnerDoc = document.layers[sID].document;
+		if ( oInnerDoc )
+		{
+			oInnerDoc.write( sMLink );
+			oInnerDoc.close();
+		}
+	}
+	else if ( document.getElementById )
+	{
+		var oSpan;
+		oSpan = document.getElementById( sID );
+		if ( oSpan )
+			oSpan.innerHTML = sMLink;
+	}
+	else if ( document.all )
+	{
+		var oSpan = document.all[sID];
+		if ( oSpan )
+			oSpan.innerHTML = sMLink;
+	}
+
+}
+
+//-->
+</script>
+</head>
+
+<body>
+
+<p>For more details please send email to 
+<script type="text/javascript" language="JavaScript">mgen('George','Curious George')</script>
+<noscript>(email address protected by Javascript)</noscript>.
+</p>
+
+<p>Another sample
+<script type="text/javascript" language="JavaScript">mgen('George|SomeOtherDomain com','')</script>
+<noscript>(email address protected by Javascript)</noscript>.
+</p>
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           </body>
+
+</html>

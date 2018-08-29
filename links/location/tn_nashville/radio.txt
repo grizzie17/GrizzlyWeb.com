@@ -1,0 +1,69 @@
+! Nashville
+!
+!CALL-Letters | Frequency | (AM/FM) | Station Name | /categories/ | City Location | URL
+
+WFSK | 88.1 | FM || /Gospel/Jazz/College/ || http://www.wfsk.org/
+WMTS | 88.3 | FM || /Alternative/college/ | Middle Tennessee State University - Murfreesboro TN | http://www.mtsu.edu/~wmts/
+WVCP | 88.5 | FM || /Soft AC/Rock/College/ || http://www.vscc.cc.tn.us/academic/humanities/com100/wvcp.html
+WAYM | 88.7 | FM || /Contemporary Christian/ |Columbia| http://www.wayfm.com/waym/
+WNAZ | 89.1 | FM | Praise 89| /Religious/College/ || http://www.trevecca.edu/wnaz/ | http://bible.broadcastamerica.com/stations/moreinfo/bio.phtml/Stations/WNAZ/Bio?call=wnaz_fm_bb
+WMOT | 89.5 | FM | Jazz 89| /News/Jazz/college/ | Middle Tennessee State University - Murfreesboro TN | http://www.mtsu.edu/~wmot/
+WPLN | 90.3 | FM |Public Radio| /Classical/Jazz/Public/ || http://www.wpln.org/ | http://rm.telalink.net:8080/ramgen/wpln/smil/wplnlive.smil
+WRVU | 91.1 | FM || /Alternative/College/ | Vanderbilt University | http://www.wrvu.org/ | http://www.wrvu.org:8080/ramgen/encoder/wrvu.rm
+WNRZ | 91.5 | FM |Spirit FM| /Christian/ |Dickson| http://www.trevecca.edu/wnaz/
+WFCM | 91.7 | FM || /Religious/ |Murfreesboro | http://www.wfcm.org/
+WQQK | 92.1 | FM || /R&B/ |Hendersonville | 
+WJXA | 92.9 | FM || /AC/ || 
+WYYB | 93.7 | FM |The Phoenix| /Adult Alternative/ || http://www.wyyb.com/ | http://www.broadcast.com/radio/adult_album_alternative/wyyb/
+WRLG | 94.1 | FM || /Alternative Rock/ |Smyrna TN| http://wrlt.com/ | http://www.broadcast.com/radio/adult_album_alternative/wrlt/
+WDBL | 94.3 | FM || /Country/Oldies/Adult Alternative/ || 
+WSM | 95.5 | FM || /Country/ || http://www.wsmonline.com/ | http://www.broadcast.com/radio/country/wsmfm/
+WMAK | 96.3 | FM || /Oldies/ |Murfreesboro | 
+WNKX | 96.7 | FM || /Country/ || 
+WRQQ | 97.1 | FM || /Hot AC/ |Goodlettsville |
+WSIX | 97.9 | FM || /Country/ || http://www.wsix.com/ | http://www.broadcast.com/radio/country/wsix/
+WANT | 98.9 | FM |Real Country| /Country/ |Lebanon | http://www.wantfm.com/
+WWTN | 99.7 | FM |SuperTalk 99.7| /Talk/Sports/ |Manchester TN| http://www.997wtn.com/ | http://www.broadcast.com/radio/talk/wtn/
+WRLT | 100.1 | FM |Lighting 100| /Adult Alternative/ |Franklin/Nashville TN| http://wrlt.com/ | http://www.broadcast.com/radio/adult_album_alternative/WRLT/
+WZTO | 101.1 | FM |The One| /Christian/ |Russellville KY| http://www.theoneonline.com/
+WQZQ | 102.5 | FM |The Party| /Top-40/Rock/ || http://www.1025theparty.com/ | http://209.12.211.16:7070/ramgen/encoder/theparty
+WZPC | 102.9 | FM |102-9 the Buzz| /Modern ROck/ |Shelbyville | http://www.1029thebuzz.com/
+WKDF | 103.3 | FM |Music City Country| /Country/ || http://www.musiccity103.com/ | http://stream1.clbn.com/coolradio/listen.asp?stationid=1178
+WGFX | 104.5 | FM || /Classic Rock/ |Gallatin TN| http://www.104thecore.com/ | http://stream1.clbn.com/coolradio/listen.asp?stationid=1177
+WBOZ | 104.9 | FM || /Southern Gospel/ |Murfreesboro | 
+WVRY | 105.1 | FM |Simulcast WBOZ| /Gospel/ |Waverly | http://solidgospel.com/
+WNRQ | 105.9 | FM |The Rock@105.9| /Classic Rock/ || http://www.1059.com/ | http://www.broadcast.com/radio/classic_rock/wnrq/
+WNPL | 106.7 | FM |Rooster 106| /Rock/ |Belle Meade | 
+WRVW | 107.5 | FM |The River| /Hot AC/ |Lebanon TN| http://www.1075theriver.com/ | http://www.broadcast.com/radio/adult_contemporary/WRVW/
+! |  | FM || // || 
+
+
+WNSR | 560 | AM |Sports 56| /Sports/ |Brentwood/Nashville TN| http://www.sports56.com/
+WSM | 650 | AM || /Country/ || http://www.wsmonline.com/
+WENO | 760 | AM || /Religious/ || 
+WQSV | 790 | AM || /Religious/ || 
+WMGC | 810 | AM |Golden Radio| /Spanish/Gospel/R&B/ |Murfreesboro/Nashville TN| http://www.goldenradio.com/
+WMDB | 880 | AM || /Gospel/R&B/ || 
+WCOR | 900 | AM |Simulcast WANT| /Country/ || 
+WAKM | 950 | AM || /Country/ || 
+WYFN | 980 | AM || /Religious/ || 
+WHIN | 1010 | AM || /Country/ || 
+WSGI | 1100 | AM || /Country/ || 
+WSLV | 1110 | AM || /Country/ |Ardmore| http://www.wslvam.com/
+WAMB | 1160 | AM || /Adult Standards/ || 
+WNSG | 1240 | AM || /Gospel/ || 
+WDKN | 1260 | AM || /Country/ || 
+WQKR | 1270 | AM || /News/Talk/ || 
+WLAC | 1510 | AM || /News/Talk/ || http://www.wlac.com/
+WNQM | 1300 | AM || /Religious/ || 
+WNAH | 1360 | AM || /Religious/Gospel/Variety/ || http://www.jtr.com/wnah/
+WIZO | 1380 | AM || /Rock/Spanish/ || 
+WKDA | 1430 | AM || /News/Talk/ | Madison |
+WGNS | 1450 | AM || /News/Talk/ || 
+WVOL | 1470 | AM || /Gospel/ || 
+WNKX | 1570 | AM || /Country/ || 
+WDBL | 1590 | AM |Simulcast WDBL-FM| /Gospel/ || 
+! |  | AM || // || 
+! |  | AM || // || 
+
+

@@ -1,0 +1,118 @@
+<html>
+
+<head>
+<title>Frames Buster Example-1</title>
+<!-- BEGIN HIDE -->
+<meta name="ROBOTS" content="noindex">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<!-- END HIDE -->
+<!--
+	We provide the "window-target" meta-tag for those few
+	browsers that honor the tag.  If the browser supports
+	the tag then it will the handle breaking out of frames.
+-->
+<meta http-equiv="window-target" content="_top">
+<script language="JavaScript">
+<!--
+var sThisURL = unescape(window.location.pathname);
+
+function doFramesBuster()
+{
+	//	This function is the key to breaking out of frames.
+	//	All of the rest of the stuff is to gracefully deal 
+	//	with the browser's history.
+	//
+<!-- BEGIN HIDE -->
+	//	Some flavors of the frames buster use (top != self)
+	//	but this will not correctly handle iframes.  You
+	//	must use test the location object to correctly
+	//	detect iframes.
+	//
+//	if ( top.location != self.location )
+<!-- END HIDE -->
+	if ( top != self )
+		breakFrames();
+}
+
+//	It is important to note that there are two implementations
+//	of the "breakFrames" function.  One in this JavaScript
+//	block and the second in the JavaScript1.1 block.  Only one
+//	of the implementations will actually be used.  If the 
+//	browser supports JavaScript 1.1 or later then only the
+//	second implementation will be used.
+//
+function breakFrames()
+{
+	//	The JavaScript 1.0 version of this function supports
+	//	browsers that don't have the ability to replace this
+	//	file in the browser history.  As a result we want to
+	//	make sure that we briefly delay so when the visitor
+	//	is moving back through their browser-history they
+	//	will have time to press the back-button on this page
+	//	before the script moves them to the redirection
+	//	target page again.
+	//
+	//	This form of changing location "does" add to the
+	//	browser's history, but since we are dealing with
+	//	JavaScript 1.0 we can't do much about it.
+	//
+	setTimeout( "top.location.href = sThisURL", 1.5*1000 );
+}
+
+//-->
+</script>
+<script language="JavaScript1.1">
+<!--
+function breakFrames()
+{
+	//	JavaScript 1.1 added the 'replace' function on the
+	//	location object so we can change locations without
+	//	adding to the browser's history.
+	//
+	top.location.replace( sThisURL );
+}
+
+//	Please note that we define the breakFrames() function before
+//	the next code.  This is important since this code may execute 
+//	"before" the page finishes loading.
+
+// if we are not the top frame we want to bust out
+//	Please note that we test for MSIE (Internet Explorer)
+//	this is because Netscape has problems with partially
+//	loading a page and then reloading.  Their cache gets
+//	confussed.  As a result we call the do-frames-buster
+//	function from the onload event as well.
+//
+if ( "MSIE" == navigator.appName )
+	doFramesBuster();
+
+//-->
+</script>
+</head>
+
+<!--
+	In addition to the check we did above, we also call
+	the frames-buster code from the onload event.  This
+	handles all of the non-MSIE browsers.
+-->
+<body onload="doFramesBuster()">
+
+<p>Document that should be displayed without any frames</p>
+<!-- BEGIN HIDE -->
+<script language="JavaScript">
+<!--
+	document.write("<p>Please note that this window's browser history contains ");
+	document.writeln( window.history.length + " pages</p>");
+//-->
+</script>
+<form>
+  <input type="button" onclick="top.close()" value="Close Example Window"
+  name="btn">
+</form>
+<!-- END HIDE -->
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </body>
+
+</html>

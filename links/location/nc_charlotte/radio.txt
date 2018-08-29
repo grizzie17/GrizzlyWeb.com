@@ -1,0 +1,62 @@
+!CALL-Letters | Frequency | (AM/FM) | Station Name | /categories/ | City Location | URL
+
+
+WNSC | 88.9 | FM || /public/ | Rock Hill, SC | http://www.scern.org/
+WDAV | 89.9 | FM || /Classical/college/ | Davidson College | http://www.wdav.org/
+WFAE | 90.7 | FM || /News/Jazz/Blues/public/ || http://www.wfae.org/
+WSGE | 91.7 | FM || /Variety/ | Dallas |
+WRCM | 91.9 | FM || /Christian/Religious/college/ | Columbia International University | http://www.wrcm.org/ | http://www.webnitro.net/wrcm.ram
+WCHH | 92.7 | FM | Hot 92.7 | /R&B/ | Harrisburg |
+WYFQ | 93.5 | FM || /Religious/ | Wadesboro |
+WNKS | 95.1 | FM | KISS 95.1 | /CHR/ || http://www.kiss951.com/
+WXRC | 95.7 | FM | X-treme Radio | /Classic Rock/ | Hickory | http://www.957xrc.com/ | http://www.957xrc.com/listen.asp
+WWMG | 96.1 | FM | Magic 96.1 | /Oldies/ | Shelby | http://www.magic961.com/ | http://www.magic961.com/listen.html
+WKKT | 96.9 | FM | Cat Country | /country/ | Statesville | http://www.wkktfm.com/ | http://www.broadcast.com/radio/country/wkkt/
+WPEG | 97.9 | FM | Power 98 | /R&B/ | Concord | http://www.power98fm.com/
+WBT | 99.3 | FM || /news/talk/ || http://www.wbt.com/
+WBT | 1110 | AM || /news/talk/ || http://www.wbt.com/
+WRFX | 99.7 | FM || /classic rock/ | Kannapolis |  http://www.wrfx.com/ | http://www.broadcast.com/radio/classic_rock/wrfx/
+WBAV | 101.9 | FM | V 101.9 | /Adult R&B/ | Gastonia | http://www.v1019.com/
+WLYT | 102.9 | FM | Lite 102.9 | /ac/ | Hickory | http://www.wlyt.com/ | http://www.broadcast.com/radio/adult_contemporary/wlyt/
+WSOC | 103.7 | FM || /country/ || http://www.wsocfm.com/
+WSSS | 104.7 | FM | Star 104 - Hits of the 70's &amp; 80's | /80s Oldies/ || http://www.star1047.com
+WAGI | 105.3 | FM || /Country/Southern Gospel/ | Gaffney SC | http://www.wagifm.com/
+WFMX | 105.7 | FM || /country/ | Statesville | http://www.wfmx.com/
+WNMX | 106.1 | FM | Mix 106 | /Standards/ | Waxhaw | http://www.mix106.net/
+WEND | 106.5 | FM || /modern rock/ | Salisbury | http://www.1065.com/ |
+WMIT | 106.9 | FM || /Religious/ | Black Mountain | http://www.brb.org/wmit.htm | http://real.brb.org:8080/ramgen/encoder/wmit.rm
+WLNK | 107.9 | FM | 107.9 the LINK | /hot ac/ || http://www.1079thelink.com/
+
+WFNZ | 610 | AM || /Sports/ || http://www.wfnz.com/ | http://www.radio.audionet.com/radio/new_makeram.asp?ID=5894
+WXII | 830 | AM ||| Kernersville | 
+WCTG | 840 | AM ||| Columbia, SC |
+WYFQ | 930 | AM ||||
+WAAK | 960 | AM ||| Dallas |
+WBZK | 980 | AM ||| York, SC |
+WNOW | 1030 | AM || /Religion/Talk/ | Mint Hill | http://www.wnow.com/
+WLON | 1050 | AM ||| Lincolnton | http://www.piedmont-superstation.com/
+WKRE | 1060 | AM ||| Monroe |
+WBT | 1110 | AM || /News/Talk/ || http://www.wbt.com/
+WRNA | 1140 | AM ||| China Grove |
+WAVO | 1150 | AM ||| Rock Hill, SC |
+WCXN | 1170 | AM ||| Claremont |
+WIXE | 1190 | AM ||| Monroe | http://www.wixe.com/
+WKMT | 1220 | AM ||| Kings Mountain |
+WHVN | 1240 | AM |||| 
+WCGC | 1270 | AM ||| Belmont | 
+WGSP | 1310 | AM ||||
+WRHI | 1340 | AM || /Talk/Sports/ | Rock Hill SC/Charlotte NC | http://www.wrhi.com/
+WHIP | 1350 | AM ||| Mooresville |
+WLTC | 1370 | AM ||| Gastonia |
+WEGO | 1410 | AM ||| Concord |
+WGAS | 1420 | AM ||| South Gastonia |
+WDEX | 1430 | AM ||| Monroe |
+WGNC | 1450 | AM ||| Gastonia |
+WRKB | 1460 | AM ||| Kannapolis |
+WGFY | 1480 | AM ||||
+WOGR | 1540 | AM ||||
+WAGL | 1560 | AM ||| Lancaster, SC |
+WCSL | 1590 | AM ||| Cherryville |
+WGIV | 1600 | AM || /Gospel/ ||
+WBHE | 1660 | AM ||||
+

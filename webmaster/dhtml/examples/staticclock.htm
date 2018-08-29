@@ -1,0 +1,82 @@
+<!-- BEGIN HIDE -->
+<!---------------------------------------------------------------------+\
+|
+|					  Written by Grizzly WebMaster
+|					a division of Bear Consulting Group
+|
+|	Public Domain:
+|	Redistribution and use of this software is freely permitted.
+|	This software should be considered as unowned and without
+|	copyright restrictions, nor should any individual or company
+|	claim exclussive copyright.  This software is provided "as is"
+|	and without any express or implied warranties, including, without
+|	limitation, the implied warranties or merchantibility and fitness
+|	for a particular purpose.
+|
+|	Grizzly WebMaster assumes NO responsibility for the use or
+|	reliability of software altered by the user.
+|
+|	The information in this document is subject to change without
+|	notice and should not be construed as a commitment by
+|	Grizzly WebMaster.	
+|
+\+---------------------------------------------------------------------->
+<!-- END HIDE -->
+<html>
+
+<head>
+<title>Static Clock Example</title>
+<!-- BEGIN HIDE -->
+<meta name="ROBOTS" content="noindex">
+<!-- END HIDE -->
+<script language="JavaScript">
+<!--
+function getTimeString()
+{
+	var oTime = new Date();
+	var hours = oTime.getHours();
+	var minutes = oTime.getMinutes();
+	var seconds = oTime.getSeconds();
+	var meridian;
+	
+	// determine the meridian
+	if ( 11 < hours )
+	{
+		// 12 o'clock will go to zero
+		//  but it will be fixed below
+		hours = hours - 12;
+		meridian = "PM";
+	}
+	else
+	{
+		meridian = "AM";
+	}
+	
+	// fix the parts for display
+	if ( 0 == hours )
+		hours = 12;
+	if ( minutes < 10 )
+		minutes = "0" + minutes;
+	if ( seconds < 10 )
+		seconds = "0" + seconds;
+
+	var timeString = hours + ":" + minutes + ":" + seconds + " " + meridian;
+	
+	return timeString;
+}
+
+//-->
+</script>
+</head>
+
+<body>
+
+<script language="JavaScript">
+<!--
+	document.write( getTimeString() );
+//-->
+</script>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       </body>
+
+</html>

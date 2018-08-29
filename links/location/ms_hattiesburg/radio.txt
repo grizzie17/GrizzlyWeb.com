@@ -1,0 +1,34 @@
+!CALL-Letters | Frequency | (AM/FM) | Station Name | /categories/ | City Location | URL
+
+WUSM | 88.5 | FM || /Classical/Jazz/Blues/College/ | University of Southern Mississippi | http://www-dept.usm.edu/~wusm/ | http://www.wusm.usm.edu/live.ram
+WAII | 89.3 | FM || /Religious/ | Hattiesburg | http://www.todayschristianmusic.com/
+WATP | 90.7 | FM || /Religious/ | Laurel | http://www.afr.net/
+WJMG | 92.1 | FM || /R&B/ | Hattiesburg |
+WKZW | 94.3 | FM | KZ94 | /Hot AC/ | Sandersville | http://www.kz94.com/
+WBBN | 95.9 | FM | B95| /Country/ | Taylorsville | http://www.b95country.com/
+WXHB | 96.5 | FM | The Hub | /Talk/ | Richton |
+WXAB | 96.9 | FM || /Oldies/ | McLain |
+WFMM | 97.3 | FM | Super Talk Mississippi | /Talk/ | Sumrall | http://www.supertalkms.com/ | http://www.supertalkms.com/wfmn.ram
+WMXI | 98.1 | FM | Spirit 98 | /Gospel/ | Laurel | http://www.spirit98.com/
+WHER | 99.3 | FM | Eagle 99.3 | /Oldies/ | Heidelberg |
+WNSL | 100.3 | FM | SL100 | /Hot AC/Top-40/ | Laurel | http://www.sl100.com/
+WJKX | 102.5 | FM | 102JKX | /R&B/ | Ellisville |
+WUSW | 103.7 | FM | US103 | /Country/ | Hattiesburg |
+WXRR | 104.5 | FM | Rock 104 | /Classic Rock/ | Hattiesburg | http://www.rock104fm.com/
+WZLD | 106.3 | FM | Wild 106.3 | /R&B/ | Petal |
+WKNZ | 107.1 | FM | Zoo 107 | /Soft AC/ | Collins |
+WZKX | 107.9 | FM | Kicker 108 | /Country/ | Bay St. Louis | http://www.kicker108.com/
+
+WSJC | 810 | AM || /Country/ | Magee |
+WEEZ | 890 | AM || /Gospel/ | Laurel |
+WBKH | 950 | AM || /Gospel/ | Hattiesburg |
+WJNT | 1180 | AM || /Talk/ | Pearl | http://www.wjnt.com/
+WAML | 1340 | AM || /Gospel/ | Laurel |
+WFFF | 1360 | AM ||| Columbia |
+WFOR | 1400 | AM || /Oldies/ | Hattiesburg |
+WLAU | 1430 | AM ||| Laurel |
+WRBE | 1440 | AM ||| Lucedale |
+WCJU | 1450 | AM ||| Columbia |
+WRPM | 1530 | AM ||| Poplarville |
+WIZK | 1570 | AM ||| Bay Springs |
+WORV | 1580 | AM || /Gospel/ | Hattiesburg |

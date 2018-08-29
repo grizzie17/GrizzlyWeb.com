@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>Style Guide - Generic - Performance</title>
+</head>
+
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td valign="top"><table border="0">
+      <tr>
+        <td colspan="3"><font size="2">Coding Guidelines</font></td>
+      </tr>
+      <tr>
+        <td width="20"></td>
+        <td colspan="2"><b>Generic Guidelines</b></td>
+      </tr>
+      <tr>
+        <td width="20"></td>
+        <td width="20"></td>
+        <td><font size="6"><strong>Performance</strong></font></td>
+      </tr>
+    </table>
+    </td>
+    <td align="right" valign="top"><table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><a href="c_const.htm"><img src="images/b-left.gif" alt="&lt;-" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="c_1.htm"><img src="images/b-up.gif" alt="^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="cpp_1.htm" target><img src="images/b-right.gif" alt="-&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+      </tr>
+      <tr>
+        <td><a href="0std.htm"><img src="images/b-left2.gif" alt="&lt;&lt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="0std.htm"><img src="images/b-top.gif" alt="^^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="cpp_1.htm" target><img src="images/b-right2.gif" alt="&gt;&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<p>Design performance into your code from the beginning, and tune your code to improve it.</p>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><b><i>Design in performance</i></b>
+    </td>
+    <td valign="top" bgcolor="#DDDDDD">Choosing the right data structures and algorithms is
+    the most important aspect of good performance. The best way to speed up code is to
+    eliminate it.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#99CCFF"><i>Conduct Performance
+    Analysis</i></td>
+    <td valign="top" bgcolor="#DDDDDD">You need hard data to solve performance problems.
+    Measure your code to find out what can be improved.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Use cached objects</td>
+    <td valign="top" bgcolor="#DDDDDD">Creating and destroying objects can take a lot of time;
+    consider holding onto objects for longer periods and reusing them.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Move Code Out of Loops</td>
+    <td valign="top" bgcolor="#DDDDDD">A simple optimization is to move code out of loops. One
+    key is to look for expressions which do not depend on the loop index and operations which
+    generate the same results on every iteration. Removing code from loops, especially nested
+    loops, helps improve speed. <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>pointer = buffer + 20;
+while ( buffer &lt; pointer )
+{
+    y = x * 5;
+    *(pointer--) = x * y;
+}</pre>
+        </td>
+      </tr>
+    </table>
+    <p>In the preceding example two expressions may be moved outside of the while loop without
+    changing the validity of the loop.</p>
+    <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>y = x * 5;
+temp = x * y;
+pointer = buffer + 20;
+while ( buffer &lt; pointer )
+{
+    *(pointer--) = temp;
+}</pre>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Reorder Logical Expression
+    Tests</td>
+    <td valign="top" bgcolor="#DDDDDD">The logical AND (<tt>&amp;&amp;</tt>) and logical OR (<tt>||</tt>)
+    operations are short-circuited in the C language. That is, the evaluation of each operand
+    is only done until the validity (true or false) of the expression is determined.
+    Therefore, the second operand of an AND operation will not be evaluated if the first
+    operand is false because the result is assured to be false. In the same manner, the second
+    operand of the OR operation is not evaluated if the first one is true since this assures
+    the result to be true. By taking advantage of this knowledge the programmer can order the
+    operands such that the first operand will most likely be true in an OR operation and false
+    in an AND operation. Also (as with repetitive computations) if a logical expression
+    appears multiple times within a function the code should be reworked to evaluate it once
+    and save the logical results in a temporary location. This can save time, especially with
+    large logical expressions. <p>Additionally, the programmer should apply the <i>Distributivity
+    Property</i> to logical expression tests whenever possible. For example, assuming three
+    knowns; <b>m</b>, <b>n</b>, and <b>p</b> for equivalent logical expressions follow: </p>
+    <pre>((n || m) &amp;&amp; (n || p))   equals   (n || (m &amp;&amp; p))
+((n &amp;&amp; m) || (n &amp;&amp; p))   equals   (n &amp;&amp; (m || p))
+((n || m) || (n || p))   equals   (n || (m || p))
+((n &amp;&amp; m) &amp;&amp; (n &amp;&amp; p))   equals   (n &amp;&amp; (m &amp;&amp; p))</pre>
+    <p>As is obvious, all of the equivalent expressions on the right of &quot;equals&quot;
+    requires one less expression evaluation than those on the left. </td>
+  </tr>
+</table>
+
+<hr>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><a href="c_const.htm"><img src="images/b-left.gif" alt="&lt;-" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="c_1.htm"><img src="images/b-up.gif" alt="^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="cpp_1.htm" target><img src="images/b-right.gif" alt="-&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+  </tr>
+  <tr>
+    <td><a href="0std.htm"><img src="images/b-left2.gif" alt="&lt;&lt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="0std.htm"><img src="images/b-top.gif" alt="^^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="cpp_1.htm" target><img src="images/b-right2.gif" alt="&gt;&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+  </tr>
+</table>
+<!--webbot bot="Include" U-Include="../_private/change.htm" TAG="BODY" startspan -->
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="12"></td>
+  </tr>
+  <tr>
+    <td align="right"><font face="Arial" size="1" color="#999999" style="font-family: sans-serif; font-size: 10px">Last modified: 
+	25 May 2009</font><br>
+    <a style="text-decoration: none" target="_self" href="../9copyright.htm"><font face="Arial" size="1" color="#CCCCCC" style="font-family: sans-serif; font-size: 9px">copyright
+    2004 Bear Consulting Group</font></a></td>
+  </tr>
+</table>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right">
+	
+
+<script language="JavaScript" src="../../javascript/remotelog.js"></script>
+
+
+
+</td>
+  </tr>
+</table>
+<!--webbot bot="Include" endspan i-checksum="38072" -->
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </body>
+</html>

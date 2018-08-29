@@ -1,0 +1,97 @@
+<!-- BEGIN HIDE -->
+<!---------------------------------------------------------------------+\
+|
+|					  Written by Grizzly WebMaster
+|					a division of Bear Consulting Group
+|
+|	Public Domain:
+|	Redistribution and use of this software is freely permitted.
+|	This software should be considered as unowned and without
+|	copyright restrictions, nor should any individual or company
+|	claim exclussive copyright.  This software is provided "as is"
+|	and without any express or implied warranties, including, without
+|	limitation, the implied warranties or merchantibility and fitness
+|	for a particular purpose.
+|
+|	Grizzly WebMaster assumes NO responsibility for the use or
+|	reliability of software altered by the user.
+|
+|	The information in this document is subject to change without
+|	notice and should not be construed as a commitment by
+|	Grizzly WebMaster.	
+|
+\+---------------------------------------------------------------------->
+<!-- END HIDE -->
+<html>
+
+<head>
+<title>Form Validation Example</title>
+<!-- BEGIN HIDE -->
+<meta name="ROBOTS" content="noindex">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<!-- END HIDE -->
+<script language="JavaScript">
+<!--
+
+function checkRequired( theForm )
+{
+	var	bMissing = false;
+	
+	// Our example just wants to make sure "something"
+	//	is in the text field. Obviously you could
+	//	parse the "value" property for some valid syntax.
+	if ( 0 == theForm.textField.value.length )
+		bMissing = true;
+	
+	//	Our example just wants to have some other item
+	//	selected other than the first ("0") item.  If
+	//	we had created the field so that nothing was
+	//	selected the 'selectedIndex' would be (-1).
+	if ( 0 == theForm.dropMenu.selectedIndex )
+		bMissing = true;
+	
+	if ( bMissing )
+	{
+		alert( "All form fields are required.\n"
+				+ "Please complete them and Submit again.");
+		
+		// false causes the form submission to be canceled
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+//-->
+</script>
+</head>
+
+<body>
+
+<!--
+	Notice the "onsubmit" event handler.  It passes "this" as an
+	argument which passes the form to the validation function.
+-->
+<form method="GET" action="formvalidationtarget.htm" onsubmit="return checkRequired(this)">
+  <!--
+		The rest of the form is just a couple of simple fields.
+		The names or details are not important to this example.
+  -->
+  <p><input type="text" name="textField" size="20"><br>
+  <select size="1" name="dropMenu">
+    <option selected value>Select One</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select><br>
+  <input type="submit" value="Submit" name="submit"> <input type="reset" value="Reset"
+  name="reset"></p>
+</form>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 </body>
+
+</html>

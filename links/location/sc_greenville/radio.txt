@@ -1,0 +1,56 @@
+! Greenville/Spartanburg
+!
+!CALL-Letters | Frequency | (AM/FM) | Station Name | /categories/ | City Location | URL
+
+WAGI | 105.3 | FM || /Country/Southern Gospel/ | Gaffney SC |
+WBAV | 101.9 | FM | V101.9 | /Urban AC/ | Gastonia NC | http://www.v1019.com/
+WCCP | 104.9 | FM | Foothills 104.9 | /Sports/ | Clemson SC | http://www.carol.net/gcb/wccp/
+WEPC | 88.5 | FM || /College/ || 
+WEPR | 90.1 | FM || /News/Classical/public/ || http://www.scern.org/wepr.html
+WESC | 92.5 | FM || /Country/ || http://www.wescfm.com/
+WFBC | 93.7 | FM | B93.7 | /CHR/Top 40/ || http://www.wfbcfm.com/
+WJMZ | 107.3 | FM | 107.3 Jamz | /Urban AC/ | Anderson SC | http://www.wjmz.com/
+WLFJ | 89.3 | FM | His Radio | /Contemporary Christian/Religious/college/ || http://hisradio.fm/ | http://hisradio.fm/real.ram
+WMUU | 94.5 | FM || /Easy listening/Classical/Gospel/ | Greenville | http://www.wmuu.com/ | http://www.wmuu.com/wmuufm.ram
+WMXT | 102.1 | FM || /AC/ | Pamplico/Florence SC | http://www.mix102.com/
+WMYI | 102.5 | FM | My102.5 | /AC/ | Hendersonville NC | http://www.wmyi.com/ | http://www.broadcast.com/radio/adult_contemporary/wmyi/
+WOLI | 103.9 | FM || /50s-70s Oldies/ | Easley SC |
+WOLT | 103.3 | FM | Oldies 103 | /50s-70s Oldies/ | Greer |
+WPEK | 98.1 | FM | The Peak | /Talk/ | Seneca | http://www.thepeakwpek.com/
+WPLS | 96.7 | FM || /Alternative/college/ | Furman University | http://www-student.furman.edu/wpls/
+WRIX | 103.1 | FM || /Country/Religious/ | Honea Path SC | 
+WROQ | 101.1 | FM | ROCK 101 | /Classic Rock/ | Anderson | http://www.wroq.com/
+WSBF | 88.1 | FM || /Alternative/College/ | Clemson/Greenville SC | http://wsbf.clemson.edu/
+WSPA | 98.9 | FM | Lite 98.9 | /Soft AC/ | Spartanburg | 
+WSSL | 100.5 | FM | Whistle 100 | /Country/ | Gray Court | http://www.wsslfm.com/ | http://www.broadcast.com/radio/country/wssl
+WTBI | 91.7 | FM || /Religious/college/ | Pickens | http://thewerx.com/directory/gdir/listings/WTBI/
+WTPT | 93.3 | FM | Planet 93.3 | /Rock/ | Forect City NC | http://www.93planet.com/
+WWMG | 96.1 | FM | Magic 96.1 | /Oldies/ | Shelby NC | http://www.magic961.com/
+WWNF | 100.1 | FM || /Oldies/ | Lake City/Florence SC | http://www.mix102-wmxt.com/fun100.html
+WXWX | 103.9 | FM || /Urban/ || 
+WXWZ | 103.3 | FM || /Urban/ || 
+WYFG | 91.1 | FM || /Religious/college/ | Gaffney SC | 
+! |  | FM || // || 
+! |  | FM || // || 
+! |  | FM || // || 
+! |  | FM || // || 
+! |  | FM || // || 
+! |  | FM || // || 
+
+WORD | 910 | AM || /news/talk/sports/ | Spartanburg SC | http://www.newstalkword.com/ | http://www.worthwhile.com/word/word.ram
+WFBC | 1330 | AM || /news/talk/sports/ | Spartanburg SC | http://www.newstalkword.com/ | http://www.worthwhile.com/word/word.ram
+WTBI | 1540 | AM || /Gospel/Religious/ | Pickens/Greenville Sc | http://thewerx.com/directory/gdir/listings/WTBI/
+WSPA | 950 | AM || /News/Talk/ || 
+WAIM | 1230 | AM || /News/Talk/ || 
+WCCP | 1560 | AM || /News/Talk/ || 
+WDAB | 1580 | AM || /News/Talk/ || 
+WANS | 1280 | AM || /AC/ || 
+WLWZ | 1390 | AM || /Urban/ || 
+WASC | 1530 | AM || /Urban/ || 
+WRIX | 1020 | AM || /Religious/ || 
+WMUU | 1260 | AM || /Gospel/Religious/ || http://www.wmuu.com/ | http://www.wmuu.com/wmuuam.ram
+WHPB | 1390 | AM || /Religious/ || 
+WCKI | 1300 | AM || /Gospel/ || 
+WMMZ | 1400 | AM || /Gospel/ || 
+WPCI | 1490 | AM || /Financial/ || 
+! |  | AM || // || 

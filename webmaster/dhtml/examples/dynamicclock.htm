@@ -1,0 +1,193 @@
+<!-- BEGIN HIDE -->
+<!---------------------------------------------------------------------+\
+|
+|					  Written by Grizzly WebMaster
+|					a division of Bear Consulting Group
+|
+|	Public Domain:
+|	Redistribution and use of this software is freely permitted.
+|	This software should be considered as unowned and without
+|	copyright restrictions, nor should any individual or company
+|	claim exclussive copyright.  This software is provided "as is"
+|	and without any express or implied warranties, including, without
+|	limitation, the implied warranties or merchantibility and fitness
+|	for a particular purpose.
+|
+|	Grizzly WebMaster assumes NO responsibility for the use or
+|	reliability of software altered by the user.
+|
+|	The information in this document is subject to change without
+|	notice and should not be construed as a commitment by
+|	Grizzly WebMaster.	
+|
+\+---------------------------------------------------------------------->
+<!-- END HIDE -->
+<html>
+
+<head>
+<title>Dynamic Clock Example</title>
+<!-- BEGIN HIDE -->
+<meta name="ROBOTS" content="noindex">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<!-- END HIDE -->
+<style type="text/css">
+<!--
+/*
+	This is the style that we use for the clock text
+*/
+.clockstyle
+{
+	color: #000000;
+	font-size: 24pt;
+	font-weight: bold;
+	font-family: Arial;
+}
+/*
+	The style "#dynclock" identifies the style for the 'span'
+	as absolute positioning.  It MUST be identfied as either
+	absolute or relative for the dynamic replace to work.
+*/
+#dynclock
+{
+	position: absolute;
+	left: 20;
+	top: 10;
+}
+-->
+</style>
+<script language="JavaScript">
+<!--
+// This function is provided so that browsers that
+// do not support DHTML will still display the page.
+// The "showTime" function used for DHTML is in the
+// JavaScript1.1 code section below.
+function showTime()
+{
+}
+
+// We issolated the getTimeString function from
+// the showTime function because we also call it
+// to initialize the original display.  This allows
+// browsers that do support JavaScript but do not
+// support DHTML to still see some sort of time
+// display.
+//
+// It also makes the "showTime" function easier to
+// follow emphasizing the dynamic text replacement
+// instead of how we make a good clock display.
+//
+function getTimeString()
+{
+	var oTime = new Date();
+	var hours = oTime.getHours();
+	var minutes = oTime.getMinutes();
+	var seconds = oTime.getSeconds();
+	var meridian;
+	
+	// determine the meridian
+	if ( 11 < hours )
+	{
+		// 12 o'clock will go to zero
+		//  but it will be fixed below
+		hours = hours - 12;
+		meridian = "PM";
+	}
+	else
+	{
+		meridian = "AM";
+	}
+	
+	// fix the parts for display
+	if ( 0 == hours )
+		hours = 12;
+	if ( minutes < 10 )
+		minutes = "0" + minutes;
+	if ( seconds < 10 )
+		seconds = "0" + seconds;
+
+	var timeString = hours + ":" + minutes + ":" + seconds + " " + meridian;
+	
+	return timeString;
+}
+
+//-->
+</script>
+<script language="JavaScript1.2">
+<!--
+// This code section MUST be after the "JavaScript" code
+// section that contains the dummy "showTime" function.
+
+function showTime()
+{
+	// font and the like determined by style 'clockstyle'
+	//
+	//	You might think that you could just set the style
+	//	on the 'span' or 'div' whose content you will be
+	//	dynamically replacing.  Unfortunately Netscape
+	//	looses the associated style when you replace the
+	//	content text, so we must include the style in the
+	//	replacement text.
+	//
+	var clock = "<span class=clockstyle>" + getTimeString() + "</span>";
+		
+	var oDynClock;
+	if ( document.getElementById )
+		oDynClock = document.getElementById("dynclock");
+	else if ( document.layers )
+		oDynClock = document.layers["dynclock"];
+	else if ( document.all )
+		oDynClock = document.all.item("dynclock");
+	
+	// here is the secret to changing a "span" or "div" dynamically.
+	if ( oDynClock )
+	{
+		if ( oDynClock.innerHTML )
+		{
+			oDynClock.innerHTML = clock;
+		}
+		else
+		{
+			oDynClock.document.write( clock );
+			oDynClock.document.close();
+		}
+	
+		// you obviously would not want to really update the
+		// clock this frequently but we wanted to show you
+		// that the clock was really changing
+		setTimeout( "showTime()", 1.5*1000 );
+	}
+}
+
+//-->
+</script>
+
+</head>
+
+<body onload="showTime()">
+
+<!--
+	The following 'span' is what we use to identify the location
+	of the dynamic clock.  Its content is replaced dynamically
+	by the 'showTime' function.
+	
+	The style "#dynclock" (defined at the top) identifies the
+	'span' as absolute positioning.  It MUST be identfied as
+	either absolute or relative for the dynamic replace to work.
+	
+	The name identified in the 'id' is what is used to refer to
+	the 'span' for dynamic replacement.
+-->
+<span id="dynclock"><script language="JavaScript">
+<!--
+	// we call this for browsers that do not support DHTML
+	document.write( getTimeString() );
+	
+	// It should be noted that this "script" block
+	// will be replaced with the first call to showTime
+//-->
+</script></span>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </body>
+
+</html>

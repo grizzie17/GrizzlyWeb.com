@@ -1,0 +1,48 @@
+<html>
+
+<head>
+<title>Redirect to JavaScripts</title>
+<meta name="ROBOTS" content="noindex">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<script language="JavaScript">
+<!--
+var sURL = "../javascript.htm";
+
+function doRedirect()
+{
+	setTimeout( "timedRedirect()", 2*1000 );
+}
+
+function timedRedirect()
+{
+	window.location.href = sURL;
+}
+
+//-->
+</script>
+
+<script language="JavaScript1.1">
+<!--
+function doRedirect()
+{
+	window.location.replace( sURL );
+}
+
+doRedirect();
+
+//-->
+</script>
+<noscript>
+<meta http-equiv="refresh" content="2; URL=../javascript.htm">
+</noscript>
+
+</head>
+
+<body onload="doRedirect()">
+
+<p>Loading <a href="../javascript.htm">JavaScripts</a></p>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </body>
+
+</html>

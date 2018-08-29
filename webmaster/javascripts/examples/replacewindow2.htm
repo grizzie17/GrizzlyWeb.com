@@ -1,0 +1,86 @@
+<!-- BEGIN HIDE -->
+<!---------------------------------------------------------------------+\
+|
+|					  Written by Grizzly WebMaster
+|					a division of Bear Consulting Group
+|
+|	Public Domain:
+|	Redistribution and use of this software is freely permitted.
+|	This software should be considered as unowned and without
+|	copyright restrictions, nor should any individual or company
+|	claim exclussive copyright.  This software is provided "as is"
+|	and without any express or implied warranties, including, without
+|	limitation, the implied warranties or merchantibility and fitness
+|	for a particular purpose.
+|
+|	Grizzly WebMaster assumes NO responsibility for the use or
+|	reliability of software altered by the user.
+|
+|	The information in this document is subject to change without
+|	notice and should not be construed as a commitment by
+|	Grizzly WebMaster.	
+|
+\+---------------------------------------------------------------------->
+<html>
+
+<head>
+<title>Replace Window Example 2</title>
+<meta name="ROBOTS" content="noindex">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<!-- END HIDE -->
+<script language="JavaScript">
+<!--
+function replaceWindowURL( win, url )
+{
+    var nVers = parseInt( navigator.appVersion );
+    var sBrowser = navigator.appName;
+    var bReplace = false;
+    var bOpenEx = false;
+
+    if ( sBrowser == "Netscape" )
+    {
+        if ( 2 < nVers )
+            bReplace = true;
+    }
+    else if ( sBrowser == "Microsoft Internet Explorer"
+            ||  sBrowser == "MSIE" )
+    {
+        if ( 3 < nVers )
+            bReplace = true;
+        else if ( 2 < nVers )
+            bOpenEx = true;
+    }
+
+    if ( bReplace )
+        win.location.replace( url );
+    else if ( bOpenEx )
+        win.open( url, "_self", "", true );
+    else
+        win.location.href = url;
+}
+//-->
+</script>
+<script language="JavaScript">
+<!--
+
+function doLoad()
+{
+	replaceWindowURL( window, "redirectiontarget.htm" );
+}
+
+//-->
+</script>
+<!-- BEGIN HIDE -->
+</head>
+
+<body onload="doLoad()">
+
+<!--
+	Use the "onload" event to start the redirection process.
+-->
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </body>
+
+</html>
+<!-- END HIDE -->

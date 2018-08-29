@@ -1,0 +1,145 @@
+<!-- BEGIN HIDE -->
+<!---------------------------------------------------------------------+\
+|
+|					  Written by Grizzly WebMaster
+|					a division of Bear Consulting Group
+|
+|	Public Domain:
+|	Redistribution and use of this software is freely permitted.
+|	This software should be considered as unowned and without
+|	copyright restrictions, nor should any individual or company
+|	claim exclussive copyright.  This software is provided "as is"
+|	and without any express or implied warranties, including, without
+|	limitation, the implied warranties or merchantibility and fitness
+|	for a particular purpose.
+|
+|	Grizzly WebMaster assumes NO responsibility for the use or
+|	reliability of software altered by the user.
+|
+|	The information in this document is subject to change without
+|	notice and should not be construed as a commitment by
+|	Grizzly WebMaster.	
+|
+\+---------------------------------------------------------------------->
+<!-- END HIDE -->
+<html>
+
+<head>
+<title>Cookie Examples</title>
+<!-- BEGIN HIDE -->
+<meta name="ROBOTS" content="noindex">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<!-- END HIDE -->
+<script language="JavaScript">
+<!--
+
+// These functions provide a clean method of dealing with cookies
+
+//
+// This function sets a document cookie that will expire
+//	in one year from the time it was set.
+//
+function setDocumentCookie( oDoc, sName, sValue )
+{
+	if ( sName.length < 1 )
+		return;
+
+	if ( 0 < sValue.length )
+	{
+		// create a date for a year from now
+		var	expDate = new Date();
+		expDate.setTime( expDate.getTime() + 365*24*60*60*1000 );
+
+		// Notice that the cookie is actually two assignment strings.
+		//	The first is "cookiename=value" and the second is
+		//	"expires=date".  The two assignments are 	separated by a 
+		//	semicolon.  If you do not have the "expires" assignment
+		//	the cookie will disappear when the visitor's browser exits.
+		//
+		oDoc.cookie = ""
+						+ sName + "=" + sValue + "; "
+						+ "expires=" + expDate.toGMTString();
+	}
+	else
+	{
+		//	this will cause the named cookie to be deleted.
+		oDoc.cookie = sName + "=";
+	}
+}
+
+function setNamedCookie( sName, sValue )
+{
+	setDocumentCookie( document, sName, sValue );
+}
+
+function deleteDocumentCookie( oDoc, sName )
+{
+	oDoc.cookie = sName + "=";
+}
+
+function deleteCookie( sName )
+{
+	deleteDocumentCookie( document, sName );
+}
+
+//
+//	This function will fetch a named cookie
+//
+function fetchDocumentCookie( oDoc, sName )
+{
+	var sValue = "";
+	var index = 0;
+
+	//	The "cookie" property on the document is actually a
+	//	single string of the form "name=value; name2=value2; ..."
+	//	As a result we must search through the cookie string
+	//	to find the name=value pair that we are looking for.
+	//
+	if( oDoc.cookie )
+		index = oDoc.cookie.indexOf( sName + "=" );
+	else
+		index = -1;
+
+	if ( index < 0 )
+	{
+		sValue = "";
+	}
+	else
+	{
+		var countbegin = (oDoc.cookie.indexOf( "=", index ) + 1);
+		if ( 0 < countbegin )
+		{
+			var countend = oDoc.cookie.indexOf( ";", countbegin );
+			if ( countend < 0 )
+				countend = oDoc.cookie.length;
+			sValue = oDoc.cookie.substring( countbegin, countend );
+		}
+		else
+		{
+			sValue = "";
+		}
+	}
+	return sValue;
+}
+
+function fetchNamedCookie( sName )
+{
+	return fetchDocumentCookie( document, sName );
+}
+
+
+//-->
+</script>
+</head>
+
+<body>
+
+<!-- BEGIN HIDE -->
+
+<p><a href="../cookie.asp">Cookie Description</a></p>
+<!-- END HIDE -->
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </body>
+
+</html>

@@ -1,0 +1,197 @@
+﻿
+
+div.rssweather
+{
+	position: relative;
+}
+
+.weatherForecastTable
+{
+	position: relative;
+}
+
+.weatherForecastTable td
+{
+	vertical-align: top;
+	background-color: #D5EAFF;
+}
+
+
+.weatherCurrentTemp
+{
+	font-size: xx-large!important;
+}
+
+.weatherFeelsLike
+{
+	font-size: small;
+	margin-left: -1em;
+	color: gray;
+}
+
+
+
+
+.weatherTodaysTemps
+{
+	position: relative;
+	font-family: sans-serif;
+	font-size: x-small;
+}
+
+.weatherTodaysHigh
+{
+	position: relative;
+	color: #CC0000;
+	padding-right: 5px;
+}
+
+.weatherTodaysLow
+{
+	position: relative;
+	color: #000099;
+	padding-left: 3px;
+}
+
+
+
+
+
+
+
+.weatherCurrentText
+{
+	font-size: medium!important;
+}
+
+
+
+
+.weatherAlert
+{
+	font-family: sans-serif;
+	font-size: x-small;
+	color: red;
+}
+
+
+
+
+.weatherCurrentDate
+{
+	color: gray;
+	font-family: sans-serif;
+	font-size: x-small;
+	text-align: center;
+}
+
+.weatherCurrentCity
+{
+	color: gray;
+	font-size: x-small;
+	font-family: sans-serif;
+}
+
+
+.weatherWindGauge
+{
+	position: relative;
+	width: 64px;
+	height: 64px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.weatherWindGauge img
+{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+
+
+.weatherWindGauge div
+{
+	font-family: sans-serif;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 64px;
+	height: 64px;
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 22px;
+}
+
+
+
+
+
+
+
+
+
+.weatherForecastUpperBlock
+{
+	vertical-align: top;
+}
+
+
+
+
+.weatherForecastDay
+{
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: medium!important;
+}
+
+.weatherForecastImage
+{
+}
+
+
+
+.weatherForecastImage img
+{
+	position: relative;
+}
+
+.weatherForecastText
+{
+	font-size: x-small!important;
+}
+
+
+.weatherForecastTemps
+{
+	white-space: nowrap;
+}
+
+
+
+.weatherForecastHigh
+{
+	font-size: small!important;
+}
+.weatherForecastLow
+{
+	font-size: x-small!important;
+}
+
+
+
+
+.weatherForecastDescription
+{
+	font-family: sans-serif;
+	font-size: xx-small;
+}
+
+
+
+
+
+

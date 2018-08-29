@@ -1,0 +1,51 @@
+!CALL-Letters | Frequency | (AM/FM) | Station Name | /categories/ | City Location | URL
+
+WAYH | 88.1 | FM |Way-FM| /Christian/ || http://wayfm.com/ | http://wayh.wayfm.com/player.html
+WJIA | 88.5 | FM || /Christian/AC/ | Guntersville | http://www.wjia.org/ | http://www.wjia.org/
+WLRH | 89.3 | FM | Public Radio | /Classical/Jazz/News/public/ | Huntsville | http://www.wlrh.org/
+WOCG | 90.1 | FM |Praise 90.1 FM| /Christian/college/ | Oakwood College | http://www.wocg.org/ | http://www.christiannetcast.com/listen?station=wocg-fm
+WJAB | 90.9 | FM || /Jazz/Blues/college/ | Alabama A&amp;M | http://www.aamu.edu/wjab/ | http://wjab.aamu.edu/
+WBHL | 91.3 | FM | Lite 'n Easy | /AC/ | Florence | http://www.wbhl.org/
+WYFD | 91.7 | FM || /Religious/ | Decatur | http://www.bbnradio.org/ | http://www.bbnradio.org/bbn/bbnaudio6.asx
+WEUZ | 92.1 | FM |WEUP-FM 103.1| /R&B/ | Minor Hill TN |
+WWXQ | 92.5 | FM || /50s-70s Oldies/ | Trinity | http://www.wxq.com/
+WAFN | 92.7 | FM | Fun 92 | /Oldies/ | Arab |
+WHRP | 93.3 | FM | Power93.3 | /R&B/ | Tullahoma, TN | http://www.power933.net/
+WXQW | 94.1 | FM || /Oldies/ | Meridianville | http://www.wxq.com/
+WRTT | 95.1 | FM | 95.1 The Rocket | /Rock/ | Huntsville | http://www.rocket951.fm/
+WXFL | 96.1 | FM | KIX-96 | /AC/ | Florence | http://www.wxfl.com/
+WRSA | 96.9 | FM |Lite 96.9| /Soft AC/Easy Listening/ | Huntsville | http://www.lite969.com/
+WAHR | 99.1 | FM | Star 99.1 | /AC/ | Huntsville | http://www.star99.fm/
+WRJL | 99.9 | FM ||/Christian/Gospel/| Eva | http://www.wrjl.com/
+WLAY | 100.3 | FM || /Country/ | Florence |
+WYDE | 101.1 | FM || /Talk/ |Cullman| 
+WDRM | 102.1 | FM || /Country/ | Decatur | http://www.wdrm.com/
+WEUP | 103.1 | FM || /R&B/ | Moulton | http://www.103weup.com/ | http://www.103weup.com/livestream.shtml
+WQEN | 103.7 | FM ||| Gadsden |
+WZYP | 104.3 | FM | 104.3 ZYP | /Top 40/ | Athens | http://www.wzyp.net/
+WQSB | 105.1 | FM || /Country/ | Albertville | http://www.wqsb.com/
+WYTM | 105.5 | FM ||| Fayetteville, TN |
+WTAK | 106.1 | FM || /Classic Rock/ | Hartselle | http://www.wtak.com/
+WQLT | 107.3 | FM | Q-107 | /AC/Oldies/ | Florence | http://www.wqlt.com/
+
+WKNI | 620 | AM ||| Lexington |
+WSM  | 650 | AM || /Country/ | Nashville, TN | http://www.wsmonline.com/
+WUMP | 730 | AM | The Ump | /Talk/Sports/ | Athens | http://www.730ump.com/
+WVNN | 770 | AM | The Talk Monster | /Talk/News/Sports/ | Athens | http://www.wvnn.com/ | http://mmslb.eonstreams.com/wvnn.asf
+WHOS | 800 | AM ||| Decatur |
+WNSI | 810 | AM ||| Jacksonville |
+WYAM | 890 | AM || /Religion/ | Hartselle | http://www.afr.net/newafr/default.asp
+WDJL | 1000 | AM ||| Huntsville |
+WWIC | 1050 | AM ||| Scottsboro |
+WKAC | 1080 | AM || /Oldies/ | Athens | http://www.wkac1080.com/
+WSLV | 1110 | AM || /Country/ |Ardmore| http://www.wslvam.com/
+WBXR | 1140 | AM || /Religion/ | Hazel Green | http://www.wilkinsradio.com/
+WBHP | 1230 | AM || /Talk/ | Huntsville |
+WJRA | 1310 | AM ||| Priceville |
+WRAB | 1380 | AM ||| Arab |
+WTKI | 1450 | AM || /Sports/ || http://www.espn1450.com/ | http://specs.eyecentric.com/pres/98/client-popup.shtml
+WAJF | 1490 | AM ||| Decatur |
+WLOR | 1550 | AM |Jammin' 1550| /Urban AC/ | Huntsville | http://www.jammin1550.am/
+WVNA | 1590  | AM || /Classic Rock/ || http://www.classicrock100.com/
+WEUP | 1600 | AM || /Urban AC/ || http://www.weupam.com/ | http://www.weupam.com/livestream.shtml
+

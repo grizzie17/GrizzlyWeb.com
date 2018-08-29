@@ -1,0 +1,1126 @@
+<!--------------------------------------------------------------------+
+|
+|            Copyright 1986 .. 2000 Bear Consulting Group
+|                          All Rights Reserved
+|
+|    This software-file/document, in whole or in part, including	
+|    the structures and the procedures described herein, may not	
+|    be provided or otherwise made available without prior written
+|    authorization.  In case of authorized or unauthorized
+|    publication or duplication, copyright is claimed.
+|
++--------------------------------------------------------------------->
+<html>
+
+<head>
+<title>Introduction - Bear Consulting Group</title>
+<meta name="robots" content="noindex">
+<meta name="copyright" content="copyright 2000, Bear Consulting Group">
+<meta name="author" content="John Griswold">
+<script language="JavaScript1.2">
+<!--
+
+var nWinWidth = 0;
+var nWinHeight = 0;
+
+
+var oLoading;
+
+var oBear;
+var oBear_sprite;
+var oBear_width = 0;
+
+var oConsulting;
+var oConsulting_sprite;
+var oConsulting_width = 0;
+
+var oGroup;
+var oGroup_sprite;
+var oGroup_width = 0;
+
+var oBCGText;
+
+var oBCG;
+var oBCG_sprite;
+var oBCG_width = 0;
+var oBCG_height = 0;
+
+var oPaw;
+var oPaw_sprite;
+
+var oGrizzly;
+var oGrizzly_sprite;
+var oGrizzly_width = 0;
+var oGrizzly_height = 0;
+
+var oGWMList;
+var oGWMList_sprite;
+var oGWMList_height;
+
+var oKodiak;
+var oKodiak_sprite;
+var oKodiak_width = 0;
+var oKodiak_height = 0;
+
+var oKGList;
+var oKGList_sprite;
+var oKGList_height = 0;
+
+var oBrownBear;
+var oBrownBear_sprite;
+var oBrownBear_width = 0;
+var oBrownBear_height = 0;
+
+var oBBSList;
+var oBBSList_sprite;
+var oBBSList_height = 0;
+
+var oFinalBlock;
+
+var finalCount = 0;
+
+var oFinalPaw;
+var oFinalPaw_sprite;
+
+var oFinalBCG;
+var oFinalBCG_sprite;
+
+var oFinalGrizzly;
+var oFinalGrizzly_sprite;
+
+var oFinalKodiak;
+var oFinalKodiak_sprite;
+
+var oFinalBrownBear;
+var oFinalBrownBear_sprite;
+
+var oFinalBackground;
+var oFinalBackground_sprite;
+
+var bTimeLists = false;
+var bTimeFinal = false;
+
+var sHide = "hidden";
+var sShow = "visible";
+
+
+function drawFrame( frameDelta )
+{
+	if ( ! this.active )
+		return;
+
+	var n = frameDelta - this.frameTime;
+	if ( n < 1 )
+		return;
+
+	var x = this.x;
+	if ( 0 == this.frameTime )
+	{
+		n = 1;
+		this.obj.visibility = sShow;
+	}
+	this.frameTime = frameDelta;
+
+	x += this.rate * n;
+	if ( this.rate < 0 )
+	{
+		if ( x < this.xEnd )
+		{
+			this.callbackDeactivate();
+			x = this.xStart;
+			this.frameTime = 0;
+		}
+	}
+	else
+	{
+		if ( this.xEnd < x )
+		{
+			this.callbackDeactivate();
+			x = this.xStart;
+			this.frameTime = 0;
+		}
+	}
+	this.x = x;
+	this.obj.left = x;
+	this.postFunc();
+}
+
+function drawFrameVert( frameDelta )
+{
+	if ( ! this.active )
+		return;
+
+	var n = frameDelta - this.frameTime;
+	if ( n < 1 )
+		return;
+
+	var y = this.y;
+	if ( 0 == this.frameTime )
+	{
+		n = 1;
+		this.obj.visibility = sShow;
+	}
+	this.frameTime = frameDelta;
+
+	y += this.rate * n;
+	if ( this.rate < 0 )
+	{
+		if ( y < this.yEnd )
+		{
+			this.callbackDeactivate();
+			y = this.yStart;
+			this.frameTime = 0;
+		}
+	}
+	else
+	{
+		if ( this.yEnd < y )
+		{
+			this.callbackDeactivate();
+			y = this.yStart;
+			this.frameTime = 0;
+		}
+	}
+	this.y = y;
+	this.obj.top = y;
+	this.postFunc();
+}
+
+
+function oBearPostFunc()
+{
+	var x = this.x;
+	this.active = true;
+	if ( x < nWinWidth/2 )
+	{
+		oBCG_sprite.activate();
+		if ( x < 0 )
+			oConsulting_sprite.activate();
+	}
+}
+
+function oConsultingPostFunc()
+{
+	var x = this.x;
+
+	if ( x < 0 )
+		oGroup_sprite.activate();
+}
+
+function oGroupPostFunc()
+{
+	var x = this.x;
+
+
+	if ( x < nWinWidth/2 )
+	{
+		bTimeLists = true;
+		oGrizzly_sprite.activate();
+		this.postFunc = proxyPostFunc;
+	}
+}
+
+function oBCGCallbackDeactivate()
+{
+	this.yStart = this.yEnd;
+	this.active = false;
+	this.activate = spriteActivateDummy;
+}
+
+function oBCG2CallbackDeactivate()
+{
+	this.xStart = this.xEnd;
+	this.active = false;
+}
+
+function oBCG2start()
+{
+	oBCG_sprite.activate = spriteActivate;
+	oBCG_sprite.callbackDeactivate = oBCG2CallbackDeactivate;
+	oBCG_sprite.drawFrame = drawFrame;
+	oBCG_sprite.xEnd = nWinWidth + 10;
+	oBCG_sprite.rate = 4;
+	oBCG_sprite.frameTime = 0;
+	oBCG_sprite.activate();
+}
+
+function oGrizzlyPostFunc()
+{
+	var x = this.x;
+
+	if ( 0 < x )
+	{
+		oGWMList_sprite.activate();
+		if ( nWinWidth*2/3 < x )
+		{
+			oKodiak_sprite.activate();
+			this.postFunc = proxyPostFunc;
+		}
+	}
+}
+
+function oKodiakPostFunc()
+{
+	var x = this.x;
+
+	if ( 0 < x )
+	{
+		oKGList_sprite.activate();
+		if ( nWinWidth*2/3 < x )
+		{
+			this.postFunc = proxyPostFunc;
+			oBrownBear_sprite.activate();
+		}
+	}
+}
+
+
+function oPawPostFunc()
+{
+	this.postFunc = proxyPostFunc;
+	oLoading.visibility = sHide
+}
+
+function oPawCallbackDeactivate()
+{
+	this.xStart = this.xEnd;
+	this.active = false;
+	this.activate = spriteActivateDummy;
+}
+
+function oPaw2CallbackDeactivate()
+{
+	this.xStart = this.xEnd;
+	this.active = false;
+	oFinalPaw_sprite.activate();
+}
+
+function oPaw2start()
+{
+	oPaw_sprite.activate = spriteActivate;
+	oPaw_sprite.callbackDeactivate = oPaw2CallbackDeactivate;
+	oPaw_sprite.drawFrame = drawFrame;
+	oPaw_sprite.xEnd = -nWinWidth;
+	oPaw_sprite.rate = -6;
+	oPaw_sprite.frameTime = 0;
+	oPaw_sprite.activate();
+}
+
+
+
+function oBrownBearPostFunc()
+{
+	var x = this.x;
+
+	if ( 0 < x )
+	{
+		oBBSList_sprite.activate();
+		this.postFunc = proxyPostFunc;
+	}
+}
+
+function oBrownBearCallbackDeactivate()
+{
+	this.active = false;
+	oFinalBlock.visibility = sShow;
+	bTimeFinal = true;
+	oBCG2start();
+	oPaw2start();
+	//oFinalPaw_sprite.activate();
+}
+
+
+function oFinalPawCallbackDeactivate()
+{
+	bTimeLists = false;
+	this.xStart = this.xEnd;
+	this.active = false;
+	this.activate = spriteActivateDummy;
+	oFinalBCG_sprite.activate();
+	oFinalGrizzly_sprite.activate();
+	oFinalBackground_sprite.activate();
+	++finalCount;
+}
+
+function oFinalBCGCallbackDeactivate()
+{
+	this.xStart = this.xEnd;
+	this.active = false;
+	this.activate = spriteActivateDummy;
+	++finalCount;
+	if ( 5 < finalCount )
+		setTimeout( "window.close()", 7*1000 );
+}
+
+function oFinalGrizzlyCallbackDeactivate()
+{
+	this.yStart = this.yEnd;
+	this.active = false;
+	this.activate = spriteActivateDummy;
+	oFinalKodiak_sprite.activate();
+	++finalCount;
+}
+
+function oFinalKodiakCallbackDeactivate()
+{
+	this.yStart = this.yEnd;
+	this.active = false;
+	this.activate = spriteActivateDummy;
+	oFinalBrownBear_sprite.activate();
+	++finalCount;
+}
+
+function oFinalBrownBearCallbackDeactivate()
+{
+	this.yStart = this.yEnd;
+	this.active = false;
+	this.activate = spriteActivateDummy;
+	++finalCount;
+	if ( 5 < finalCount )
+		setTimeout( "window.close()", 7*1000 );
+}
+
+function oFinalBackgroundCallbackDeactivate()
+{
+	this.yStart = this.yEnd;
+	this.active = false;
+	this.activate = spriteActivateDummy;
+	++finalCount;
+	if ( 5 < finalCount )
+		setTimeout( "window.close()", 7*1000 );
+}
+
+function oFinalBackgroundActivate()
+{
+	this.active = true;
+	oBear_sprite.postFunc = proxyPostFunc;
+	oConsulting_sprite.postFunc = proxyPostFunc;
+}
+
+
+
+function spriteActivate()
+{
+	this.active = true;
+}
+
+function spriteActivateDummy()
+{
+}
+
+function spriteCallbackDeactivate()
+{
+	this.active = false;
+}
+
+function spriteCallbackDeactivateDummy()
+{
+}
+
+function proxyPostFunc()
+{
+	return;
+}
+
+
+function sprite( obj, xStart, xEnd, yStart, yEnd, rate, postFunc )
+{
+	this.obj = obj;
+	this.x = xStart;
+	this.xStart = xStart;
+	this.xEnd = xEnd;
+	this.y = yStart;
+	this.yStart = yStart;
+	this.yEnd = yEnd;
+	this.rate = rate;
+	this.frameTime = 0;
+	this.active = false;
+	this.activate = spriteActivate;
+	this.callbackDeactivate = spriteCallbackDeactivate;
+	if ( xStart != xEnd )
+		this.drawFrame = drawFrame;
+	else
+		this.drawFrame = drawFrameVert;
+	this.postFunc = postFunc;
+
+	this.obj.left = this.xStart;
+	this.obj.top = this.yStart;
+}
+
+function findBears()
+{
+	if ( !document.all )
+	{
+		if ( !document.layers )
+		{
+			return;
+		}
+		else // document.layers
+		{
+			oLoading = document.layers["loading"];
+			oBear = document.layers["bear"];
+			oConsulting = document.layers["consulting"];
+			oGroup = document.layers["group"];
+			oBCG = document.layers["BearConsultingGroup"];
+			oBCGText = oBCG.document.layers["BCGText"];
+			oBCG_height = nWinHeight/12;
+			oPaw = document.layers["paw"];
+			oGrizzly = document.layers["GrizzlyWebMaster"];
+			oGrizzly_height = nWinHeight/14;
+			oGWMList = document.layers["GWMList"];
+			oKodiak = document.layers["KodiakGraphics"];
+			oKodiak_height = nWinHeight/14;
+			oKGList = document.layers["KGList"];
+			oBrownBear = document.layers["BrownBearSoftware"];
+			oBrownBear_height = nWinHeight/18;
+			oBBSList = document.layers["BBSList"];
+			oFinalBlock = document.layers["finalblock"];
+			oFinalPaw = oFinalBlock.document.layers["finalpaw"];
+			oFinalBCG = oFinalBlock.document.layers["finalBCG"];
+			oFinalGrizzly = oFinalBlock.document.layers["finalGrizzly"];
+			oFinalKodiak = oFinalBlock.document.layers["finalKodiak"];
+			oFinalBrownBear = oFinalBlock.document.layers["finalBrownBear"];
+			oFinalBackground = document.layers["finalBackground"];
+		}
+	}
+	else // document.all
+	{
+		//nWinHeight = document.body.offsetHeight;
+		//nWinWidth = document.body.offsetWidth;
+		nWinHeight = document.body.clientHeight;
+		nWinWidth = document.body.clientWidth;
+
+		oLoading = document.all.item("loading").style;
+		oBear = document.all.item("bear").style;
+		oBear.fontSize = nWinHeight;
+		oConsulting = document.all.item("consulting").style;
+		oConsulting.fontSize = nWinHeight/3;
+		oGroup = document.all.item("group").style;
+		oGroup.fontSize = nWinHeight/4;
+		oBCG = document.all.item("BearConsultingGroup").style;
+		oBCG_height = nWinHeight/12;
+		oBCGText = document.all.item("BCGText").style;
+		oBCGText.fontSize = oBCG_height;
+		oPaw = document.all.item("paw").style;
+		oGrizzly = document.all.item("GrizzlyWebMaster").style;
+		oGrizzly_height = nWinHeight/14;
+		oGrizzly.fontSize = oGrizzly_height;
+		oGWMList = document.all.item("GWMList").style;
+		oKodiak = document.all.item("KodiakGraphics").style;
+		oKodiak_height = nWinHeight/14;
+		oKodiak.fontSize = oKodiak_height;
+		oKGList = document.all.item("KGList").style;
+		oBrownBear = document.all.item("BrownBearSoftware").style;
+		oBrownBear_height = nWinHeight/18;
+		oBrownBear.fontSize = oBrownBear_height;
+		oBBSList = document.all.item("BBSList").style;
+		oFinalBlock = document.all.item("finalblock").style;
+		oFinalPaw = document.all.item("finalpaw").style;
+		oFinalBCG = document.all.item("finalBCG").style;
+		oFinalGrizzly = document.all.item("finalGrizzly").style;
+		oFinalKodiak = document.all.item("finalKodiak").style;
+		oFinalBrownBear = document.all.item("finalBrownBear").style;
+		oFinalBackground = document.all.item("finalBackground").style;
+	}
+
+
+}
+
+function startAnimation()
+{
+	if ( !document.all )
+	{
+		if ( !document.layers )
+		{
+			return;
+		}
+		else // document.layers
+		{
+			oBear_width = oBear.clip.width;
+			oConsulting_width = oConsulting.clip.width;
+			oGroup_width = oGroup.clip.width;
+			oBCG_width = oBCG.clip.width;
+			oGrizzly_width = oGrizzly.clip.width;
+			oGWMList_height = oGWMList.clip.height;
+			oKodiak_width = oKodiak.clip.width;
+			oKGList_height = oKGList.clip.height;
+			oBrownBear_width = oBrownBear.clip.width;
+			oBBSList_height = oBBSList.clip.height;
+		}
+	}
+	else // document.all
+	{
+		oBear_width = oBear.pixelWidth;
+		if ( oBear_width < 1 )
+			oBear_width = document.all.item("bear").offsetWidth;
+		oConsulting_width = oConsulting.pixelWidth;
+		if ( oConsulting_width < 1 )
+			oConsulting_width = document.all.item("consulting").offsetWidth;
+		oGroup_width = oGroup.pixelWidth;
+		if ( oGroup_width < 1 )
+			oGroup_width = document.all.item("group").offsetWidth;
+		oBCG_width = oBCG.pixelWidth;
+		if ( oBCG_width < 1 )
+			oBCG_width = document.all.item("BearConsultingGroup").offsetWidth;
+		oGrizzly_width = oGrizzly.pixelWidth;
+		if ( oGrizzly_width < 1 )
+			oGrizzly_width = document.all.item("GrizzlyWebMaster").offsetWidth;
+		oGWMList_height = oGWMList.pixelHeight;
+		if ( oGWMList_height < 1 )
+			oGWMList_height = document.all.item("GWMList").offsetHeight;
+		oKodiak_width = oKodiak.pixelWidth;
+		if ( oKodiak_width < 1 )
+			oKodiak_width = document.all.item("KodiakGraphics").offsetWidth;
+		oKGList_height = oKGList.pixelHeight;
+		if ( oKGList_height < 1 )
+			oKGList_height = document.all.item("KGList").offsetHeight;
+		oBrownBear_width = oBrownBear.pixelWidth;
+		if ( oBrownBear_width < 1 )
+			oBrownBear_width = document.all.item("BrownBearSoftware").offsetWidth;
+		oBBSList_height = oBBSList.pixelHeight;
+		if ( oBBSList_height < 1 )
+			oBBSList_height = document.all.item("BBSList").offsetHeight;
+
+	}
+
+	var y = -(nWinHeight/10);
+	oBear_sprite = new sprite( oBear, nWinWidth + 10, -oBear_width - 10,
+								y, y,
+								-2, oBearPostFunc );
+	oBear_sprite.activate();
+
+	y = nWinHeight/7;
+	oConsulting_sprite = new sprite( oConsulting,
+										nWinWidth+10, -oConsulting_width - 10,
+										y, y,
+										-4, oConsultingPostFunc );
+
+	y = nWinHeight/2;
+	oGroup_sprite = new sprite( oGroup,
+									nWinWidth+10, -oGroup_width - 10,
+									y, y,
+									-3, oGroupPostFunc );
+
+	var x = (nWinWidth - oBCG_width) / 2;
+	oBCG_sprite = new sprite( oBCG,
+								0, 0,
+								-oBCG_height - 10, nWinHeight - oBCG_height*1.5 - 20,
+								2, proxyPostFunc );
+	oBCG_sprite.callbackDeactivate = oBCGCallbackDeactivate;
+
+	oPaw_sprite = new sprite( oPaw,
+								-nWinWidth - 10, 0,
+								0, 0,
+								1, oPawPostFunc );
+	oPaw_sprite.activate();
+	oPaw_sprite.callbackDeactivate = oPawCallbackDeactivate;
+
+	y = nWinHeight/2 - oGrizzly_height*2;
+	oGrizzly_sprite = new sprite( oGrizzly,
+									-oGrizzly_width - 10, nWinWidth + 10,
+									y, y,
+									3, oGrizzlyPostFunc );
+	
+	oGWMList_sprite = new sprite( oGWMList,
+									0, 0,
+									-oGWMList_height - 10, nWinHeight + 10,
+									2, proxyPostFunc );
+
+	y = nWinHeight/2 - oKodiak_height/2;
+	oKodiak_sprite = new sprite( oKodiak,
+									-oKodiak_width - 10, nWinWidth + 10,
+									y, y,
+									4, oKodiakPostFunc );
+
+	oKGList_sprite = new sprite( oKGList,
+									0, 0,
+									-oKGList_height - 10, nWinHeight + 10,
+									3, proxyPostFunc );
+
+	y = nWinHeight/2 + oBrownBear_height*2;
+	oBrownBear_sprite = new sprite( oBrownBear,
+										-oBrownBear_width - 10, nWinWidth + 10,
+										y, y,
+										5, oBrownBearPostFunc );
+	oBrownBear_sprite.callbackDeactivate = oBrownBearCallbackDeactivate;
+
+	oBBSList_sprite = new sprite( oBBSList,
+									0, 0,
+									-oBBSList_height - 10, nWinHeight + 10,
+									4, proxyPostFunc );
+
+
+	oFinalPaw_sprite = new sprite( oFinalPaw,
+								-nWinWidth/2, 0,
+								0, 0,
+								2, proxyPostFunc );
+	oFinalPaw_sprite.callbackDeactivate = oFinalPawCallbackDeactivate;
+
+	oFinalBCG_sprite = new sprite( oFinalBCG,
+									nWinWidth, 0,
+									0, 0,
+									-2, proxyPostFunc );
+	oFinalBCG_sprite.callbackDeactivate = oFinalBCGCallbackDeactivate;
+
+	oFinalGrizzly_sprite = new sprite( oFinalGrizzly,
+										0, 0,
+										nWinHeight/2 + 10, 0,
+										-2, proxyPostFunc );
+	oFinalGrizzly_sprite.callbackDeactivate = oFinalGrizzlyCallbackDeactivate;
+
+	oFinalKodiak_sprite = new sprite( oFinalKodiak,
+										0, 0,
+										nWinHeight/2 + 10, 0,
+										-3, proxyPostFunc );
+	oFinalKodiak_sprite.callbackDeactivate = oFinalKodiakCallbackDeactivate;
+
+	oFinalBrownBear_sprite = new sprite( oFinalBrownBear,
+										0, 0,
+										nWinHeight/2 + 10, 0,
+										-4, proxyPostFunc );
+	oFinalBrownBear_sprite.callbackDeactivate = oFinalBrownBearCallbackDeactivate;
+
+	oFinalBackground_sprite = new sprite( oFinalBackground,
+										0, 0,
+										-nWinHeight, 0,
+										2, proxyPostFunc );
+	oFinalBackground_sprite.activate = oFinalBackgroundActivate;
+	oFinalBackground_sprite.callbackDeactivate = oFinalBackgroundCallbackDeactivate;
+
+
+
+	setTimeout( "doAnimation()", 20 );
+}
+
+var gPrevT = 0;
+
+function doAnimation()
+{
+	var d = new Date();
+	var tt = d.getTime();
+	var t = Math.floor( tt / 60.0 );
+
+	if ( gPrevT < t )
+	{
+		gPrevT = t;
+		oBear_sprite.drawFrame( t );
+		oConsulting_sprite.drawFrame( t );
+		oGroup_sprite.drawFrame( t );
+		oBCG_sprite.drawFrame( t );
+		oPaw_sprite.drawFrame( t );
+		if ( bTimeLists )
+		{
+			oGrizzly_sprite.drawFrame( t );
+			oGWMList_sprite.drawFrame( t );
+			oKodiak_sprite.drawFrame( t );
+			oKGList_sprite.drawFrame( t );
+			oBrownBear_sprite.drawFrame( t );
+			oBBSList_sprite.drawFrame( t );
+		}
+		if ( bTimeFinal )
+		{
+			oFinalPaw_sprite.drawFrame( t );
+			oFinalBCG_sprite.drawFrame( t );
+			oFinalGrizzly_sprite.drawFrame( t );
+			oFinalKodiak_sprite.drawFrame( t );
+			oFinalBrownBear_sprite.drawFrame( t );
+			oFinalBackground_sprite.drawFrame( t );
+		}
+	}
+
+	setTimeout( "doAnimation()", 25 );
+}
+
+
+function doLoad()
+{
+	window.focus();
+	findBears();
+	setTimeout( "startAnimation()", 3000 );
+}
+
+
+function doBlur()
+{
+	window.focus();
+}
+
+
+
+//-->
+</script>
+<script language="JavaScript">
+<!--
+
+	xBrowserName = navigator.appName;
+	xNN = false;
+	xIE = false;
+
+	if ( window.innerHeight )
+	{
+		xNN = true;
+		xIE = false;
+		nWinHeight = window.innerHeight;
+		nWinWidth = window.innerWidth;
+	}
+	else
+	{
+		xNN = false;
+		xIE = true;
+		//nWinHeight = document.body.offsetHeight;
+		//nWinWidth = document.body.offsetWidth;
+		nWinHeight = 350;
+		nWinWidth = 550;
+	}
+
+	document.writeln('<style type="text/css">');
+	document.writeln("<" + "!-" + "-");
+
+	document.writeln('#bear');
+	document.writeln('{');
+	document.writeln('position: absolute;');
+	document.writeln('left:		0;');
+	document.writeln('top:		0;');
+	document.writeln('font-size:' + nWinHeight + 'px;');
+	document.writeln('font-weight:	bold;');
+	document.writeln('color:#330000;');
+	document.writeln('visibility:hidden;');
+	document.writeln('z-index: 0;');
+	document.writeln('font-family:	Bookman Old Style;');
+	document.writeln('}');
+
+	document.writeln('#consulting');
+	document.writeln('{');
+	document.writeln('position:	absolute;');
+	document.writeln('left:		0;');
+	document.writeln('top:		0;');
+	document.writeln('font-size:' + nWinHeight/3 + 'px;');
+	document.writeln('font-weight:	bold;');
+	document.writeln('color:#996633;');
+	document.writeln('visibility:hidden;');
+	document.writeln('z-index: 0;');
+	document.writeln('font-family:	Bookman Old Style;');
+	document.writeln('}');
+
+	document.writeln('#group');
+	document.writeln('{');
+	document.writeln('position:	absolute;');
+	document.writeln('left:		0;');
+	document.writeln('top:		0;');
+	document.writeln('font-size:' + nWinHeight/4 + 'px;');
+	document.writeln('font-weight: bold;');
+	document.writeln('color: #CC9966;');
+	document.writeln('visibility:hidden;');
+	document.writeln('z-index: 0;');
+	document.writeln('font-family: Bookman Old Style;');
+	document.writeln('}');
+
+	document.writeln('#BearConsultingGroup');
+	document.writeln('{');
+	document.writeln('position:	absolute;');
+	document.writeln('left:		0;');
+	document.writeln('top:		0;');
+	document.writeln('font-size:' + nWinHeight/12 + 'px;');
+	document.writeln('font-weight: bold;');
+	document.writeln('color: #FFCC00;');
+	document.writeln('visibility:hidden;');
+	document.writeln('z-index: 0;');
+	document.writeln('font-family: Bookman Old Style;');
+	document.writeln('}');
+
+	document.writeln('#BCGText');
+	document.writeln('{');
+	document.writeln('font-size:' + nWinHeight/12 + 'px;');
+	document.writeln('font-weight: bold;');
+	document.writeln('color: #FFCC00;');
+	document.writeln('font-family: Bookman Old Style;');
+	document.writeln('}');
+
+	document.writeln('#GrizzlyWebMaster');
+	document.writeln('{');
+	document.writeln('position:	absolute;');
+	document.writeln('left:		0;');
+	document.writeln('top:		0;');
+	document.writeln('font-size:' + nWinHeight/14 + 'px;');
+	document.writeln('font-weight: bold;');
+	document.writeln('color: #FFFF99;');
+	document.writeln('visibility:hidden;');
+	document.writeln('z-index: 0;');
+	document.writeln('font-family: sans-serif, Arial, Helvetica;');
+	document.writeln('}');
+
+	document.writeln('#KodiakGraphics');
+	document.writeln('{');
+	document.writeln('position:	absolute;');
+	document.writeln('left:		0;');
+	document.writeln('top:		0;');
+	document.writeln('font-size:' + nWinHeight/14 + 'px;');
+	document.writeln('font-weight: bold;');
+	document.writeln('color: #FFFF99;');
+	document.writeln('visibility:hidden;');
+	document.writeln('z-index: 0;');
+	document.writeln('font-family: sans-serif, Arial, Helvetica;');
+	document.writeln('}');
+
+	document.writeln('#BrownBearSoftware');
+	document.writeln('{');
+	document.writeln('position:	absolute;');
+	document.writeln('left:		0;');
+	document.writeln('top:		0;');
+	document.writeln('font-size:' + nWinHeight/18 + 'px;');
+	document.writeln('font-weight: bold;');
+	document.writeln('color: #FFFF99;');
+	document.writeln('visibility:hidden;');
+	document.writeln('z-index: 0;');
+	document.writeln('font-family: sans-serif, Arial, Helvetica;');
+	document.writeln('}');
+
+
+	document.writeln('-' + '-' + '>');
+	document.writeln('<' + '/style>');
+
+//-->
+</script>
+
+<style type="text/css">
+<!--
+
+#loading     { position: absolute; left: 0; top: 0; height: 100% }
+#loadingtext { color: #FFFFFF; font-size: 20px; font-weight: bold; font-family: sans-serif }
+#paw         { position: relative; z-index: 10; visibility: hidden }
+#GWMList     { position: absolute; left: 0; top: 0; font-weight: bold; color: #FFFFFF; 
+               visibility: hidden; z-index: 0 }
+#KGList      { position: absolute; left: 0px; top: 0px; font-weight: bold; color: #FFFFFF; 
+               visibility: hidden; z-index: 0 }
+#BBSList     { position: absolute; left: 0px; top: 0px; font-weight: bold; color: #FFFFFF; 
+               visibility: hidden; z-index: 0 }
+#finalblock  { position: absolute; left: 0px; top: 0px; height: 100%; z-index: 10; 
+               visibility: hidden }
+#finalpaw    { position: relative; z-index: 10; visibility: hidden }
+#finalBCGtext { color: #FFCC00; font-size: 36px; font-weight: bold; font-family: 
+               Bookman Old Style }
+#finalBCG    { position: relative; z-index: 10; visibility: hidden }
+#finalGrizzly { position: relative; font-size: 24px; font-weight: bold; color: #FFFF99; 
+               z-index: 10; visibility: hidden; font-family: 
+               Arial, Helvetica, sans-serif }
+#finalKodiak { position: relative; font-size: 24px; font-weight: bold; color: #FFFF99; 
+               z-index: 10; visibility: hidden; font-family: 
+               Arial, Helvetica, sans-serif }
+#finalBrownBear { position: relative; font-size: 20px; font-weight: bold; color: #FFFF99; 
+               z-index: 10; visibility: hidden; font-family: 
+               Arial, Helvetica, sans-serif }
+#finalBackground { position: absolute; left: 0px; top: 0px; height: 100%; z-index: -5; 
+               visibility: hidden }
+ul           { color: #FFFFFF; font-family: sans-serif, Arial, Helvetica }
+a            { text-decoration: none; font-family: sans-serif }
+a:link       { text-decoration: none; font-family: sans-serif }
+a:hover      { color: #FFFF00; text-decoration: underline; font-family: sans-serif }
+-->
+</style>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body bgcolor="#663300" link="#FFFF00" vlink="#FFFF00" onload="doLoad()"
+onblur="doBlur()" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
+
+<div id="loading">
+  <table border="0" width="100%" height="100%" cellspacing="0" cellpadding="20">
+    <tr>
+      <td align="center" valign="middle"><span id="loadingtext">Loading
+        Introduction...</span></td>
+    </tr>
+  </table>
+</div>
+<div id="finalBackground">
+  <table border="0" width="100%" height="100%" cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center"><img src="images/bkg_paw.gif" width="597" height="389"></td>
+    </tr>
+  </table>
+</div>
+<table border="0" width="100%" cellspacing="0" cellpadding="20">
+  <tr>
+    <td align="right" valign="top">
+      <div id="paw">
+        <table>
+          <tr>
+            <td><img src="../images/bearpawc3.gif" width="80" height="100"></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>
+<div id="bear">
+  <p>Bear</p>
+</div>
+<div id="consulting">
+  <p>Consulting</p>
+</div>
+<div id="group">
+  <p>Group</p>
+</div>
+<div id="BearConsultingGroup">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" nowrap><span id="BCGText">Bear Consulting Group</span></td>
+    </tr>
+  </table>
+</div>
+<div id="GrizzlyWebMaster">
+  <p>Grizzly&nbsp;WebMaster</p>
+</div>
+<div id="KodiakGraphics">
+  <p>Kodiak&nbsp;Graphics</p>
+</div>
+<div id="BrownBearSoftware">
+  <p>Brown&nbsp;Bear&nbsp;Software</p>
+</div>
+<div id="GWMList">
+  <table border="0" cellspacing="0" cellpadding="2" width="100%">
+    <tr>
+      <th>
+        <ul>
+          <li>Web Design &amp; Maintenance</li>
+          <li>Online Brochures / Catalogs</li>
+          <li>Web Hosting</li>
+          <li>Custom Web Software</li>
+          <li>All-in-one Web Solutions</li>
+        </ul>
+      </th>
+    </tr>
+  </table>
+</div>
+<div id="KGList">
+  <table border="0" cellspacing="0" cellpadding="2" width="100%">
+    <tr>
+      <th>
+        <ul>
+          <li>Custom Graphic Design</li>
+          <li>Business Cards / Logos</li>
+          <li>Newsletter Page Layout</li>
+          <li>Brochure Composition</li>
+        </ul>
+      </th>
+    </tr>
+  </table>
+</div>
+<div id="BBSList">
+  <table border="0" cellspacing="0" cellpadding="2" width="100%">
+    <tr>
+      <th>
+        <ul>
+          <li>C / C++ Consulting</li>
+          <li>Custom Windows Programming</li>
+        </ul>
+      </th>
+    </tr>
+  </table>
+</div>
+<div id="finalblock">
+  <table width="100%" height="100%">
+    <tr>
+      <td align="center" valign="middle">
+        <table border="0" cellspacing="0" cellpadding="10">
+          <tr>
+            <td>
+              <table border="0" cellspacing="10" cellpadding="0">
+                <tr>
+                  <td>
+                    <div id="finalpaw">
+                      <table>
+                        <tr>
+                          <td><img src="../images/bearpawc3.gif" width="80"
+                            height="100"></td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                  <td>
+                    <div id="finalBCG">
+                      <table border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td><span id="finalBCGtext">Bear<br>
+                            Consulting<br>
+                            Group</span></td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <table border="0" cellpadding="0">
+                <tr>
+                  <td>
+                    <div id="finalGrizzly">
+                      Grizzly WebMaster
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div id="finalKodiak">
+                      Kodiak Graphics
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div id="finalBrownBear">
+                      Brown Bear Software
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>
+<script language="JavaScript">
+<!--
+function playMIDI( sFile )
+{
+	var	bMIDI = false;
+	
+	if ( 0 < navigator.mimeTypes.length )
+	{
+		var	nMax = navigator.mimeTypes.length;
+		for ( var i = 0; i < nMax; ++i )
+		{
+			if ( navigator.mimeTypes[i].suffixes.indexOf("mid",0) )
+			{
+				bMIDI = true;
+				break;
+			}
+		}
+	}
+	else
+	{
+		bMIDI = true;
+	}
+	
+	if ( bMIDI )
+	{
+		document.write("<embed src='" + sFile + "' width='0' height='0' autostart='true' repeat='false'>");
+		document.write("<noembed>");
+		document.write("<bgsound src='" + sFile + "' loop='-1'>");
+		document.writeln("</noembed>");
+	}
+}
+
+playMIDI( 'music.mid' );
+
+//-->
+</script>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </body>
+
+</html>

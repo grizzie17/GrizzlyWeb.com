@@ -1,0 +1,367 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="ROBOTS" content="noindex">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>RPN Calculator</title>
+<style type="text/css">
+<!--
+input        { font-weight: bold; font-family: 'Lucida Console', monospace, 'Courier New' }
+textarea     { font-weight: bold; font-family: 'Lucida Console', monospace, 'Courier New' }
+.button      { font-weight: bold; font-family: sans-serif, Arial }
+.buttonsmall { font-family: sans-serif, Arial }
+-->
+</style>
+</head>
+
+<body onkeydown="doKey()">
+
+<script language="JavaScript"><!--
+
+function registers( display )
+{
+   this.x = 0;
+   this.y = 0;
+   this.z = 0;
+   this.t = 0;
+
+   this.entered = 1;
+
+   this.disp = display;
+}
+
+function setX ( n )
+{ 
+   regs.x = n;
+   regs.disp.value = n;
+}
+
+function getX()
+{
+   return regs.x;
+}
+
+function doDigit(n)
+{
+   if( regs.entered )
+   {
+      rotUp();
+      setX( "" );
+      regs.entered = 0;
+   }
+
+   var tmp = regs.disp.value;
+   tmp = tmp + n;
+   setX(tmp);
+}
+
+function doDecimal()
+{
+	if ( regs.entered )
+	{
+		doDigit(".");
+	}
+	else
+	{
+		var tmp = regs.disp.value;
+		if ( tmp.indexOf(".") < 0 )
+			doDigit(".");
+	}
+}
+
+function rotUp()
+{
+   regs.t = regs.z;
+   regs.z = regs.y;
+   regs.y = regs.x;
+}
+
+function rotDn()
+{
+   setX( regs.y );
+   regs.y = regs.z;
+   regs.z = regs.t;
+}
+
+function twoOp ( n )
+{
+   rotDn();
+   setX(n);
+   regs.entered = 1;
+}
+
+function doEnter()
+{
+   if( regs.entered )
+   {
+      rotUp();
+   }
+   regs.entered = 1;
+}
+
+function doRollDown()
+{
+	var	nTemp = getX();
+
+	setX( regs.y );
+	regs.y = regs.z;
+	regs.z = regs.t;
+	regs.t = nTemp;
+}
+
+function doXYSwap()
+{
+	var	nTemp = getX();
+
+	regs.entered = 1;
+
+	setX( regs.y );
+	regs.y = nTemp;
+}
+
+function doDel()
+{
+   if( regs.entered )
+   {
+      return;
+   }
+   var len = regs.disp.value.length;
+
+   if( len > 0 )
+   {
+      setX( regs.disp.value.substring( 0,  len-1 ) );
+   }
+}
+
+function doMinus()
+{
+	twoOp(-1*getX() + 1*regs.y);
+}
+
+function doPlus()
+{
+	twoOp(1*getX() + 1*regs.y);
+}
+
+function doDivide()
+{
+	twoOp(regs.y / getX());
+}
+
+function doMultiply()
+{
+	twoOp(getX() * regs.y);
+}
+
+function doChangeSign()
+{
+	setX(-getX());
+}
+
+function doKey()
+{
+	var n = window.event.keyCode;
+
+	//document.forms[0].elements[1].value = n;
+	if ( 0 == n )
+	{
+		n = event.which;
+		//document.forms[0].elements[1].value = n;
+		if ( 0 == n )
+			return;
+	}
+
+	if ( 48 <= n  &&  n <= 57 )
+	{
+		doDigit( ""+(n-48) );
+	}
+	else if ( 96 <= n  &&  n <= 105 )
+	{
+		doDigit( ""+(n-96) );
+	}
+	else
+	{
+		switch ( n )
+		{
+		case 191:
+		case 111:
+			doDivide();
+			break;
+		case 109:
+		case 189:
+			doMinus();
+			break;
+		case 107:
+		case 187:
+			doPlus();
+			break;
+		case 106:
+			doMultiply();
+			break;
+		case 110:
+			doDecimal();
+			break;
+		case 220:
+			doChangeSign();
+			break;
+		case 8:		// backspace
+		case 46:
+			doDel();
+			break;
+		case 13:
+			doEnter();
+			break;
+		case 40:
+			doRollDown();
+			break;
+		case 39:
+		case 37:
+			doXYSwap();
+			break;
+		}
+	}
+
+	event.returnValue=false;
+	return false;
+}
+
+
+
+// --></script>
+
+
+<form>
+  <div align="center">
+    <center>
+    <table border="1" cellpadding="2">
+      <tr>
+        <td align="center" bgcolor="#C0C0C0"><strong>RPN</strong></td>
+        <td align="center" bgcolor="#C0C0C0"><input type="text" size="20"
+          name="display" align="right" onfocus="this.blur()"
+          onsubmit="return false"><!--input type="text" size="5"      name="temp" align="right" onfocus="this.blur()" onsubmit="return false"--> <script language="JavaScript">
+regs = new registers( document.forms[0].elements[0] );
+regs.disp.value = "0";
+</script>
+        </td>
+      </tr>
+      <tr>
+        <td align="middle" colspan="2" bgcolor="#666666">
+          <table border="0" cellpadding="2">
+            <tr>
+              <td align="center" bgcolor="#00FFFF"><input type="button"
+                name="RollDown" value="R-dwn" onclick="doRollDown()"></td>
+              <td></td>
+              <td align="center"><input type="button" name="seven"
+                value="&nbsp;7&nbsp;" onclick="doDigit(7)"></td>
+              <td align="center"><input type="button" name="eight"
+                value="&nbsp;8&nbsp;" onclick="doDigit(8)"></td>
+              <td align="center"><input type="button" name="nine"
+                value="&nbsp;9&nbsp;" onclick="doDigit(9)"></td>
+              <td></td>
+              <td align="center" bgcolor="#000080"><input type="button"
+                name="div" value="&nbsp;&nbsp;" onclick="doDivide()"
+                style="font-weight: bold"></td>
+            </tr>
+            <tr>
+              <td align="center" bgcolor="#00FFFF"><input type="button"
+                name="XYSwap" value="X&lt;&gt;Y" onclick="doXYSwap()"></td>
+              <td></td>
+              <td align="center"><input type="button" name="four"
+                value="&nbsp;4&nbsp;" onclick="doDigit(4)"></td>
+              <td align="center"><input type="button" name="five"
+                value="&nbsp;5&nbsp;" onclick="doDigit(5)"></td>
+              <td align="center"><input type="button" name="six"
+                value="&nbsp;6&nbsp;" onclick="doDigit(6)"></td>
+              <td></td>
+              <td align="center" bgcolor="#000080"><input type="button"
+                name="times" value="&nbsp;&nbsp;" onclick="doMultiply()"
+                style="font-weight: bold"></td>
+            </tr>
+            <tr>
+              <td align="center"><input type="button" name="bspc"
+                value="&lt; del" onclick="doDel()"></td>
+              <td></td>
+              <td align="center"><input type="button" name="one"
+                value="&nbsp;1&nbsp;" onclick="doDigit(1)"></td>
+              <td align="center"><input type="button" name="two"
+                value="&nbsp;2&nbsp;" onclick="doDigit(2)"></td>
+              <td align="center"><input type="button" name="three"
+                value="&nbsp;3&nbsp;" onclick="doDigit(3)"></td>
+              <td></td>
+              <td align="center" bgcolor="#000080"><input type="button"
+                name="minus" value="&nbsp;&#8722;&nbsp;" onclick="doMinus()"
+                style="font-weight: bold"></td>
+            </tr>
+            <tr>
+              <td align="center" bgcolor="#804040"><input type="button"
+                name="enter" value="Enter" onclick="doEnter()"></td>
+              <td></td>
+              <td align="center"><input type="button" name="zero"
+                value="&nbsp;0&nbsp;" onclick="doDigit(0)"></td>
+              <td align="center"><input type="button" name="dot"
+                value="&nbsp;&nbsp;" onclick="doDecimal()"
+                style="font-weight: bold"></td>
+              <td align="center" bgcolor="#004080"><input type="button"
+                name="plusminus" value="+/-" onclick="doChangeSign()"></td>
+              <td></td>
+              <td align="center" bgcolor="#000080"><input type="button"
+                name="plus" value="&nbsp;+&nbsp;" onclick="doPlus()"
+                style="font-weight: bold"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    </center>
+  </div>
+</form>
+<!--webbot bot="Include" u-include="../_private/include/footer.htm" tag="BODY" startspan
+-->
+
+
+<br clear="all">
+<table border="0" width="100%" cellspacing="0" cellpadding="2">
+  <tr>
+    <td height="5" colspan="2"></td>
+  </tr>
+  <tr>
+    <td valign="bottom">
+      <form method="GET" name="SearchForm_bottom"
+      action="submit/searchengine/grizzlyweblinks.asp">
+        <table border="0" cellspacing="0">
+          <tr>
+            <td bgcolor="#FFCC99"><input type="text" name="q" size="25"> <input
+              type="submit" value="Search Site" name="x"></td>
+          </tr>
+          <tr>
+            <td><a href="submitlink.asp" class="small">Add
+              Link...</a>&nbsp;&nbsp; <span class="small">*</span>&nbsp;&nbsp; <a
+              href="comments.asp" class="small">Comments /
+              Problems...</a></td>
+          </tr>
+        </table>
+      </form>
+    </td>
+    <td align="right" valign="top"><font face="Arial" size="1" color="#999999"
+      style="font-family: sans-serif; font-size: 10px">Last modified: 
+    30 Sep 2009</font><br>
+      <a style="color: #CCCCCC; TEXT-DECORATION: none"
+      href="../company/9copyright.htm"><font color="#CCCCCC" size="1">Copyright
+      2004 Bear Consulting Group</font></a><font color="#CCCCCC" size="1"><a
+      style="color: #CCCCCC; text-decoration: none"><br>
+      </a><a href="../company/" style="color: #CCCCCC; TEXT-DECORATION: none">Service
+      Provided by Bear Consulting Group</a></font></td>
+  </tr>
+</table>
+
+
+
+
+<!--webbot bot="Include" endspan i-checksum="59332"
+-->
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </body>
+
+</html>

@@ -1,0 +1,73 @@
+<html>
+
+<head>
+<title>Frames Required Example</title>
+<!-- BEGIN HIDE -->
+<meta name="ROBOTS" content="noindex">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<!-- END HIDE -->
+<script language="JavaScript">
+<!--
+function replaceWindowURL( win, url )
+{
+	win.location.href = url;
+}
+//-->
+</script>
+<script language="JavaScript1.1">
+<!--
+function replaceWindowURL( win, url )
+{
+	win.location.replace( url );
+}
+//-->
+</script>
+<!--
+	Please note that we define the replaceWindowURL function before
+	the next block of code.  This is important since this code may
+	execute "before" the page finishes loading.
+-->
+<script language="JavaScript">
+<!--
+// this file is required to be part of a frameset
+// the following code will reload this page into the proper frameset
+function doFramesRequired()
+{
+	if ( top == self )
+	{
+		var homeURL = "framesrequiredframe.htm";
+		var thisURL = unescape(window.location.pathname);
+		var url = homeURL + "?" + thisURL;
+
+		replaceWindowURL( top, url );
+	}
+}
+
+if ( top == self  &&  "MSIE" == navigator.appName )
+	doFramesRequired();
+
+
+//-->
+</script>
+</head>
+
+<body onload="doFramesRequired()">
+
+<p>This page must be nested in frames</p>
+<!-- BEGIN HIDE -->
+<script language="JavaScript">
+<!--
+	document.write("<p>Please note that the browser history contains ");
+	document.writeln( window.history.length + " pages</p>");
+//-->
+</script>
+<form>
+  <input type="button" onclick="top.close()" value="Close Example Window"
+  name="btn">
+</form>
+<!-- END HIDE -->
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </body>
+
+</html>

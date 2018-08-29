@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>Style Guide - Generic - Expressions</title>
+</head>
+
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td valign="top"><table border="0">
+      <tr>
+        <td colspan="3"><font size="2">Coding Guidelines</font></td>
+      </tr>
+      <tr>
+        <td width="20"></td>
+        <td colspan="2"><b>Generic Guidelines</b></td>
+      </tr>
+      <tr>
+        <td width="20"></td>
+        <td width="20"></td>
+        <td><font size="6"><strong>Expressions</strong></font></td>
+      </tr>
+    </table>
+    </td>
+    <td align="right" valign="top"><table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><a href="c_const.htm"><img src="images/b-left.gif" alt="&lt;-" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="c_1.htm"><img src="images/b-up.gif" alt="^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="c_perf.htm" target><img src="images/b-right.gif" alt="-&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+      </tr>
+      <tr>
+        <td><a href="0std.htm"><img src="images/b-left2.gif" alt="&lt;&lt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="0std.htm"><img src="images/b-top.gif" alt="^^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="cpp_1.htm" target><img src="images/b-right2.gif" alt="&gt;&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><b><i>Multiply, divide and
+    modulus come before add and subtract; use parenthesis for everything else</i></b> </td>
+    <td valign="top" bgcolor="#DDDDDD">In C expressions, you can assume that multiply (*),
+    divide (/) and modulus (%) come before add (+) and subtract (-). Parenthesis should be
+    used around everything else. C does a very good job of defining operator precedence,
+    however most programmers don't remember the exact order. Using parenthesis removes this
+    uncertainty.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><b><i>Put constants on the
+    left when comparing for equality</i></b> </td>
+    <td valign="top" bgcolor="#DDDDDD">One common mistake is accidentally assigning a value to
+    a variable when what was intended was comparing for equality. <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>if ( variable = CONST_VAL )  /* accidental assignment */</pre>
+        </td>
+      </tr>
+    </table>
+    <p>By putting the constant on the left of the equality operator the compiler would have
+    identified this as an error. </p>
+    <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>if ( CONST_VAL = variable )  /* compiler error */</pre>
+        </td>
+      </tr>
+    </table>
+    <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>if ( CONST_VAL == variable )</pre>
+        </td>
+      </tr>
+    </table>
+    <p>Functions in equality comparisons should use a similar technique. </p>
+    <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>if ( function() == variable )</pre>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#99CCFF"><i>Use mathematical
+    notational order when checking for ranges</i> </td>
+    <td valign="top" bgcolor="#DDDDDD">When a variable is to be tested to see if it is within
+    or outside of a specified numeric range, organize the logical expression such that it
+    reads as a mathematical expression. For example, if a variable (&quot;a&quot;) must be
+    within the range of LOW through HIGH inclusive a common representation would be: <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>if ( a &gt;= LOW  &amp;&amp;  a &lt;= HIGH )   /* POOR */</pre>
+        </td>
+      </tr>
+    </table>
+    <p>Instead we should describe that as <b><tt>(LOW &lt;= a &lt;= HIGH)</tt></b> in
+    mathematical notation. Thus the if-statement might look like:</p>
+    <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>if ( LOW &lt;= a  &amp;&amp;  a &lt;= HIGH )    /* BETTER */</pre>
+        </td>
+      </tr>
+    </table>
+    <p>Correspondingly, if the variable should be outside of the numeric range it could be
+    expressed as:</p>
+    <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>if ( a &lt; LOW  ||  HIGH &lt; a )</pre>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Place smaller value on left
+    in binary comparison </td>
+    <td valign="top" bgcolor="#DDDDDD">When two values are compared place the smaller value on
+    the left of the binary less-than operator (&quot;&lt;&quot;). <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>if ( HIGH &gt; LOW )   /* POOR */</pre>
+        </td>
+      </tr>
+    </table>
+    <p>By placing the smaller value on the left this makes the expression resemble the
+    standard mathematical notation. </p>
+    <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>if ( LOW &lt; HIGH )   /* BETTER */</pre>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Code in a word-size
+    independent manner</td>
+    <td valign="top" bgcolor="#DDDDDD">Word size affects masks. The following snippet code
+    clears the right most nibble of an int on some 68000 systems. <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>x &amp;= 0xFFF0</pre>
+        </td>
+      </tr>
+    </table>
+    <p>On some other machines it also clears the upper two bytes. You should use the following
+    instead:</p>
+    <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>x &amp;= ~0x0F</pre>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Be careful of sign extension
+    for shift right operations</td>
+    <td valign="top" bgcolor="#DDDDDD">Some compilers will treat the right shift (&gt;&gt;)
+    operator as an arithmetic shift (causing the sign bit to be replicated) instead of a
+    logical shift on signed integers. If you must have logical shift make sure that you are
+    dealing with an unsigned data type. Also be aware that some compilers don't give you
+    access to an arithmetic shift (except through in-line assembly). A good rule is to only
+    use the logical form of shift. Arithmetic operations should be done with the standard
+    arithmetic operators. <p><tt>(short) 0x8000 &gt;&gt; 3 == 0xF000 </tt>// some compilers
+    will generate this<br>
+    <tt>(unsigned short) 0x8000 &gt;&gt; 3 == 0x1000</tt><br>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><a href="c_const.htm"><img src="images/b-left.gif" alt="&lt;-" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="c_1.htm"><img src="images/b-up.gif" alt="^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="c_perf.htm" target><img src="images/b-right.gif" alt="-&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+  </tr>
+  <tr>
+    <td><a href="0std.htm"><img src="images/b-left2.gif" alt="&lt;&lt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="0std.htm"><img src="images/b-top.gif" alt="^^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="cpp_1.htm" target><img src="images/b-right2.gif" alt="&gt;&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+  </tr>
+</table>
+<!--webbot bot="Include" U-Include="../_private/change.htm" TAG="BODY" startspan -->
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="12"></td>
+  </tr>
+  <tr>
+    <td align="right"><font face="Arial" size="1" color="#999999" style="font-family: sans-serif; font-size: 10px">Last modified: 
+	25 May 2009</font><br>
+    <a style="text-decoration: none" target="_self" href="../9copyright.htm"><font face="Arial" size="1" color="#CCCCCC" style="font-family: sans-serif; font-size: 9px">copyright
+    2004 Bear Consulting Group</font></a></td>
+  </tr>
+</table>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right">
+	
+
+<script language="JavaScript" src="../../javascript/remotelog.js"></script>
+
+
+
+</td>
+  </tr>
+</table>
+<!--webbot bot="Include" endspan i-checksum="38072" -->
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </body>
+</html>

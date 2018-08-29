@@ -1,0 +1,253 @@
+<!-- BEGIN HIDE -->
+<!---------------------------------------------------------------------+\
+|
+|					  Written by Grizzly WebMaster
+|					a division of Bear Consulting Group
+|
+|	Public Domain:
+|	Redistribution and use of this software is freely permitted.
+|	This software should be considered as unowned and without
+|	copyright restrictions, nor should any individual or company
+|	claim exclussive copyright.  This software is provided "as is"
+|	and without any express or implied warranties, including, without
+|	limitation, the implied warranties or merchantibility and fitness
+|	for a particular purpose.
+|
+|	Grizzly WebMaster assumes NO responsibility for the use or
+|	reliability of software altered by the user.
+|
+|	The information in this document is subject to change without
+|	notice and should not be construed as a commitment by
+|	Grizzly WebMaster.	
+|
+\+---------------------------------------------------------------------->
+<!-- END HIDE -->
+<html>
+
+<head>
+<title>Email Address Hide Example</title>
+<!-- BEGIN HIDE -->
+<meta name="ROBOTS" content="noindex">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<!-- END HIDE -->
+<script type="text/javascript" language="JavaScript">
+<!--
+
+var g_at = '&#64;';
+var g_sDom = 'Your' + 'Domain' + 'Name' + '&#46;' + 'com';
+
+
+function postoffice()
+{
+	var aSpans = document.getElementsByTagName( "SPAN" );
+	var i;
+	var j;
+	var oSpan;
+	var sContent;
+	var sLink;
+	for ( i = 0; i < aSpans.length; ++i )
+	{
+		oSpan = aSpans[i];
+		if ( oSpan.className == "pobox" )
+		{
+			sContent = oSpan.innerText;
+			j = sContent.indexOf( "[" );
+			if ( 0 < j )
+				sLink = poWithMessage( sContent );
+			else
+				sLink = poPlainAddress( sContent );
+			if ( 0 < sLink.length )
+			{
+				oSpan.innerHTML = sLink;
+				oSpan.className = "poboxsent";
+			}
+		}
+	}
+}
+
+
+function poWithMessage( sContent )
+{
+	var	i;
+	i = sContent.indexOf( "[" );
+	var sM;
+	var sA;
+	
+	sM = sContent.substr(0,i);
+	sM = poTrim( sM );
+	sA = sContent.substr(i+1);
+	i = sA.indexOf( "]" );
+	if ( 0 < i )
+		sA = sA.substr(0, i);
+	sA = poParseAddress( sA );
+	if ( 0 < sM.length )
+		return poBuildLink( sA, sM );
+	else
+		return poBuildLink( sA, sA );
+}
+
+function telWithMessage( sContent )
+{
+	var	i;
+	i = sContent.indexOf( "[" );
+	var sM;
+	var sA;
+	
+	sM = sContent.substr(0,i);
+	sM = poTrim( sM );
+	sA = sContent.substr(i+1);
+	i = sA.indexOf( "]" );
+	if ( 0 < i )
+		sA = sA.substr(0, i);
+	sA = telParseNumber( sA );
+	if ( 0 < sM.length )
+		return telBuildLink( sA, sM );
+	else
+		return telBuildLink( sA, sA );
+}
+
+function poPlainAddress( sContent )
+{
+	var sA = poParseAddress( sContent );
+	if ( 0 < sA.length )
+		return poBuildLink( sA, sA );
+	else
+		return "";
+}
+
+function telPlainNumber( sContent )
+{
+	var sA = telParseNumber( sContent );
+	if ( 0 < sA.length )
+		return telBuildLink( sA, sA );
+	else
+		return "";
+}
+
+
+function poLTrim( str )
+{ 
+	for( var k = 0; k < str.length && poIsWhitespace( str.charAt(k) ); k++)
+		;
+	return str.substring(k, str.length);
+}
+
+function poRTrim( str )
+{
+	for( var j=str.length-1; 0 <= j && poIsWhitespace(str.charAt(j)) ; j--)
+		;
+	return str.substring(0, j+1);
+}
+
+function poTrim( str )
+{
+	return poLTrim( poRTrim( str ));
+}
+
+var k_whitespaceChars = " \t\n\r\f";
+
+function poIsWhitespace(charToCheck)
+{
+	return (k_whitespaceChars.indexOf(charToCheck) != -1);
+}
+
+
+function poBuildLink( sA, sT )
+{
+	return '<a h' + 're' + 'f="' + 'mai' + 'lto&#58;' + sA + '">' + sT + '</' + 'a>';
+}
+
+function telBuildLink( sA, sT )
+{
+	return '<a h' + 're' + 'f="' + 't' + 'el&#58;+1-' + sA + '">' + sT + '</' + 'a>';
+}
+
+
+function poParseAddress( sAddress )
+{
+	var sA;
+	var sQ;
+	var aa;
+	var i;
+	
+	// trim white space
+	sA = poTrim( sAddress );
+	
+	// anything to the right of the v-bar will be the subject of the mail
+	i = sA.indexOf( "|" );
+	if ( 0 < i )
+	{
+		// no processing will be done on this
+		sQ = sA.substr(i+1);
+		sA = sA.substr(0,i);
+		sA = poTrim( sA );
+		sQ = poTrim( sQ );
+	}
+	else
+	{
+		sQ = "";
+	}
+	
+	// the asterix is used to "hide" the at-sign
+	if ( 0 < sA.indexOf( "*" ) )
+	{
+		aa = sA.split( "*" );
+		sA = aa[0].toString();
+		for ( i = 1; i < aa.length; i++ )
+			sA += g_at + aa[i].toString();
+	}
+	else
+	{
+		sA = sA + g_at + g_sDom;
+	}
+	
+	// colons are used to "hide" periods
+	if ( 0 < sA.indexOf( ":" ) )
+	{
+		aa = sA.split( ":" );
+		sA = aa[0].toString();
+		for ( i = 1; i < aa.length; ++i )
+			sA += "&#46;" + aa[i].toString();
+	}
+	
+	// spaces are used to confuse things; just collapse out
+	if ( 0 < sA.indexOf( " " ) )
+	{
+		aa = sA.split( " " );
+		sA = aa[0].toString();
+		for ( i = 1; i < aa.length; ++i )
+		{
+			if ( 0 < aa[i].length )
+				sA += aa[i].toString();
+		}
+	}
+	
+	if ( 0 < sQ.length )
+	{
+		// add in the subject if one was specified
+		sA = sA + "?Subject=" + escape(sQ);
+	}
+	
+	return sA;
+}
+
+
+
+//-->
+</script>
+</head>
+
+<body onload="postoffice();">
+
+<p>For more details please send email to <span class="pobox">Curious George [George]</span>
+</p>
+
+<p>Another sample <span class="pobox">George*Some Other Domain:com</span>
+</p>
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </body>
+
+</html>

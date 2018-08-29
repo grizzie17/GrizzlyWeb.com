@@ -1,0 +1,174 @@
+<html>
+
+<head>
+<meta name="ROBOTS" content="noindex">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<script language="JavaScript">
+<!--
+var win = window;    // window to search.
+var n   = 0;
+
+function doLoad()
+{
+	window.close();
+}
+
+function doBlur()
+{
+	//window.focus();
+}
+
+function doChange()
+{
+	n = 0;
+	return false;
+}
+
+function findInPage( str )
+{
+}
+
+//-->
+</script>
+<script language="JavaScript1.2">
+<!--
+
+var NS4 = (document.layers);    // Which browser?
+var IE4 = (document.all);
+
+function getCreator()
+{
+	if ( !window.opener )
+	{
+		n = n + 1;
+		if ( n < 10 )
+			setTimeout( "getCreator()", 250 );
+		else
+			window.close();
+	}
+	else
+	{
+		win = window.opener;
+		n = 0;
+	}
+}
+
+function doLoad()
+{
+	setTimeout( "getCreator()", 250 );
+	document.forms.search.string.focus();
+}
+
+function doBlur()
+{
+	//self.focus();
+	//return false;
+}
+
+
+function findInPage( str )
+{
+	var txt, i, found;
+
+	if ( str == "" )
+		return false;
+
+	// Find next occurance of the given string on the page, wrap around to the
+	// start of the page if necessary.
+
+	if ( NS4 )
+	{
+
+		// Look for match starting at the current point. If not found, rewind
+		// back to the first match.
+
+		if ( !win.find(str) )
+		{
+			while(win.find(str, false, true))
+				n++;
+		}
+		else
+		{
+			n++;
+		}
+
+		// If not found in either direction, give message.
+
+		if (n == 0)
+			alert("Not found.");
+	}
+	else if (IE4)
+	{
+		txt = win.document.body.createTextRange();
+
+		// Find the nth match from the top of the page.
+
+		for (i = 0; i <= n && (found = txt.findText(str)) != false; i++)
+		{
+			txt.moveStart("character", 1);
+			txt.moveEnd("textedit");
+		}
+
+		// If found, mark it and scroll it into view.
+
+		if (found)
+		{
+			txt.moveStart("character", -1);
+			txt.findText(str);
+			txt.select();
+			txt.scrollIntoView();
+			n++;
+		}
+		else	// Otherwise, start over at the top of the page and find first match.
+		{
+			if (n > 0)
+			{
+				n = 0;
+				findInPage(str);
+			}
+			else	// Not found anywhere, give message.
+			{
+				alert("Not found.");
+			}
+		}
+	}
+
+	return false;
+}
+
+//-->
+</script>
+<title>Find Magazine</title>
+<link rel="stylesheet" title="Default Styles" href="0style.css" media="screen">
+<link rel="stylesheet" title="Default Styles" href="0style_ent.css" media="screen">
+</head>
+
+<body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" onload="doLoad()"
+onblur="doBlur()" bgcolor="#FFFFFF">
+
+<form name="search" onsubmit="return findInPage(this.string.value);">
+  <table border="0" width="100%" cellspacing="0" cellpadding="3">
+    <tr>
+      <th bgcolor="#CC9966" class="entertainment">Search Magazine Page</th>
+    </tr>
+    <tr>
+      <td align="center" bgcolor="#FFFFCC"><font size="3"><input name="string" type="text"
+        size="20" onchange="doChange()"></font> <input type="submit" value="Find"></td>
+    </tr>
+    <tr>
+      <td>
+        <ul>
+          <li>Use partial searches<br>
+            (eg, &quot;<b>car</b>&quot; for &quot;Car &amp; Driver&quot;)</li>
+          <li>Do <b>not</b> use the word &quot;<i>magazine</i>&quot; in the search</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</form>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </body>
+
+</html>

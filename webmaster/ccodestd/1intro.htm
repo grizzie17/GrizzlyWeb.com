@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="Author" content="John Griswold">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>Style Guide - Introduction</title>
+</head>
+
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td valign="top"><table border="0">
+      <tr>
+        <td colspan="2"><strong>Coding Guidelines</strong></td>
+      </tr>
+      <tr>
+        <td width="20"></td>
+        <td><font size="6"><strong>Why a Style Guide?</strong></font></td>
+      </tr>
+    </table>
+    </td>
+    <td align="right" valign="top"><table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><a href="1hotlist.htm"><img src="images/b-left.gif" alt="&lt;-" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="0std.htm"><img src="images/b-up.gif" alt="^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="1conven.htm"><img src="images/b-right.gif" alt="-&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+      </tr>
+      <tr>
+        <td><a href="0std.htm"><img src="images/b-left2.gif" alt="&lt;&lt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="0std.htm"><img src="images/b-top.gif" alt="^^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="c_1.htm"><img src="images/b-right2.gif" alt="&gt;&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<p>In the process of developing and maintaining software products it becomes increasingly
+obvious that the expense of maintaining and enhancing a product over its life can be
+significant. To help ease some of the expense certain coding conventions can greatly help.
+Our primary goals include: maintainability, portability and efficiency in that order.</p>
+
+<h2>Maintainability</h2>
+
+<p>Any software project is worth undertaking only if the methods and development
+techniques used are maintainable. Making the code understandable to humans is a primary
+concern in the maintainability of code. It is easy to generate a program that the C
+compiler can understand, but if a human does not understand it, then the program is
+worthless in the long run. Mainly because any enhancement or repair that might be needed
+would most likely cause a major rework or rewrite of the code.</p>
+
+<h2>Portability</h2>
+
+<p>In the modern computing environment of multiple platforms, it is crucial that our
+source code for our products be as portable as possible. Even if we have no immediate need
+to run our applications on an alternate platform, we may very well need to in the future
+(as an example Intergraph has already used 5 major platforms in our history). There are
+several things to remember when developing portable code. 
+
+<ol>
+  <li>Write portable code first. Implement optimizations or machine dependent code only when
+    required.</li>
+  <li>Recognize that some aspects of a program or subsystem are inherently non-portable, such
+    as device drivers, window systems, etc..</li>
+  <li>Plan ahead for portability. Retrofitting or force-fitting a port can be a maintenance
+    nightmare or even impossible without a major redesign/coding effort.</li>
+  <li>Portability takes a lot of careful detailed practice. Don't think that you are going to
+    get it perfect on the first try.</li>
+  <li>Don't be afraid to rework some subsystems to allow for better porting. (corollary to the
+    second point)</li>
+  <li>Just because a compiler or linker &quot;should&quot;, doesn't mean that it
+    &quot;will.&quot; In other words not all compilers or linkers are the all encompassing or
+    all forgiving systems that we would wish them to be.</li>
+  <li>If your application is moving to different; hardware or operating system or file system
+    or windowing/GUI environment or even just a different compiler and development tools, then
+    you will need to plan on porting.</li>
+</ol>
+
+<p>Always remember, take your product to the customer. Don't ask your customer to come to
+you.</p>
+
+<h2>Efficiency</h2>
+
+<p>It should be noted that the performance issues are listed last in importance. This is
+primarily due to the fact that if the code is not understandable and if it can not run on
+the machines that we need it to run on then it doesn't really matter how fast it runs!
+There are some good practices that can and should be used to provide better performance
+without sacrificing maintainability or portability. An overall good design is more
+important than micro-optimizations.</p>
+
+<hr>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><a href="1hotlist.htm"><img src="images/b-left.gif" alt="&lt;-" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="0std.htm"><img src="images/b-up.gif" alt="^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="1conven.htm"><img src="images/b-right.gif" alt="-&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+  </tr>
+  <tr>
+    <td><a href="0std.htm"><img src="images/b-left2.gif" alt="&lt;&lt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="0std.htm"><img src="images/b-top.gif" alt="^^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="c_1.htm"><img src="images/b-right2.gif" alt="&gt;&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+  </tr>
+</table>
+<!--webbot bot="Include" U-Include="../_private/change.htm" TAG="BODY" startspan -->
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="12"></td>
+  </tr>
+  <tr>
+    <td align="right"><font face="Arial" size="1" color="#999999" style="font-family: sans-serif; font-size: 10px">Last modified: 
+	25 May 2009</font><br>
+    <a style="text-decoration: none" target="_self" href="../9copyright.htm"><font face="Arial" size="1" color="#CCCCCC" style="font-family: sans-serif; font-size: 9px">copyright
+    2004 Bear Consulting Group</font></a></td>
+  </tr>
+</table>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right">
+	
+
+<script language="JavaScript" src="../../javascript/remotelog.js"></script>
+
+
+
+</td>
+  </tr>
+</table>
+<!--webbot bot="Include" endspan i-checksum="38072" -->
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </body>
+</html>

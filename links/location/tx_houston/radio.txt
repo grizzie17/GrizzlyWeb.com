@@ -1,0 +1,89 @@
+! Houston
+!
+!CALL-Letters | Frequency | (AM/FM) | Station Name | /categories/ | City Location | URL
+
+KAFX | 95.5 | FM ||| Diboll |
+KAYD | 97.5 | FM | KD97 | /Country/ |Beaumont| http://www.kayd.com/
+KBXX | 97.9 | FM | The Box | /Urban/ || http://www.kbxx.com/thebox/main.html
+KCTX | 102.5 | FM ||| Beaumont |
+KFDM | 87.7 | FM | TV Channel 6 ||Beaumont|
+KHCB | 105.7 | FM || /Religion/ || http://www.khcb.org/
+KHLA | 99.5 | FM ||| Lake Charles |
+KHMX | 96.5 | FM || /Hot AC/ || http://www.khmx.com/
+KIOC | 106.1 | FM ||| Beaumont | http://www.hot106.com/
+KHYS | 98.5 | FM | The Jam - Oldies with Attitude| /CHR/Dance/Jazz/ | | http://www.khys.com/ | http://tm.intervu.net/template/smirror/ivtemplates/onradio/onradio.asx?reg='b';ar='a';br='c';stream='ktjm28';show='Oldies%20With%20Attitude';clip='LIVE!!!';author='98.5%20THE%20JAM,%20KTJM';copyright='Clear%20Channel%20Communications%201999';xtn=.asx
+KIKK | 95.7 | FM |Young Country| /Country/ || http://www.youngcountry957.com/
+KILT | 100.3 | FM || /Country/ || http://www.kilt.com/
+KJIC | 88.1 | FM || /Gospel/ || 
+KJOJ | 103.3 | FM || /Jazz/ || 
+KKBQ | 92.9 | FM | 93-Q | /Country/ | Pasadena | http://www.neosoft.com/kkbq
+KKHT | 106.9 | FM || /Religion/Talk/ | Conroe | http://www.kkht.com/
+KKMY | 104.5 | FM || /AC/ | Beaumont | http://www.kkmy.com/
+KKPN | 102.9 | FM |The Planet| /Modern AC/Spanish/ || http://www.1029planet.com/
+KKRW | 93.7 | FM |The Arrow| /Classic Rock/ || http://www.kkrw.com/
+KKTL | 97.1 | FM |97Talk| /Talk/ | Cleveland | http://97talk.houstonradio.com/
+KKZR | 106.9 | FM || /News/Talk/ || 
+KLDE | 94.5 | FM | Oldies 94.5 | /Pop/Oldies/ || http://www.klde.com/
+KLOL | 101.1 | FM | Rock 101 | /Rock/ || http://www.klol.com/
+KLTN | 93.3 | FM || /Spanish/AC/ || 
+KMJQ | 102.1 | FM | Majic 102 | /Urban AC/ || http://www.kmjq.com/
+KMPQ | 104.9 | FM || /Spanish/ || 
+KODA | 99.1 | FM |Sunny 99.1| /AC/ || http://www.sunny99.com/
+KPFT | 90.1 | FM || /public/ || http://www.kpft.org/
+KQQK | 106.5 | FM || /Contemporary/Spanish/ || 
+KQXY | 94.1 | FM || /Top 40/ | Beaumont | http://www.kqxy.com/
+KRBE | 104.1 | FM || /CHR/Top 40/ || http://www.krbe.com/
+KRTS | 92.1 | FM || /Classical/ |Seabrook| http://www.krts.com/
+KRTX | 104.9 | FM || /AC/ || 
+KSBJ | 89.3 | FM || /Contemporary Christian/ | Houston | http://www.ksbj.org/
+KSHN | 99.9 | FM || /Country/ | Liberty | 
+KSTB | 101.5 | FM ||| Crystal Beach |
+KTBZ | 107.5 | FM | The Buzz | /Alternative Rock/ || http://www.thebuzz.com/
+KTRU | 91.7 | FM | Rice Radio | /Eclectic */college/ | Rice University | http://www.ktru.org/
+KTSU | 90.9 | FM || /Jazz/News/college/ | Texas Southern University | http://www.ktsu.com/
+KTXB | 89.7 | FM ||| Beaumont |
+KACC | 89.7 | FM || /college/ | Alvin Community College |
+KUHF | 88.7 | FM || /News/Classical/college/ | University of Houston | http://www.uh.edu/kuhf/
+KVLU | 91.3 | FM ||| Beaumont |
+KPVU | 91.3 | FM || /college/ | Prarie View A&M University |
+KXTJ | 107.9 | FM |Tejano| /Spanish/ || 
+KYKR | 95.1 | FM || /Country/ | Beaumont | http://www.kykr.com/ | http://www.broadcast.com/radio/country/kykr/
+KYKZ | 96.1 | FM || /Country/ | Lake Charles, LA | http://www.kykz.com/
+KZWA | 105.3 | FM ||| Lake Charles, LA |
+! |  | FM || // || 
+! |  | FM || // || 
+! |  | FM || // || 
+
+
+KBBZ | 990 | AM || // |Beaumont| 
+KILT | 610 | AM |Star 610| /Sports/ || http://www.star610kilt.com/
+KSEV | 700 | AM |SuperTalk| /Talk/Sports/ |Topmbell| http://ksev.houstonradio.com/
+KTRH | 740 | AM |NewsRadio 740| /News/ || http://www.ktrh.com/
+KKBQ | 790 | AM || /Country/ || http://www.neosoft.com/kkbq
+KJOJ | 880 | AM || /Religion/Talk/ |Conroe| http://kjoj.houstonradio.com/
+KPRC | 950 | AM |SuperTalk| /Talk/ || http://kprc.houstonradio.com/ | http://kprc.houstonradio.com/kprc.ram
+KQUE | 1230 | AM || /Classic Rock/ || http://www.broadcast.com/radio/classic_rock/kque/
+KHCB | 1400 | AM || /Religion/Spanish/ |Galveston| http://www.khcb.org/
+KYND | 1520 | AM |Radio Kafe| /Spanish/ |Cypress| http://www.radiokafe.com/
+KGBC | 1540 | AM || /Oldies/ || 
+KIKK | 650 | AM || /Country/ || http://www.kikk.com/
+KTEK | 1110 | AM || /Religious/ || 
+KSSQ | 1140 | AM || /Religious/ || 
+KWWJ | 1360 | AM || /Religious/ || 
+KCOH | 1430 | AM || /Full Service/ || 
+KENR | 1070 | AM || /Ethnic/Asian/ || 
+KGOL | 1180 | AM || /Ethnic/Asian/ || 
+KMPQ | 980 | AM || /Children/ || 
+KLAT | 1010 | AM || /Spanish/ || 
+KXYZ | 1320 | AM || /Spanish/ || 
+KLVL | 1480 | AM || /Spanish/ || 
+KYOK | 1590 | AM || /Gospel/ || 
+NWS | 530 | AM |National Weather Service| /Weather/ |Beaumont| 
+KLVI | 560 | AM || /News/Talk/Sports/ |Beaumont| http://www.klvi.com/ | http://www.broadcast.com/radio/Talk/KLVI
+KUHD | 1150 | AM || // |Port Neches| 
+KALO | 1250 | AM || // |Port Arthur|
+KAYD | 1450 | AM || // |Beaumont| http://www.kayd.com/
+KQHN | 1510 | AM || // |Nederland|
+! |  | AM || // || 
+
+

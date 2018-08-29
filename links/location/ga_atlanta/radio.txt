@@ -1,0 +1,73 @@
+! Atlanta
+!
+!CALL-Letters | Frequency | (AM/FM) | Station Name | /categories/ | City Location | URL
+
+WABE | 90.1 | FM || /News/Classical/public/ || http://www.wabe.org/
+WCLK | 91.9 | FM || /Jazz/college/ | Clark Atlanta University | http://www.cau-wclk.com/
+WFOX | 97.1 | FM |FOX 97| /Oldies/ |Gainesville/Atlanta GA| http://www.fox97.com/ | http://tm.intervu.net/template/smirror/ivtemplates/onradio/onradio.asx?reg='c';ar=;br='b';stream='wfox28';xtn=.asx
+WGST | 105.7 | FM || /News/Talk/Sports/ || http://www.wgst.com/ | http://www.nuclearchannel.com/startstream.asx?stationid=WGST
+WHTA | 97.5 | FM |Hot 97.5| /Urban/ | Fayetteville | http://siliconhorizons.com/hot975/
+WTHA | 107.5 | FM || /Urban/ |Roswell/Atlanta GA| http://siliconhorizons.com/hot975/
+WJZF | 104.1 | FM |Jazz Flavors| /New AC/Jazz/ |La Grange/Atlanta GA| http://www.wjzf.com/ | http://www.accessatlanta.com/includes/partners/wjzf/listen.html
+WKLS | 96.1 | FM |96 Rock| /Rock/ || http://www.96rock.com/ | http://www.radio.audionet.com/radio/ram/wkls.ram
+WNNX | 99.7 | FM |99X| /Alternative Rock/ || http://www.99x.com/ | http://www.99x.com/wnnx.ram
+WPCH | 94.9 | FM |Peach 94.9| /Christian/ || http://www.peach949.com/
+WREK | 91.1 | FM | Quality Diverse Radio | /Alternative/Variety/college/ | Georgia Institute of Technology | http://cyberbuzz.gatech.edu/wrek/ | http://cyberbuzz.gatech.edu/wrek/wreknet.shtml
+WRFG | 89.3 | FM | Radio Free Georgia | /Variety/public/ || http://www.wrfg.org/
+WSB | 98.5 | FM |B98.5 fm| /AC/ || http://www.accessatlanta.com/b985fm/
+WSTR | 94.1 | FM |Star 94| /CHR/Top 40/ |Smyrna/Atlanta GA| http://www.star94.com/ | http://www2.star94.com/sounds/live/star94.ram
+WVEE | 103.3 | FM |V-103| /Urban/ || http://www.v-103.com/
+WVFJ | 93.3 | FM |J93 Joy FM| /Contemporary Christian/ |Manchester/Columbus GA| http://www.wvfj.com/
+WWEV | 91.5 | FM |Victory 91.5| /Contemporary Christian/ |Cumming/Atlanta GA| http://www.wwev.org/ | http://63.67.8.43:8080/ramgen/encoder/test.rm
+WZGC | 92.9 | FM | Z93 | /Classic Rock/ || http://www.z93.com/
+WRAS | 88.5 | FM || /Rock/college/ | Georgia State University | http://www.wras.org/
+WLKR | 102.3 | FM || /Oldies/ || 
+WJGA | 92.1 | FM || /AC/ || 
+WMKJ | 98.7 | FM || /AC/ || 
+WTMI | 93.1 | FM || /Classical/ || 
+WJSP | 88.1 | FM || /Jazz/college/ | Columbus | http://www.gpb.org/pspr/
+WKHX | 101.5 | FM | KICKS 101.5 | /Country/ || http://www.wkhx.com/ | http://abcradio.concentric.net/cgi/audio_rotate.cgi?1=wkhx&2=abcradio/wkhxfm/live/live16.ra
+WYAY | 106.7 | FM | Y106.7 Hit Country | /Country/ || http://www.wyay.com/ | http://abcradio.concentric.net/cgi/audio_rotate.cgi?1=wyay&2=abcradio/wyayfm/live/live16.ra
+WALR | 104.7 | FM || /Urban/ || 
+WMJE | 102.9 | FM | Majic 102.9 | /CHR/Top 40/ | Clarkesville | http://www.wmje.com/majic.htm | http://un.applied.net/metas/wmje.ram
+WBTS | 95.5 | FM | The Beat | /CHR/Top 40/ || http://www.thebeat955.com | http://playlist.broadcast.com/makeram.asp?id=229624
+! |  | FM || // || 
+! |  | FM || // || 
+! |  | FM || // || 
+
+
+WAFS | 920 | AM || /Religion/ || http://wafs.mbn.org/
+WCNN | 680 | AM || /News/Talk/Sports/ || http://www.accessatlanta.com/wcnn
+WDWD | 590 | AM |Radio Disney| /Kids/Pre-Teen/ || http://www.disney.com/RadioDisney/
+WGKA | 1190 | AM || /Classical/Jazz/Vocal Artists/ || http://www.wgka.com/
+WGST | 640 | AM || /News/Talk/ || http://www.wgst.com/ | http://www.nuclearchannel.com/startstream.asx?stationid=WGST
+WQXI | 790 | AM |The Zone| /Sports/ || http://www.wqxi.com/ | http://www.radio.audionet.com/radio/ram/wqxi.ram
+WSB | 750 | AM || /News/Talk/ || http://www.wsbradio.com
+WSSA | 1570 | AM || /Christian/Country/Religious/ |Morrow/Atlanta GA| http://www.wssa1570.com/
+WKKP | 1410 | AM || /AC/ || 
+WBZT | 1290 | AM || /News/Talk/ || 
+WIGO | 1340 | AM || /News/Talk/ || 
+WPLO | 610 | AM || /Country/ || 
+WCOH | 1400 | AM || /Country/Spanish/ || 
+WGFS | 1430 | AM || /Country/ || 
+WKUN | 1580 | AM || /Country/ || 
+WAEC | 860 | AM || /Religious/ || 
+WNIV | 970 | AM || /Religious/ || 
+WGUN | 1010 | AM || /Religious/ || 
+WPBS | 1050 | AM || /Religious/ || 
+WFTD | 1080 | AM || /Religious/ || 
+WFOM | 1230 | AM || /Religious/ || 
+WTJH | 1260 | AM || /Religious/ || 
+WNEA | 1300 | AM || /Religious/ || 
+WXLL | 1310 | AM || /Religious/ || 
+WAOK | 1380 | AM || /Religious/ || 
+WYZE | 1480 | AM || /Gospel/ || 
+WDCY | 1520 | AM || /Gospel/ |Douglasville| 
+WKEU | 1450 | AM || /Full Service/ || 
+WXEM | 1460 | AM || /Spanish/ || 
+WAZX | 1550 | AM || /Spanish/ || 
+WAOK | 1600 | AM || /Spanish/ || 
+! |  | AM || // || 
+! |  | AM || // || 
+
+

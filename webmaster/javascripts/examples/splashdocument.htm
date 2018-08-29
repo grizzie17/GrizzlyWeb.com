@@ -1,0 +1,154 @@
+<!-- BEGIN HIDE -->
+<!-- ------------------------------------------------------------------!
+!
+!					  Written by Grizzly WebMaster
+!					a division of Bear Consulting Group
+!
+!	Public Domain:
+!	Redistribution and use of this software is freely permitted.
+!	This software should be considered as unowned and without
+!	copyright restrictions, nor should any individual or company
+!	claim exclussive copyright.  This software is provided "as is"
+!	and without any express or implied warranties, including, without
+!	limitation, the implied warranties or merchantibility and fitness
+!	for a particular purpose.
+!
+!	Grizzly WebMaster assumes NO responsibility for the use or
+!	reliability of software altered by the user.
+!
+!	The information in this document is subject to change without
+!	notice and should not be construed as a commitment by
+!	Grizzly WebMaster.	
+!
+!------------------------------------------------------------------- -->
+<!-- END HIDE -->
+<html>
+
+<head>
+<title>Splash Window - main document example</title>
+<!-- BEGIN HIDE -->
+<meta name="ROBOTS" content="noindex">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<!-- END HIDE -->
+<script language="JavaScript">
+<!--
+
+function createSplashWindow()
+{
+	var w, h;
+	var x, y;
+	var s;
+
+	//	First calculate the size and position for the window
+	w = 200;
+	h = 150;
+	
+	//	We need to test if the screen object exists because
+	//	older browsers don't support it.
+	if ( window.screen )
+	{
+		x = (screen.width-w)/2;
+		y = (screen.height-h)/3;
+	}
+	else
+	{
+		x = 100;
+		y = 100;
+	}
+	s = "width=" + w + ",height=" + h + ",left=" + x + ",top=" + y;
+	
+	//	create the window with just a title bar
+	window.open( "splashwindow.htm",
+					"SplashWindow",
+					s + ",resizable=no,scrollbars=no,status=no" );
+}
+
+function fetchCookie( sName )
+{
+	var sValue = "";
+	var index = 0;
+
+	//	The "cookie" property on the document is actually a
+	//	single string of the form "name=value; name2=value2; ..."
+	//	As a result we must search through the cookie string
+	//	to find the name=value pair that we are looking for.
+	//
+	if( document.cookie )
+		index = document.cookie.indexOf( sName + "=" );
+	else
+		index = -1;
+
+	if ( index < 0 )
+	{
+		sValue = "";
+	}
+	else
+	{
+		var nBegin = document.cookie.indexOf( "=", index ) + 1;
+		if ( 0 < nBegin )
+		{
+			var nEnd = document.cookie.indexOf( ";", nBegin );
+			if ( nEnd < 0 )
+				nEnd = document.cookie.length;
+			sValue = document.cookie.substring( nBegin, nEnd );
+		}
+		else
+		{
+			sValue = "";
+		}
+	}
+	return sValue;
+}
+
+function doSplashWindow()
+{	
+	//	we use a cookie so the window is only displayed
+	//	once per session.  If the visitor closes all of 
+	//	their open browser windows and then returns to the
+	//	site the splash window will show again.
+	if ( "" == fetchCookie( "Splash" ) )
+		setTimeout( "createSplashWindow()", 0.5*1000 );
+
+	document.cookie = "Splash=yes;";
+}
+
+//	Notice that we don't use the 'onload' event to start
+//	the splash window.  This is because some documents
+//	load lots of images.  We want our splash window to
+//	to display 'while' this document is loading.
+doSplashWindow();
+
+//-->
+</script>
+<!-- BEGIN HIDE -->
+<script language="JavaScript">
+<!--
+
+function clearSplashCookie()
+{
+	document.cookie = "Splash=;";
+}
+
+//-->
+</script>
+<!-- END HIDE -->
+</head>
+
+<body onload="doSplashWindow()">
+
+<p>This is the main document</p>
+<!-- BEGIN HIDE -->
+
+<p>&nbsp;</p>
+
+<p>Notice that if you &quot;refresh&quot; the document window the splash window
+does not redisplay.</p>
+
+<p>You can cause it to redisplay by clearing the <a href="javascript:clearSplashCookie()">SplashWindow Cookie</a></p>
+<!-- END HIDE -->
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   </body>
+
+</html>

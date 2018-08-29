@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>Style Guide - C++ - Class</title>
+</head>
+
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td valign="top"><table border="0">
+      <tr>
+        <td colspan="3"><font size="2">Coding Guidelines</font></td>
+      </tr>
+      <tr>
+        <td width="20"></td>
+        <td colspan="2"><b>C++ Guidelines</b></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td width="20"></td>
+        <td><font size="6"><strong>Class Specification</strong></font></td>
+      </tr>
+    </table>
+    </td>
+    <td align="right" valign="top"><table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><a href="cpp_file.htm" target><img src="images/b-left.gif" alt="&lt;-" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="cpp_1.htm" target><img src="images/b-up.gif" alt="^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="com_1.htm" target><img src="images/b-right.gif" alt="-&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+      </tr>
+      <tr>
+        <td><a href="c_1.htm" target><img src="images/b-left2.gif" alt="&lt;&lt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="0std.htm" target><img src="images/b-top.gif" alt="^^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="com_1.htm" target><img src="images/b-right2.gif" alt="&gt;&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<ul>
+  <li><a href="#Member Declaration Order">Member Declaration</a></li>
+  <li><a href="#Constructors">Constructors</a></li>
+  <li><a href="#Destructors">Destructors</a></li>
+</ul>
+
+<hr>
+
+<h1><a name="Member Declaration Order"></a>Member Declaration</h1>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><b><i>Use access control</i></b>
+    </td>
+    <td valign="top" bgcolor="#DDDDDD">Whenever possible limit access to member data and
+    functions.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><b><i>Prefix data members
+    with &quot;m_&quot;</i></b> </td>
+    <td valign="top" bgcolor="#DDDDDD">Class data members should be prefixed with
+    &quot;m_&quot;. The variable name following the &quot;m_&quot; should follow the normal <a href="c_decl.htm#Variable Names">variable naming conventions</a>.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#99CCFF"><i>Prefix static data members
+    with &quot;g_&quot;</i></td>
+    <td valign="top" bgcolor="#DDDDDD">Class data members that are static (shared between all
+    occurrences of the class) should be prefixed with &quot;g_&quot;. The variable name
+    following the &quot;g_&quot; should follow the normal <a href="c_decl.htm#Variable Names">variable
+    naming conventions</a>.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#99CCFF"><i>Order class members</i></td>
+    <td valign="top" bgcolor="#DDDDDD">Declare class members with the most public member
+    access before the more limited access members. The easiest way to do this is to use the <a href="c_file.htm#Use File Templates">file-templates</a> when creating new files. <ul>
+      <li>Class life-cycle (constructors, destructors, initialization)</li>
+      <li>Public<ul>
+          <li>Types</li>
+          <li>Functions</li>
+        </ul>
+      </li>
+      <li>Protected<ul>
+          <li>Types</li>
+          <li>Functions</li>
+          <li>Data</li>
+        </ul>
+      </li>
+      <li>Private<ul>
+          <li>Types</li>
+          <li>Functions</li>
+          <li>Data</li>
+        </ul>
+      </li>
+      <li>Overrides</li>
+    </ul>
+    </td>
+  </tr>
+</table>
+
+<h1><a name="Constructors"></a>Constructors</h1>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Provide copy constructor for
+    classes that allocate memory</td>
+    <td valign="top" bgcolor="#DDDDDD">Any class that allocates memory or holds onto system
+    resources should always provide a copy constructor.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Disable copy operations by
+    moving the copy constructor to a protected label</td>
+    <td valign="top" bgcolor="#DDDDDD">If your class should not use block copy methods for
+    copying your data, then you can disable the copy by declaring the copy constructor as
+    protected.</td>
+  </tr>
+</table>
+
+<h1><a name="Destructors"></a>Destructors</h1>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><b><i>Use destructors to
+    cleanup</i></b> </td>
+    <td valign="top" bgcolor="#DDDDDD">Here are the rules about when your class needs a
+    destructor. <ul>
+      <li>Your class allocates memory and needs to delete it.</li>
+      <li>Your class attaches to system resources and needs to release/close them</li>
+      <li>Your class AddRefs other COM objects and needs to Release them.</li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><b><i>Declare destructors as
+    virtual if any member is virtual</i></b> </td>
+    <td valign="top" bgcolor="#DDDDDD">There are two primary rules about when a class's
+    destructor should be declared as virtual. <ul>
+      <li>If your class (or any of its parents) has any virtual functions.</li>
+      <li>If your class can be used as a base class. And that the derived class may be deleted
+        through a pointer of your base class's type.</li>
+    </ul>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><a href="cpp_file.htm" target><img src="images/b-left.gif" alt="&lt;-" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="cpp_1.htm" target><img src="images/b-up.gif" alt="^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="com_1.htm" target><img src="images/b-right.gif" alt="-&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+  </tr>
+  <tr>
+    <td><a href="c_1.htm" target><img src="images/b-left2.gif" alt="&lt;&lt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="0std.htm" target><img src="images/b-top.gif" alt="^^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="com_1.htm" target><img src="images/b-right2.gif" alt="&gt;&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+  </tr>
+</table>
+<!--webbot bot="Include" U-Include="../_private/change.htm" TAG="BODY" startspan -->
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="12"></td>
+  </tr>
+  <tr>
+    <td align="right"><font face="Arial" size="1" color="#999999" style="font-family: sans-serif; font-size: 10px">Last modified: 
+	25 May 2009</font><br>
+    <a style="text-decoration: none" target="_self" href="../9copyright.htm"><font face="Arial" size="1" color="#CCCCCC" style="font-family: sans-serif; font-size: 9px">copyright
+    2004 Bear Consulting Group</font></a></td>
+  </tr>
+</table>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right">
+	
+
+<script language="JavaScript" src="../../javascript/remotelog.js"></script>
+
+
+
+</td>
+  </tr>
+</table>
+<!--webbot bot="Include" endspan i-checksum="38072" -->
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </body>
+</html>

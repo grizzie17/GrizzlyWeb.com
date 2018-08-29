@@ -1,0 +1,52 @@
+! St. Louis
+!
+!CALL-Letters | Frequency | (AM/FM) | Station Name | /categories/ | City Location | URL
+
+KDHX | 88.1 | FM || /Variety/Public/ | St. Louis | http://www.kdhx.org/ | http://www.kdhx.org/cgi/play.smi?file=live
+WSIE | 88.7 | FM || /News/Jazz/ |Edwardsville IL| http://www.siue.edu/WSIE/
+KCLC | 89.1 | FM || /Variety/College/ || http://www.lindenwood.edu/kclc.htm
+KCFV | 89.5 | FM || /Alternative/ | Ferguson | http://www.stlcc.cc.mo.us/fv/kcfv/
+KYMC | 89.7 | FM || /Alternative/ |Ballwin/St. Louis MO| http://www.inlink.com/~mage/kymc.html
+WCBW | 89.7 | FM || /Contemporary Christian/Gospel/ | East St. Louis IL | http://www.hereshelpnet.org/
+WLCA | 89.9 | FM || /Modern Rock/ | Godfrey IL |
+WTSG | 90.1 | FM |Today's Southern Gospel| /Gospel/ | Carlinville | http://www.wtsg.org/
+KWUR | 90.3 | FM |Washington University| /Alternative/Variety/College/ |Clayton/St. Louis MO| http://kwur.wustl.edu/ | http://kwur.wustl.edu/ra/live.ram
+KWMU | 90.7 | FM || /News/Classical/Jazz/College/ | University of Missouri | http://www.kwmu.org/
+KSIV | 91.5 | FM || /Christian/Talk/ || http://www.bottradionetwork.com/
+WUIS | 91.9 | FM || /College/ | University of Illinois | http://www.uis.edu/~wuis/
+WIL | 92.3 | FM || /Country/ || http://www.wil92.com/
+WQLZ | 92.7 | FM || /Rock/ | Springfield | http://www.wqlz.com/
+KNSX | 93.3 | FM |93X| /Modern Rock/ |Steelville MO| http://www.knsx.com/
+KSD | 93.7 | FM | 93.7 the Bull | /Country/ || http://www.937thebull.com/
+KSHE | 94.7 | FM |K-She 95| /Rock/ |Crestwood MO| http://www.kshe95.com/
+WFUN | 95.5 | FM | Q95.5 | /R&B/ |Bethalto IL| http://www.q955.net/
+KIHT | 96.3 | FM |K-Hits 96 (Classic Hits)| /Oldies/ || http://www.k-hits.com/
+KFTK | 97.1 | FM || /Talk/ | Florissant | http://www.radio971fm.com/ | http://www.radio971fm.com/listenlive.html
+KYKY | 98.1 | FM |Y-98, Today's Best Mix| /Modern AC/ || http://www.y98.com/
+WNNS | 98.7 | FM || /Lite Rock/ | Springfield | http://www.wnns.com/
+KFUO | 99.1 | FM | Classic 99 | /Classical/ |Clayton MO| http://www.classic99.com/
+WVRV | 100.3 | FM | 100.3 the Beat | /R&B/ | Alton IL | http://www.katzfm.com/
+WVRV | 101.1 | FM |The River| /Modern AC/ |East St. Louis IL| http://www.wvrv.com/
+WQQL | 101.9 | FM || /Oldies/ | Springfield | http://www.cool1019.com/
+KEZK | 102.5 | FM || /AC/ || http://www.kezk.com/
+KLOU | 103.3 | FM | Oldies 103.3 | /Oldies/ | St. Louis | http://www.klou.com/
+WMLL | 104.1 | FM |104-1 the Mall, 80s & Beyond| /Modern Rock/Oldies/ | Jerseyville IL | http://www.themall1041.com/
+KMJM | 104.9 | FM | Majic 105 | /Adult R&B/ | Columbia IL | http://www.majic105.com/
+KPNT | 105.7 | FM |105-7 the Point| /Modern Rock/ |St. Genevieve MO| http://www.kpnt.com/
+WSMI | 106.1 | FM || /Country/Talk/ | Litchfield | http://www.nafb.com/stations/wsmi.htm
+WSSM | 106.5 | FM | Smooth 106.5 |/Smooth Jazz/| Granite City IL | http://www.smooth1065.com/
+KSLZ | 107.7 | FM | Z-107-7 | /Top 40/ | St. Louis | http://www.z1077.com/
+! |  | FM || // || 
+
+
+KTRS | 550 | AM || /Talk/ || http://www.550ktrs.com/
+KFNS | 590 | AM || /Sports/ |Wood River IL/St. Louis MO| http://www.kfns.com/
+WGNU | 920 | AM || /Talk/ |Granite City IL/St. Louis MO| http://mo.net/~wgnu/
+KMOX | 1120 | AM || /News/Talk/ || http://www.kmox.com/
+KSIV | 1320 | AM || /Christian/Talk/ |Clayton/St. Louis MO| http://www.bottradio.com/rs/ksivam/
+KSLQ | 1350 | AM || /CHR/ |St. Charles MO | http://www.kslq.com/
+KZJZ | 1380 | AM | The Jazz Voice | /Jazz/ |St. Louis MO| http://www.kzjz.com/
+WRTH | 1430 | AM || /Adult Standards/ || http://www.wrth-am.com/
+WMLM | 1520 | AM || /Country/News/Sports/ |St. Louis/Alma MI| http://www.wmlm.com/
+! |  | AM || // || 
+

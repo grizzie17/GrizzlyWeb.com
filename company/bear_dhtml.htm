@@ -1,0 +1,294 @@
+<!--------------------------------------------------------------------+
+|
+|            Copyright 1986 .. 2000 Bear Consulting Group
+|                          All Rights Reserved
+|
+|    This software-file/document, in whole or in part, including	
+|    the structures and the procedures described herein, may not	
+|    be provided or otherwise made available without prior written
+|    authorization.  In case of authorized or unauthorized
+|    publication or duplication, copyright is claimed.
+|
++--------------------------------------------------------------------->
+<html>
+
+<head>
+<title>Bear Consulting Group</title>
+<meta name="robots" content="noindex">
+<style type="text/css">
+<!--
+#base        { position: relative; left: 0px; top: 0px }
+#grizzly     { position: absolute; left: 0px; top: 0px; visibility: hidden }
+#kodiak      { position: absolute; left: 0px; top: 0px; visibility: hidden }
+#brownbear   { position: absolute; left: 0px; top: 0px; visibility: hidden }
+body         { background-image: url('images/bkg_paw.gif'); background-repeat: no-repeat; 
+               background-position: center 50% }
+th           { font-weight: bold; font-family: Arial, Helvetica, sans-serif }
+a            { text-decoration: none; font-family: Arial, Helvetica, sans-serif }
+a:link       { text-decoration: none; font-family: Arial, Helvetica, sans-serif }
+a:hover      { color: #FFFF00; text-decoration: underline; font-family: 
+               Arial, Helvetica, sans-serif }
+-->
+</style>
+<script language="JavaScript">
+<!--
+
+var oGrizzly;
+var oKodiak;
+var oBrownBear;
+var sHide = "hidden";
+var sShow = "visible";
+
+function findBears()
+{
+	if ( !document.all )
+	{
+		if ( !document.layers )
+		{
+			return;
+		}
+		else // document.layers
+		{
+			var oBase = document.layers["base"].document;
+			oGrizzly = oBase.layers["grizzly"];
+			oKodiak = oBase.layers["kodiak"];
+			oBrownBear = oBase.layers["brownbear"];
+			//sHide = "hide";
+			//sShow = "show";
+		}
+	}
+	else // document.all
+	{
+		oGrizzly = document.all.item("grizzly").style;
+		oKodiak = document.all.item("kodiak").style;
+		oBrownBear = document.all.item("brownbear").style;
+	}
+
+}
+
+function doLoad()
+{
+	findBears();
+}
+
+function doShow( obj )
+{
+	obj.visibility = sShow;
+	return false;
+}
+
+function doHide( obj )
+{
+	obj.visibility = sHide;
+	return false;
+}
+
+//-->
+</script>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body bgcolor="#663300" link="#FFFF00" vlink="#00FF00" onload="doLoad()"
+background="images/bkg_paw.gif" bgproperties="fixed">
+
+<div align="center">
+  <center>
+  <table border="0" cellspacing="6" cellpadding="0" width="600">
+    <tr>
+      <td colspan="2">
+        <table border="0" cellspacing="4" cellpadding="0">
+          <tr>
+            <td><img src="../images/bearpawc3.gif" width="80" height="100"></td>
+            <td><font size="6" color="#FFCC00"><strong><span
+              style="font-family: Bookman Old Style, sans-serif; font-size: 24pt; font-weight: bold">Bear<br>
+              Consulting<br>
+              Group</span></strong></font></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" bgcolor="#996633" height="2"><img
+        src="../images/000000.gif" width="1" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" align="right" width="200">
+        <table border="0" width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <th align="left" height="25"><a href="webmaster.htm"
+              onmouseover="doShow(oGrizzly)" onmouseout="doHide(oGrizzly)"><font
+              color="#FFFF99">Grizzly WebMaster</font></a></th>
+          </tr>
+          <tr>
+            <th align="left" height="25"><a onmouseover="doShow(oKodiak)"
+              onmouseout="doHide(oKodiak)" href="graphics.htm"><font
+              color="#FFFF99">Kodiak Graphics</font></a></th>
+          </tr>
+          <tr>
+            <th align="left" height="25"><a onmouseover="doShow(oBrownBear)"
+              onmouseout="doHide(oBrownBear)" href="software.htm"><font
+              color="#FFFF99">Brown Bear Software</font></a></th>
+          </tr>
+          <tr>
+            <th align="left" height="25"><font color="#FFFF99">&nbsp;</font></th>
+          </tr>
+          <tr>
+            <th align="left" height="25"><font color="#FFFF99">&nbsp;</font></th>
+          </tr>
+        </table>
+      </td>
+      <td valign="top" width="400">
+        <div id="base" name="base">
+          <div id="kodiak" name="kodiak">
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+              <tr>
+                <td valign="top">
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td height="25">&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td height="25"><img src="../images/bpawbws.gif"
+                        border="0" width="20" height="25"></td>
+                    </tr>
+                    <tr>
+                      <td height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+                <td valign="top"><!--webbot bot="Include"
+                  u-include="_private/sum_graphics.htm" tag="BODY" startspan -->
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+  <tr>
+    <td rowspan="6" width="1" bgcolor="#FFFF99"><img src="../images/000000.gif" WIDTH="1" HEIGHT="1"></td>
+  </tr>
+  <tr>
+    <th bgcolor="#996633" align="left"><font color="#FFFFFF">Custom Graphic Design</font></th>
+  </tr>
+  <tr>
+    <th align="left"><font color="#FFFFFF">Logo Design</font></th>
+  </tr>
+  <tr>
+    <th bgcolor="#996633" align="left"><font color="#FFFFFF">Business Cards</font></th>
+  </tr>
+  <tr>
+    <th align="left"><font color="#FFFFFF">Newsletter Page Layout</font></th>
+  </tr>
+  <tr>
+    <th bgcolor="#996633" align="left"><font color="#FFFFFF">Brochure Composition</font></th>
+  </tr>
+</table>
+<!--webbot bot="Include" endspan i-checksum="10155" -->
+
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div id="grizzly" name="grizzly">
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+              <tr>
+                <td valign="top">
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td height="25"><img src="../images/bpawbws.gif"
+                        border="0" width="20" height="25"></td>
+                    </tr>
+                    <tr>
+                      <td height="25"></td>
+                    </tr>
+                    <tr>
+                      <td height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+                <td valign="top"><!--webbot bot="Include"
+                  u-include="_private/sum_webmaster.htm" tag="BODY" startspan -->
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+  <tr>
+    <td rowspan="4" width="1" bgcolor="#FFFF99"><img src="../images/000000.gif" WIDTH="1" HEIGHT="1"></td>
+    <th bgcolor="#996633" align="left"><font color="#FFFFFF">Web Design &amp;
+    Maintenance</font></th>
+  </tr>
+  <tr>
+    <th align="left"><font color="#FFFFFF">Web Hosting</font></th>
+  </tr>
+  <tr>
+    <th bgcolor="#996633" align="left"><font color="#FFFFFF">Web Master +Plus</font></th>
+  </tr>
+  <tr>
+    <th align="left"><font color="#FFFFFF">Online Catalogs/Brochures</font></th>
+  </tr>
+</table>
+<!--webbot bot="Include" endspan i-checksum="7367" -->
+
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div id="brownbear" name="brownbear">
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+              <tr>
+                <td valign="top">
+                  <table border="0" cellspacing="0" cellpadding="0" align="left">
+                    <tr>
+                      <td height="25">&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td height="25">&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td height="25"><img src="../images/bpawbws.gif"
+                        border="0" width="20" height="25"></td>
+                    </tr>
+                  </table>
+                </td>
+                <td valign="top"><!--webbot bot="Include"
+                  u-include="_private/sum_software.htm" tag="BODY" startspan -->
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+  <tr>
+    <td rowspan="2" width="1" bgcolor="#FFFF99"><img src="../images/000000.gif" width="1" height="1"></td>
+    <th bgcolor="#996633" align="left"><font color="#FFFFFF">C / C++ Consulting</font></th>
+  </tr>
+  <tr>
+    <th align="left"><font color="#FFFFFF">Custom Windows Programming</font></th>
+  </tr>
+</table>
+
+<!--webbot bot="Include" endspan i-checksum="12773" -->
+
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" bgcolor="#996633" height="2"><img
+        src="../images/000000.gif" width="1" height="1"></td>
+    </tr>
+    <tr>
+      <td colspan="2"><font color="#FFFFFF">122 Rachel Drive<br>
+        Huntsville, AL 35806<br>
+        Phone: 256-722-9128<br>
+        FAX: 413-845-3915<br>
+        </font><a href="mailto:info@GrizzlyWeb.com">info@GrizzlyWeb.com</a></td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p>&nbsp;</p>
+<!--webbot bot="Include" u-include="../_private/include/counter.htm" tag="BODY" startspan
+-->
+
+
+<!--webbot bot="Include" endspan i-checksum="224"
+-->
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </body>
+
+</html>

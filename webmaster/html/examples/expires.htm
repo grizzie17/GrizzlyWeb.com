@@ -1,0 +1,74 @@
+<!-- BEGIN HIDE -->
+<html>
+
+<head>
+<title>Expires Example</title>
+<meta name="robots" content="none">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<!-- END HIDE -->
+<!--
+	The "expires" "http-equiv" meta-tag can be used to control
+	the cacheing of pages with Netscape 3.0 and later browsers.
+	The 'content="0"' form tells the browser to not cache the
+	page at all.
+-->
+<meta http-equiv="expires" content="0">
+<meta http-equiv="expires" content="Tue, 14 Mar 2000 12:45:26 GMT">
+<!--
+	The "pragma no-cache" http-equiv meta-tag was introduced 
+	in the HTTP/1.1 specification.  Not all browsers or proxy
+	agents may support these operations.  To be safe you may
+	want to specify both expires and pragma in the file.
+-->
+<meta http-equiv="pragma" content="no-cache">
+
+<!--
+	The "Cache-Control" http-equiv meta-tag was introduced in
+	the HTTP/1.1 specification.  The allowed "content" values
+	include:
+	* public - may be cached in public shared caches
+	* private - may only be cached in private (client) cache
+	* no-cache - may not be cached
+	* no-store - may be cached but no archived
+	
+	Cache-Control modifiers include:
+	* no-transform - proxy servers are not allowed to transform
+	  the cached data.
+	* must-revalidate - proxy servers and other caching mechanisms
+	  must revalidate the original file each time the file is
+	  accessed.
+	* proxy-revalidate - same as must-revalidate, but it only
+	  applies to proxy servers.
+	* max-age=<seconds> - client/browser is willing to accept
+	  a page that is more recent than the number of seconds
+	  indicated.
+	* s-maxage=<seconds> - same as max-age but applies to shared
+	  proxy servers and other shared caching mechanisms.
+	
+	The directive CACHE-CONTROL:NO-CACHE indicates cached 
+	information should not be used and instead requests should 
+	be forwarded to the origin server. This directive has the 
+	same semantics as the PRAGMA:NO-CACHE. 
+	
+	Clients/Browsers SHOULD include both "pragma no-cache" and
+	"cache-control no-cache" http-equiv meta-tags when used with
+	a server not known to be HTTP/1.1 compliant.	
+-->
+<meta http-equiv="cache-control" content="no-cache, must-revalidate">
+
+<!--
+	Be aware that some search engines will remove pages from
+	their indexes based on the "expires" meta-tag.  This
+	implies that pages that identify a 'content="0"' form may
+	not be indexed at all.
+-->
+<!-- BEGIN HIDE -->
+</head>
+
+<body>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </body>
+
+</html>
+<!-- END HIDE -->

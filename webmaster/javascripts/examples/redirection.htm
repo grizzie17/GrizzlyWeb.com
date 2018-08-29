@@ -1,0 +1,127 @@
+<!-- BEGIN HIDE -->
+<!---------------------------------------------------------------------+\
+|
+|					  Written by Grizzly WebMaster
+|					a division of Bear Consulting Group
+|
+|	Public Use:
+|	Redistribution and use of this software is freely permitted.
+|	This software should be considered as unowned and without
+|	copyright restrictions, nor should any individual or company
+|	claim exclussive copyright.  This software is provided "as is"
+|	and without any express or implied warranties, including, without
+|	limitation, the implied warranties or merchantibility and fitness
+|	for a particular purpose.
+|
+|	Grizzly WebMaster assumes NO responsibility for the use or
+|	reliability of software altered by the user.
+|
+|	The information in this document is subject to change without
+|	notice and should not be construed as a commitment by
+|	Grizzly WebMaster.	
+|
+\+---------------------------------------------------------------------->
+<!-- END HIDE -->
+<html>
+
+<head>
+<title>Redirection Example</title>
+<!-- BEGIN HIDE -->
+<meta name="ROBOTS" content="noindex">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<!-- END HIDE -->
+<noscript>
+<!--
+	meta-tag "refresh" is provided for those browsers that
+	do not support JavaScript.  Please note that the time
+	delay is greater than zero.
+
+	Notice that this is nested within a "noscript" block.
+	Which means that browsers that support JavaScript will
+	not "see" the refresh meta-tag.
+-->
+<meta http-equiv="refresh" content="2; URL=redirectiontarget.htm">
+</noscript>
+<script language="JavaScript">
+<!--
+
+// This is the file to which we will redirect.
+//	IF this is changed please remember to change the
+//	entries in the meta-refresh as well as in the
+//	link in the document body.
+//
+//	sTargetURL is declared in the JavaScript 1.0 version
+//	code block but it will be available in all later version
+//	JavaScript code blocks.
+//
+var sTargetURL = "redirectiontarget.htm";
+
+function doRedirect()
+{
+	//	The JavaScript 1.0 version of this function supports
+	//	browsers that don't have the ability to replace this
+	//	file in the browser history.  As a result we want to
+	//	make sure that we briefly delay so when the visitor
+	//	is moving back through their browser-history they
+	//	will have time to press the back-button on this page
+	//	before the script moves them to the redirection
+	//	target page again.
+	//
+	//	Notice that we have the timeout the same amount as in 
+	//	the meta-refresh version.
+	//
+	setTimeout( "window.location.href = sTargetURL", 2*1000 );
+	
+	//	The 2*1000 equals 2 seconds.
+}
+
+//-->
+</script>
+
+<script language="JavaScript1.1">
+<!--
+//	Browsers that support JavaScript 1.1 will replace the
+//	earlier definition of doRedirect defined in the
+//	JavaScript 1.0 code block.  Make sure that this 
+//	definition appears after the 1.0 definition in the file.
+//
+function doRedirect()
+{
+	//	JavaScript 1.1 added the 'replace' function on the
+	//	location object so we can change locations without
+	//	adding to the browser's history.
+	//
+	window.location.replace( sTargetURL );
+}
+
+//	Just to be a bit fun -- we call the doRedirect function
+//	directly here.  This means that it is called before the
+//	page fully loads.  If your visitor is using a later
+//	browser, then they will most likely not even see any of
+//	"this" page at all.
+//
+doRedirect();
+
+//-->
+</script>
+
+</head>
+
+<!--
+	Use the "onload" event to start the redirection process.
+-->
+<body onload="doRedirect()">
+
+<!--
+	Provide a link that the user can click on just in case
+	there is a problem with the other redirection methods.
+-->
+
+<p>Loading <a href="redirectiontarget.htm">redirection target</a></p>
+<p>In approx. 2 seconds the redirection target page should load.<br>
+If it doesn't please select the link above.</p>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              </body>
+
+</html>

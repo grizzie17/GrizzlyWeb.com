@@ -1,0 +1,230 @@
+<!-- BEGIN HIDE -->
+<!---------------------------------------------------------------------+\
+|
+|					  Written by Grizzly WebMaster
+|					a division of Bear Consulting Group
+|
+|	Public Domain:
+|	Redistribution and use of this software is freely permitted.
+|	This software should be considered as unowned and without
+|	copyright restrictions, nor should any individual or company
+|	claim exclussive copyright.  This software is provided "as is"
+|	and without any express or implied warranties, including, without
+|	limitation, the implied warranties or merchantibility and fitness
+|	for a particular purpose.
+|
+|	Grizzly WebMaster assumes NO responsibility for the use or
+|	reliability of software altered by the user.
+|
+|	The information in this document is subject to change without
+|	notice and should not be construed as a commitment by
+|	Grizzly WebMaster.	
+|
+\+---------------------------------------------------------------------->
+<!-- END HIDE -->
+<html>
+
+<head>
+<title>Moving Image Example</title>
+<!-- BEGIN HIDE -->
+<meta name="ROBOTS" content="noindex">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<!-- END HIDE -->
+<style type="text/css">
+<!--
+#BearPaw     { position: relative; visibility: hidden }
+-->
+</style>
+<script language="JavaScript">
+<!--
+
+var thePaw;
+var yPos = 0;
+var xPos = 0;
+var dSign = 1;
+
+function doFancyBearPaw()
+{
+	if ( document.getElementById )
+		thePaw = document.getElementById("BearPaw");
+	else if ( document.layers )
+		thePaw = document.layers["BearPaw"];
+	else if ( document.all )
+		thePaw = document.all.item("BearPaw");
+
+	if ( thePaw )
+	{
+		hideObj( thePaw );
+		var now = new Date();
+		var secs = now.getSeconds() % 6;
+		if ( secs < 1 )
+			doBottomToTop();
+		else if ( secs < 2 )
+			doLeftToRight();
+		else if ( secs < 3 )
+			doTopToBottom();
+		else if ( secs < 4 )
+			doRightToLeft();
+		else if ( secs < 5 )
+			doFootPrints();
+		else
+			doReveal();
+	}
+}
+
+function moveObjTo( obj, x, y )
+{
+	if ( ! obj.style )
+	{
+		obj.top = y;
+		obj.left = x;
+	}
+	else
+	{
+		obj.style.top = y + "px";
+		obj.style.left = x + "px";
+	}
+}
+
+
+function showObj( obj )
+{
+	if ( ! obj.style )
+		obj.visibility = "visible";
+	else
+		obj.style.visibility = "visible";
+}
+
+function hideObj( obj )
+{
+	if ( ! obj.style )
+		obj.visibility = "hidden";
+	else
+		obj.style.visibility = "hidden";
+}
+
+function doRightToLeft()
+{
+	xPos = 500;
+	dSign = 1;
+	moveObjTo( thePaw, xPos, yPos );
+	showObj( thePaw );
+	moveHoriz();
+}
+
+function doLeftToRight()
+{
+	xPos = 500;
+	dSign = -1;
+	moveObjTo( thePaw, (xPos * dSign), yPos );
+	showObj( thePaw );
+	moveHoriz();
+}
+
+function moveHoriz()
+{
+	var dec = Math.sqrt(xPos);
+	xPos -= dec;
+	if ( 0 < xPos )
+	{
+		moveObjTo( thePaw, (xPos * dSign), yPos );
+		setTimeout( "moveHoriz()", 40 );
+	}
+	else
+	{
+		moveObjTo( thePaw, 0, 0 );
+	}
+}
+
+function doBottomToTop()
+{
+	yPos = 700;
+	dSign = 1;
+	moveObjTo( thePaw, xPos, yPos );
+	showObj( thePaw );
+	moveVert();
+}
+
+function doTopToBottom()
+{
+	yPos = 200;
+	dSign = -1;
+	moveObjTo( thePaw, xPos, -yPos );
+	showObj( thePaw );
+	moveVert();
+}
+
+function moveVert()
+{
+	var dec = Math.sqrt(yPos/2);
+	yPos -= dec;
+	if ( 0 < yPos )
+	{
+		moveObjTo( thePaw, xPos, yPos * dSign );
+		setTimeout( "moveVert()", 40 );
+	}
+	else
+	{
+		moveObjTo( thePaw, 0, 0 );
+	}
+}
+
+function doFootPrints()
+{
+	yPos = 700;
+	xPos = 25;
+	moveObjTo( thePaw, xPos, yPos );
+	showObj( thePaw );
+	setTimeout( "moveFootPrint()", 50 );
+}
+
+function moveFootPrint()
+{
+	yPos -= 75;
+	xPos *= -1;
+	if ( 0 < yPos )
+	{
+		moveObjTo( thePaw, xPos, yPos );
+		setTimeout( "moveFootPrint()", 400 );
+	}
+	else
+	{
+		moveObjTo( thePaw, 0, 0 );
+	}
+}
+
+function doReveal()
+{
+	if ( ! thePaw.filters )
+	{
+		doLeftToRight();
+	}
+	else
+	{
+		thePaw.style.visibility = "hidden";
+		thePaw.filters[0].Apply();
+		thePaw.filters.item(0).transition = 23;
+		thePaw.style.visibility = "visible";
+		thePaw.filters[0].Play();
+	}
+}
+
+//-->
+</script>
+
+</head>
+
+<body onload="doFancyBearPaw()">
+
+<div align="center">
+<div id="BearPaw" name="BearPaw"
+style="filter: revealTrans(duration=3.0, transition=23); height:100; width:80;">
+  <img src="../../images/bearpawc3.gif" border="0" width="80" height="100">
+</div>
+Select Refresh to see a random motion
+</div>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </body>
+
+</html>

@@ -1,0 +1,124 @@
+<!-- BEGIN HIDE -->
+<!--------------------------------------------------------------------- 
+|
+|					  Written by Grizzly WebMaster
+|					a division of Bear Consulting Group
+|
+|	Public Domain:
+|	Redistribution and use of this software is freely permitted.
+|	This software should be considered as unowned and without
+|	copyright restrictions, nor should any individual or company
+|	claim exclussive copyright.  This software is provided "as is"
+|	and without any express or implied warranties, including, without
+|	limitation, the implied warranties or merchantibility and fitness
+|	for a particular purpose.
+|
+|	Grizzly WebMaster assumes NO responsibility for the use or
+|	reliability of software altered by the user.
+|
+|	The information in this document is subject to change without
+|	notice and should not be construed as a commitment by
+|	Grizzly WebMaster.	
+|
+\+---------------------------------------------------------------------->
+<!-- END HIDE -->
+<html>
+
+<head>
+<title>Redirect DHTML Page Example</title>
+<!-- BEGIN HIDE -->
+<meta name="ROBOTS" content="noindex">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<!-- END HIDE -->
+<noscript>
+<!--
+	meta-tag "refresh" is provided for those browsers that
+	do not support JavaScript.  Please note that the time
+	delay is greater than zero.
+
+	Notice that this is nested within a "noscript" block.
+-->
+<meta http-equiv="refresh" content="2; URL=noclock.htm">
+</noscript>
+<script language="JavaScript">
+<!--
+function timedRedirect()
+{
+	//	This form of changing location "does" add to the
+	//	browser's history, but since we are dealing with
+	//	JavaScript 1.0 we can't do much about it.
+	//
+	window.location.href = "staticclock.htm";
+}
+
+function doRedirect()
+{
+	//	The JavaScript 1.0 version of this function supports
+	//	browsers that don't have the ability to replace this
+	//	file in the browser history.  As a result we want to
+	//	make sure that we briefly delay so when the visitor
+	//	is moving back through their browser-history they
+	//	will have time to press the back-button on this page
+	//	before the script moves them to the redirection
+	//	target page again.
+	//
+	//	Notice that we have the timeout the same amount as in 
+	//	the meta-refresh version.
+	//
+	setTimeout( "timedRedirect()", 2*1000 );
+}
+//-->
+</script>
+<script language="JavaScript1.1">
+<!--
+function doRedirect()
+{
+	//	JavaScript 1.1 added the 'replace' function on the
+	//	location object so we can change locations without
+	//	adding to the browser's history.
+	//
+	window.location.replace( "staticclock.htm" );
+}
+//-->
+</script>
+<script language="JavaScript1.2">
+<!--
+//
+//	Browsers that support JavaScript1.2 also support DHTML.
+//
+function doRedirect()
+{
+	//	This implementation of the function will be executed
+	//	for browsers that support DHTML.
+	//
+	window.location.replace( "dynamicclock.htm" );
+}
+//-->
+</script>
+</head>
+
+<body onload="doRedirect()">
+
+<!--
+	Use the "onload" event to start the redirection process.
+-->
+
+<!--
+	Provide a link that the user can click on just in case
+	there is a problem with the other redirection methods.
+-->
+<script language="JavaScript">
+<!--
+	document.writeln('<p>Loading <a href="staticclock.htm">Static Clock</a></p>');
+//-->
+</script>
+<noscript>
+<p>Loading <a href="noclock.htm">No Clock</a></p>
+</noscript>
+<p>In approx. 2 seconds the redirection target page should load.<br>
+If it doesn't please select the link above.</p>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </body>
+
+</html>

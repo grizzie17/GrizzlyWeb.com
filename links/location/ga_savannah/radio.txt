@@ -1,0 +1,42 @@
+! Savannah
+!
+!CALL-Letters | Frequency | (AM/FM) | Station Name | /categories/ | City Location | URL
+
+WLXP | 88.1 | FM || /Contemporary Christian/ | Savannah | http://www.wlxp.com/
+WAGP | 88.7 | FM | The Light | /Religious/ | Beaufort SC | http://www.wagp.net/
+WYFS | 89.5 | FM || /Religious/ | Savannah | http://www.bbnradio.org/
+WHCJ | 90.3 | FM || /Jazz/College/ | Savannah State College | http://www.savstate.edu/whcj/whcj.htm
+WSVH | 91.1 | FM || /Classical/public/ | Savannah | http://www.wsvh.org/
+WLFS | 91.9 | FM || /Contemporary Christian/ | Port Wentworth | http://www.hisradio.org/ | http://www.hisradio.org/real.ram
+WGZO | 92.1 | FM || /Oldies/ |Parris Island/Hilton Head SC| http://www.coolfm.com/
+WSKX | 92.3 | FM | Xtra 92.3 | /Hot AC/ | Hinesville | http://www.xtra923.com/
+WEAS | 93.1 | FM |E 93 Jamz| /R&B/ | Savannah | http://www.e93.com/
+WQBT | 94.1 | FM | The Beat | /R&B/ | Savannah |
+WIXV | 95.5 | FM | I95 | /Classic Rock/ | Savannah | http://www.rockofsavannah.com/
+WJCL | 96.5 | FM |KiX 96| /Country/ | Savannah | http://www.kix96.com/
+WAEV | 97.3 | FM |97.3 Kiss FM| /top 40/ | Savannah | http://www.973kissfm.com/
+WGCO | 98.3 | FM |Oldies 98.3| /Oldies/ | Midway | http://www.oldies983fm.com/
+WYKZ | 98.7 | FM |The River| /Soft AC/ | Beaufort | http://www.987theriver.com/
+WBAW | 99.1 | FM || /Talk/ | Barnwell SC |
+WJZX | 99.7 | FM | Smooth Jazz | /Jazz/ | Port Royal SC | http://www.wjzx.net/
+WLVH | 101.1 | FM |Love 101| /Adult R&B/ | Hardeeville SC | http://www.love1011.com/
+WZAT | 102.1 | FM | Z102 | /Top 40/ |Savannah| http://www.z-102.com/
+WGZO | 103.1 | FM | Star 103.1, The 80s Channel | /Oldies/ | Parris Island SC |
+WSIS | 103.9 | FM |Kiss 104 | /R&B Oldies/ | Springfield | http://www.kiss-104.com/
+WHVL | 104.7 | FM | Phat 104.7 | /R&B/ | Hinesville |
+WGZR | 104.9 | FM | Gator 104.9 | /Country/ | Ridgeland SC | http://www.104.9thegator.com/
+WRHQ | 105.3 | FM |Q105.3| /Rock AC/ |Richmond Hill| http://www.wrhq.com/
+WFXH | 106.1 | FM |Rock 106.1| /Rock/ | Hilton Head Island, SC | http://www.rock1061.com/
+WWVV | 106.9 | FM | Wave 106.9, the New Music Alternative | /Modern Rock/ | Bluffton, SC | http://www.wave1069.com/
+WLOW | 107.9 | FM || /Standards/ | Hilton Head Island SC | http://www.wlow.com/
+! |  | FM || // || 
+
+
+WBMQ | 630 | AM || /News/Talk/ | Savannah | http://www.wbmq.com/
+WJLG | 900 | AM | The Light | /Gospel/ ||
+WFXH | 1130 | AM || /Sports/ | Hilton Head Island |
+WSOK | 1230 | AM || /Gospel/ | Savannah |
+WTKS | 1290 | AM || /News/Talk/ | Savannah | http://www.newsradio1290wtks.com/
+WHGM | 1400 | AM || /Gospel/ | Savannah |
+WNFO | 1430 | AM ||| Waalter M Czura, SC |
+! |  | AM || // || 

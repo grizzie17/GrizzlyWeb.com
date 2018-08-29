@@ -1,0 +1,334 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="Author" content="John Griswold">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<title>Style Guide - Generic - File Basics</title>
+</head>
+
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td valign="top"><table border="0">
+      <tr>
+        <td colspan="3"><font size="2">Coding Guidelines</font></td>
+      </tr>
+      <tr>
+        <td width="20"></td>
+        <td colspan="2"><b>Generic Guidelines</b></td>
+      </tr>
+      <tr>
+        <td width="20"></td>
+        <td width="20"></td>
+        <td><font size="6"><strong>File Basics</strong></font></td>
+      </tr>
+    </table>
+    </td>
+    <td align="right" valign="top"><table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><a href="c_1.htm"><img src="images/b-left.gif" alt="&lt;-" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="c_1.htm"><img src="images/b-up.gif" alt="^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="c_format.htm" target><img src="images/b-right.gif" alt="-&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+      </tr>
+      <tr>
+        <td><a href="0std.htm"><img src="images/b-left2.gif" alt="&lt;&lt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="0std.htm"><img src="images/b-top.gif" alt="^^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="cpp_1.htm" target><img src="images/b-right2.gif" alt="&gt;&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<ul>
+  <li><a href="#File Names">File Names</a></li>
+  <li><a href="#Reasonable Limits">Reasonable Limits</a></li>
+  <li><a href="#Standard File Contents">Standard File Contents</a></li>
+  <li><a href="#Header Files">Header Files</a></li>
+</ul>
+
+<hr>
+
+<h2><a name="File Names"></a>File Names</h2>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FF6666"><h3><a name="std - file suffixes"></a>File Suffixes</h3>
+    </td>
+    <td valign="top" bgcolor="#DDDDDD"><table border="1" cellpadding="4" cellspacing="0">
+      <tr>
+        <td>c</td>
+        <td>&quot;C&quot; language source</td>
+      </tr>
+      <tr>
+        <td>cpp</td>
+        <td>C++ source</td>
+      </tr>
+      <tr>
+        <td>def</td>
+        <td>DLL exports definitions</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>C or C++ header file</td>
+      </tr>
+      <tr>
+        <td>rc</td>
+        <td>resource source</td>
+      </tr>
+      <tr>
+        <td>rgt</td>
+        <td>registry</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><b><i>Lower-case letters and
+    numbers only</i></b></td>
+    <td valign="top" bgcolor="#DDDDDD">All characters in the name and suffix should be
+    lower-case letters and numbers. Never try to use the capitalization of a character to
+    denote special meaning (e.g., using an upper-case 'C' suffix to denote C++ files, use
+    &quot;cpp&quot; instead).</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Start name with Letter</td>
+    <td valign="top" bgcolor="#DDDDDD">The first character in a file's name should always be a
+    letter (e.g., &quot;a&quot; through &quot;z&quot;).</td>
+  </tr>
+</table>
+
+<hr>
+
+<h2><a name="Reasonable Limits"></a>Reasonable Limits</h2>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#66CCFF"><i>96 columns max</i></td>
+    <td valign="top" bgcolor="#DDDDDD">Source lines should be limited to 96 columns for all
+    source files. Lines that are excessively long due to deep indenting are often symptomatic
+    of poorly organized code and should be reworked.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">3,000 lines max</td>
+    <td valign="top" bgcolor="#DDDDDD">Although there is no real maximum limit to the number
+    of lines of code for source files, files with more than about 3,000 lines of code are
+    cumbersome to deal with.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">95 printing ASCII characters</td>
+    <td valign="top" bgcolor="#DDDDDD">The character set used for all source file contents
+    should be restricted to the 95 printing ASCII characters.</td>
+  </tr>
+</table>
+
+<hr>
+
+<h2><a name="Standard File Contents"></a>Standard File Contents</h2>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FF6666"><h3><a name="std - file prefix comments"></a>Always prefix file with standard
+    copyright&nbsp;notice and revision&nbsp;history</h3>
+    </td>
+    <td valign="top" bgcolor="#DDDDDD">The file should always begin with the standard
+    copyright notice comment block. There should also be a revision history comment block near
+    the beginning of the file, describing all changes to the file. <p><i>The easiest way to
+    setup a file for the standard comments is to use the development <a href="#Use File Templates">template files</a> described below.</i></td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><a name="Use File Templates"></a><b><i>Use
+    File Templates</i></b> </td>
+    <td valign="top" bgcolor="#DDDDDD">Use the file templates to create all new source files.
+    Copy the file and rename it according to the file name and suffix conventions. <p>The
+    templates are available at &quot;<tt>L:\bldtools\templates</tt>&quot;</p>
+    <table border="1" cellpadding="4" cellspacing="0">
+      <tr>
+        <td>c.c</td>
+        <td>C source file</td>
+      </tr>
+      <tr>
+        <td>c.h</td>
+        <td>C header file</td>
+      </tr>
+      <tr>
+        <td>com_if.h</td>
+        <td>COM interface declaration header file</td>
+      </tr>
+      <tr>
+        <td>com_imp.cpp</td>
+        <td>COM class implementation source file</td>
+      </tr>
+      <tr>
+        <td>com_imp.h</td>
+        <td>COM class implementation header file</td>
+      </tr>
+      <tr>
+        <td>cpp.cpp</td>
+        <td>C++ class source file</td>
+      </tr>
+      <tr>
+        <td>cpp.h</td>
+        <td>C++ class header file</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><b><i>#include&nbsp;&lt;file.h&gt;
+    (angle&nbsp;brackets) for System files only</i></b> </td>
+    <td valign="top" bgcolor="#DDDDDD">Only use the angle bracket form of include for C or C++
+    standard include files (like stdio.h or strings.h). Don't consider the include files that
+    you created for your application as standard or system. Unless you are writing the C
+    compiler then your application's include files should use the quote form of include. Some
+    compilers will look for the #include &lt;file.h&gt; only in the system/compiler
+    directories. They provide no command line or configuration method of changing this
+    behavior on a project or application basis.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#66CCFF"><i>System headers before your
+    application headers</i></td>
+    <td valign="top" bgcolor="#DDDDDD">Specify standard/system header files before your
+    application's. This will highlight conflicts early in a porting effort. Also remember that
+    it is taboo to modify system header files. You are not porting the system to your
+    application. <p>The only exception to putting system header files before your
+    application's are the precompiled header file and the file &quot;machine.h&quot; which
+    identifies the machine upon which your application is currently being compiled. This is
+    important since some header files may need to be conditionally included.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#66CCFF"><i>Avoid directory paths in
+    #include</i></td>
+    <td valign="top" bgcolor="#DDDDDD">Never specify directory path information in an include
+    statement. Or if a path is required on some systems then the include statement should be
+    defined as conditional and treated as non-portable. <p>Use make or build definitions to
+    identify the locations of include files. If the path is being used because the file's name
+    is a duplicate of some other include file, then change the name of the include.</td>
+  </tr>
+</table>
+
+<hr>
+
+<h2><a name="Header Files"></a>Header Files</h2>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><b><i>Single inclusion macros</i></b>
+    </td>
+    <td valign="top" bgcolor="#DDDDDD">A Good practice for header files is to define a
+    preprocessor symbol that identifies that the include file has already been included. By
+    doing this redefinition errors can be avoided. <h4>filename.h</h4>
+    <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>#ifndef _H_filename
+#define _H_filename
+/* ... */
+#endif /* _H_filename */</pre>
+        </td>
+      </tr>
+    </table>
+    <p>A valid alternative would be</p>
+    <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>#ifndef _filename_H_
+#define _filename_H_
+/* ... */
+#endif /* _filename_H_ */</pre>
+        </td>
+      </tr>
+    </table>
+    <h4>filename.inl</h4>
+    <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>#ifndef _INL_filename
+#define _INL_filename
+/* ... */
+#endif /* _INL_filename */</pre>
+        </td>
+      </tr>
+    </table>
+    <p>This also prevents users of include files from having to know what files are being
+    included. However, if an include file is needed by a function, the programmer should not
+    depend on the knowledge that another include file includes it. In other words, if a
+    structure is needed make sure that the include file in which it is declared is directly
+    included in the C source file. This is also true for other include files.</p>
+    <p><i>One thing that should be avoided is using double underscores at the beginning and /
+    or ending of the name. According to the ANSI C and C++ standards, double underscores are
+    reserved and should only be used by the compiler for predefined preprocessor variables
+    (e.g., __FILE__, __LINE__, __DATE__, etc.). So in other words names like __filenameH__ are
+    invalid.</i></td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><b><i>Self sufficient header
+    files</i></b> </td>
+    <td valign="top" bgcolor="#DDDDDD">That means that any of the include file dependencies
+    that an include file has should be resolved by the include file itself. Do not require an
+    API user to include another file to resolve a declaration required by your include. <p>One
+    way to check this is create a source file that includes one header file. If there are any
+    undefined, or undeclared type errors then you need to add the appropriate header files to
+    your header file.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Never include executable code</td>
+    <td valign="top" bgcolor="#DDDDDD">Include files should never define executable code. <p>(#define
+    macros, C++ inline functions and templates are <b>not </b>considered to be executable in
+    this respect)</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Limit header file contents</td>
+    <td valign="top" bgcolor="#DDDDDD">The contents of header files should be carefully
+    limited. The guiding principle is: if it is not needed by multiple files then do NOT put
+    it in a header file. <p>Another principle is: a place for everything and everything in its
+    place. In other words, make sure that only related items are in the same include file. A
+    miscellany header file becomes a major maintenance headache.</td>
+  </tr>
+</table>
+
+<hr>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><a href="c_1.htm"><img src="images/b-left.gif" alt="&lt;-" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="c_1.htm"><img src="images/b-up.gif" alt="^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="c_format.htm" target><img src="images/b-right.gif" alt="-&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+  </tr>
+  <tr>
+    <td><a href="0std.htm"><img src="images/b-left2.gif" alt="&lt;&lt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="0std.htm"><img src="images/b-top.gif" alt="^^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="cpp_1.htm" target><img src="images/b-right2.gif" alt="&gt;&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+  </tr>
+</table>
+<!--webbot bot="Include" U-Include="../_private/change.htm" TAG="BODY" startspan -->
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="12"></td>
+  </tr>
+  <tr>
+    <td align="right"><font face="Arial" size="1" color="#999999" style="font-family: sans-serif; font-size: 10px">Last modified: 
+	25 May 2009</font><br>
+    <a style="text-decoration: none" target="_self" href="../9copyright.htm"><font face="Arial" size="1" color="#CCCCCC" style="font-family: sans-serif; font-size: 9px">copyright
+    2004 Bear Consulting Group</font></a></td>
+  </tr>
+</table>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right">
+	
+
+<script language="JavaScript" src="../../javascript/remotelog.js"></script>
+
+
+
+</td>
+  </tr>
+</table>
+<!--webbot bot="Include" i-checksum="38072" endspan -->
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           </body>
+</html>

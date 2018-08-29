@@ -1,0 +1,51 @@
+! Louisville
+!
+!CALL-Letters | Frequency | (AM/FM) | Station Name | /categories/ | City Location | URL
+
+WNAS | 88.1 | FM |New Albany High School| /Alternative/School/ |New Albany, IN| 
+WJIE | 88.5 | FM || /Christian/college/ |Okolona| http://www.wjie.org/ | http://www.wjie.org/wjielive/wjie.asx
+WFPL | 89.3 | FM |Louisville Free Public Library| /Jazz/public/ |Louisville| http://www.wfpl.org/
+WUOL | 90.5 | FM || /Classical/College/ | University of Louisville | http://www.wuol.org/
+WKUE | 90.9 | FM || /Fine Arts/Classical/ |Western Kentucky University|
+WFPK | 91.9 | FM || /Adult Alternative/Jazz/public/ |Louisville| http://www.wfpk.org/
+WQSH | 93.1 | FM |93.1 the Bull| /Country/ |Clarksville, IN| 
+WULF | 94.3 | FM |The Wolf| /Country/ |Hardinsburg|
+WLSY | 94.7 | FM || /Religious/ |New Albany, IN| http://www.rivertalk.net/wlsy/
+WQMF | 95.7 | FM || /Classic Rock/ |Jeffersonville, IN| http://www.wqmf.com/
+WGZB | 96.5 | FM |B 96| /Urban/ |Corydon, IN| http://www.wgzb-fm.com/
+WAMZ | 97.5 | FM || /Country/ |Louisville| http://www.wamz.com/
+WQXE | 98.3 | FM |Quicksie 98.3| /Top 40/ |Elizabethtown|
+WZTR | 98.9 | FM |Star 98.9| /Hot AC/ |Salem, IN|
+WDJX | 99.7 | FM || /Top 40/ |Louisville| http://www.wdjx.com/
+WTFX | 100.5 | FM | The FOX | /Rock/ |Louisville| http://www.wtfx.com/
+WMJM | 101.3 | FM || /Oldies/ |Jeffersontown| http://www.wmjm-fm.com/
+WTHQ | 101.7 | FM |Thunder 101| /Country/ |Shelbyville| http://www.sky1.net/thunder/
+WULV | 102.3 | FM |Love 102.3| /Soft AC/ |Louisville| http://www.love102.com/ | http://urban.broadcastamerica.com/stations/moreinfo/bio.phtml/Stations/WULV/Bio?call=wulv_fm_bu
+WRKA | 103.1 | FM |Oldies 103| /Oldies/ |St. Matthews| http://www.wrka.com/ | http://www.broadcast.com/radio/oldies/wrka/
+WMHX | 103.9 | FM |Mix 103.9| /80s Oldies/AC/ |Louisville| http://www.wmhx.com/ | http://www.broadcast.com/radio/adult_contemporary/wmhx/
+WBLO | 104.3 | FM | HOT 104 | /Hip Hop/R&B/Urban/ |Charlestown, IN| http://www.hot104flava.com/ | http://urban.broadcastamerica.com/stations/moreinfo/bio.phtml/Stations/WBLO/Bio?call=wblo_fm_bu
+WLRS | 105.1 | FM || /Modern Rock/ |Shepherdsville| http://www.lrs105.com/ | http://urban.broadcastamerica.com/stations/moreinfo/bio.phtml/Stations/WLRS/Bio?call=wlrs_fm_bu
+WRVI | 105.9 | FM |105.9 the River| /Contemporary Christian/ |Valley Station KY| http://www.rivertalk.net/wrvi/index.htm
+WVEZ | 106.9 | FM | Lite 106.9 | /AC/ |Louisville| http://www.wvez.com/ | http://www.broadcast.com/radio/adult_contemporary/wvez/
+WSFR | 107.7 | FM || /Classic Rock/ |Corydon, IN| http://www.1077sfr.com/ | http://www.broadcast.com/radio/classic_rock/wsfr/
+! |  | FM || // || 
+
+
+WTMT | 620 | AM || /Country/Sports/ |Louisville| http://www.wtmt.com/
+WNAI | 680 | AM | CNN | /News/Talk/ |Newburg| 
+WWKY | 790 | AM |Talk 790| /Talk/ |Louisville| http://www.wwky.com/wwky.html | http://www.broadcast.com/radio/talk/wwky
+WHAS | 840 | AM |Interstate 84| /Talk/ |Louisville| http://www.whas.com/whas.html | http://www.broadcast.com/radio/talk/whas
+WFIA | 900 | AM || /Religious/Talk/ |Louisville| http://www.wfia.com/
+WLKY | 970 | AM | News 970| /News/ |Louisville| http://www.wlky.com/news.html
+WKJK | 1080 | AM | KJ-1080 | /Nostalgia/Oldies/ |Louisville| http://www.wkjk.com/wkjk.html
+WSLM | 1220 | AM || // |Salem, IN| 
+WLLV | 1240 | AM || /Gospel/ |Louisville| 
+WBRT | 1320 | AM || // |Bardstown| 
+WLOU | 1350 | AM || /Gospel/Christian/Talk/ |Louisville| 
+WAVG | 1450 | AM || /Standards/Sports/ |Jeffersonville, IN| 
+WBUL | 1470 | AM || // |Shepherdsville| 
+WSAI | 1530 | AM || // |Cincinnati, OH| 
+WOCC | 1550 | AM || // |Corydon, IN| 
+WXLN | 1570 | AM || /Gospel/Religious/ |New Albany, IN| 
+! |  | AM || // || 
+

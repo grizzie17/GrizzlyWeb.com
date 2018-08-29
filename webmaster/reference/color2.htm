@@ -1,0 +1,409 @@
+<html>
+
+<head>
+<title>Color Chart</title>
+<script language="JavaScript">
+<!--
+var docRed = document;
+var docGreen = document;
+var docBlue = document;
+var docDisplay = document;
+
+var	sHexRed = "00";
+var	sHexGreen = "00";
+var	sHexBlue = "00";
+
+
+
+var isNav4, isIE4;
+if ( 4 <= parseInt(navigator.appVersion.charAt(0)) )
+{
+	isNav4 = (navigator.appName == "Netscape") ? true : false;
+	isIE4 = (navigator.appName.indexOf("Microsoft") != -1) ? true : false;
+}
+
+function doLoad()
+{
+	if( !document.all )
+		document.all = document.layers;
+	
+	if ( isNav4 )
+	{
+		docRed = document.layers.RedLayer.document;
+		docGreen = document.layers.GreenLayer.document;
+		docBlue = document.layers.BlueLayer.document;
+		docDisplay = document.layers.DisplayLayer.document;
+	}
+
+	putRGBCell( sHexRed, sHexGreen, sHexBlue );
+	updateRedCells();
+	updateGreenCells();
+	updateBlueCells();
+	setBorder( "RedBox", "00", "00" );
+	setBorder( "GreenBox", "00", "00" );
+	setBorder( "BlueBox", "00", "00" );
+}
+//-->
+</script>
+
+<style>
+<!--
+div
+{
+	position: absolute;
+	border: 5px solid;
+	border-color: #FFFFFF;
+}
+
+#RGBBox
+{
+	/*position: relative;*/
+	layer-background-color: #000000;
+	background-color: #000000;
+}
+
+#RedLayer
+{
+	top: 50; left: 50; width: 50
+}
+
+#GreenLayer
+{
+	top: 50; left: 125; width: 50
+}
+
+#BlueLayer
+{
+	top: 50; left: 200; width: 50
+}
+
+-->
+</style>
+</head>
+
+<body onload="doLoad()">
+<!------------------------------------------------------------------->
+<div id="RedLayer" name="RedLayer" style="top: 50; left: 50; width: 50"><div id="RedTitle" name="RedTitle" style="left: 0; top: 0; width: 50">
+
+<p align="center"><b>Red</b></p>
+</div><div id="RedBoxFF" name="RedBoxFF" bgcolor="#FF0000" style="background-color: #FF0000; left: 0; top: 50">
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="javascript:selectRed('FF');"><img src="../../images/000000.gif" width="40" height="40" border="0"></a></td>
+  </tr>
+</table>
+</div><div id="RedBoxCC" name="RedBoxCC" bgcolor="#CC0000" style="background-color: #CC0000; left: 0; top: 100">
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="javascript:selectRed('CC');"><img src="../../images/000000.gif" width="40" height="40" border="0"></a></td>
+  </tr>
+</table>
+</div><div id="RedBox99" name="RedBox99" bgcolor="#990000" style="background-color: #990000; left: 0; top: 150">
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="javascript:selectRed('99');"><img src="../../images/000000.gif" width="40" height="40" border="0"></a></td>
+  </tr>
+</table>
+</div><div id="RedBox66" name="RedBox66" bgcolor="#660000" style="background-color: #660000; left: 0; top: 200">
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="javascript:selectRed('66');"><img src="../../images/000000.gif" width="40" height="40" border="0"></a></td>
+  </tr>
+</table>
+</div><div id="RedBox33" name="RedBox33" bgcolor="#330000" style="background-color: #330000; left: 0; top: 250">
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="javascript:selectRed('33');"><img src="../../images/000000.gif" width="40" height="40" border="0"></a></td>
+  </tr>
+</table>
+</div><div id="RedBox00" name="RedBox00" bgcolor="#000000" style="background-color: #000000; left: 0; top: 300">
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="javascript:selectRed('00');"><img src="../../images/000000.gif" width="40" height="40" border="0"></a></td>
+  </tr>
+</table>
+</div></div><!------------------------------------------------------------------->
+<div id="GreenLayer" name="GreenLayer" style="top: 50; left: 125; width: 50"><div id="GreenTitle" name="GreenTitle" style="left: 0; top: 0; width: 50">
+
+<p align="center"><b>Green</b></p>
+</div><div id="GreenBoxFF" name="GreenBoxFF" bgcolor="#00FF00" style="background-color: #00FF00; left: 0; top: 50">
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="javascript:selectGreen('FF');"><img src="../../images/000000.gif" width="40" height="40" border="0"></a></td>
+  </tr>
+</table>
+</div><div id="GreenBoxCC" name="GreenBoxCC" bgcolor="#00CC00" style="background-color: #00CC00; left: 0; top: 100">
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="javascript:selectGreen('CC');"><img src="../../images/000000.gif" width="40" height="40" border="0"></a></td>
+  </tr>
+</table>
+</div><div id="GreenBox99" name="GreenBox99" bgcolor="#009900" style="background-color: #009900; left: 0; top: 150">
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="javascript:selectGreen('99');"><img src="../../images/000000.gif" width="40" height="40" border="0"></a></td>
+  </tr>
+</table>
+</div><div id="GreenBox66" name="GreenBox66" bgcolor="#006600" style="background-color: #006600; left: 0; top: 200">
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="javascript:selectGreen('66');"><img src="../../images/000000.gif" width="40" height="40" border="0"></a></td>
+  </tr>
+</table>
+</div><div id="GreenBox33" name="GreenBox33" bgcolor="#003300" style="background-color: #003300; left: 0; top: 250">
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="javascript:selectGreen('33');"><img src="../../images/000000.gif" width="40" height="40" border="0"></a></td>
+  </tr>
+</table>
+</div><div id="GreenBox00" name="GreenBox00" bgcolor="#000000" style="background-color: #000000; left: 0; top: 300">
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="javascript:selectGreen('00');"><img src="../../images/000000.gif" width="40" height="40" border="0"></a></td>
+  </tr>
+</table>
+</div></div><!------------------------------------------------------------------->
+<div id="BlueLayer" name="BlueLayer" style="top: 50; left: 200; width: 50"><div id="BlueTitle" name="BlueTitle" style="left: 0; top: 0; width: 50">
+
+<p align="center"><b>Blue</b></p>
+</div><div id="BlueBoxFF" name="BlueBoxFF" bgcolor="#0000FF" style="background-color: #0000FF; left: 0; top: 50">
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="javascript:selectBlue('FF');"><img src="../../images/000000.gif" width="40" height="40" border="0"></a></td>
+  </tr>
+</table>
+</div><div id="BlueBoxCC" name="BlueBoxCC" bgcolor="#0000CC" style="background-color: #0000CC; left: 0; top: 100">
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="javascript:selectBlue('CC');"><img src="../../images/000000.gif" width="40" height="40" border="0"></a></td>
+  </tr>
+</table>
+</div><div id="BlueBox99" name="BlueBox99" bgcolor="#000099" style="background-color: #000099; left: 0; top: 150">
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="javascript:selectBlue('99');"><img src="../../images/000000.gif" width="40" height="40" border="0"></a></td>
+  </tr>
+</table>
+</div><div id="BlueBox66" name="BlueBox66" bgcolor="#000066" style="background-color: #000066; left: 0; top: 200">
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="javascript:selectBlue('66');"><img src="../../images/000000.gif" width="40" height="40" border="0"></a></td>
+  </tr>
+</table>
+</div><div id="BlueBox33" name="BlueBox33" bgcolor="#000033" style="background-color: #000033; left: 0; top: 250">
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="javascript:selectBlue('33');"><img src="../../images/000000.gif" width="40" height="40" border="0"></a></td>
+  </tr>
+</table>
+</div><div id="BlueBox00" name="BlueBox00" bgcolor="#000000" style="background-color: #000000; left: 0; top: 300">
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="javascript:selectBlue('00');"><img src="../../images/000000.gif" width="40" height="40" border="0"></a></td>
+  </tr>
+</table>
+</div></div><!------------------------------------------------------------------->
+<div id="DisplayLayer" name="DisplayLayer" style="top: 50; left: 300; width: 50">
+
+<table>
+  <tr>
+    <td><form method="POST" name="DisplayText" action="../../_derived/nortbots.htm" webbot-action="--WEBBOT-SELF--" onSubmit="location.href='../../_derived/nortbots.htm';return false;" webbot-onSubmit="">
+      <table border="0" cellspacing="0" cellpadding="3">
+        <tr>
+          <td align="right">Decimal</td>
+          <td><input type="text" name="DecText" size="12" value="0,0,0"></td>
+        </tr>
+        <tr>
+          <td align="right">Hex</td>
+          <td><input type="text" name="HexText" size="12" value="#000000"></td>
+        </tr>
+      </table>
+    </form>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><div id="RGBBox" name="RGBBox" style="border-color: #000000">
+    <dd><img src="../../images/000000.gif" width="200" height="240" border="0"> </dd>
+    </div></td>
+  </tr>
+</table>
+</div><!------------------------------------------------------------------->
+<script language="JavaScript"><!--
+
+function putColorCell( i, r, g, b )
+{
+	sc = "#" + r + g + b;
+
+	if ( isNav4 )
+	{
+		doc = document;
+		if ( 0 <= i.indexOf("Red") )
+			doc = docRed;
+		else if ( 0 <= i.indexOf("Green") )
+			doc = docGreen;
+		else if ( 0 <= i.indexOf("Blue") )
+			doc = docBlue;
+		doc.layers[i].bgColor = sc;
+	}
+	else if ( isIE4 )
+	{
+		document.all(i).style.backgroundColor = sc;
+	}
+}
+
+function putRGBCell( r, g, b )
+{
+	sc = "#" + r + g + b;
+
+	if ( isNav4 )
+	{
+		docDisplay.layers.RGBBox.bgColor = sc;
+	}
+	else if ( isIE4 )
+	{
+		RGBBox.style.backgroundColor = sc;
+	}
+}
+
+function cnvDecFromHex( s )
+{
+	if ( "FF" == s )
+		return "255";
+	else if ( "CC" == s )
+		return "204";
+	else if ( "99" == s )
+		return "153";
+	else if ( "66" == s )
+		return "102";
+	else if ( "33" == s )
+		return "51";
+	else if ( "00" == s )
+		return "0";
+	else
+		return "?";
+}
+
+function putDecText( f )
+{
+	f.DecText.value = cnvDecFromHex( sHexRed )
+				+ "," + cnvDecFromHex( sHexGreen )
+				+ "," + cnvDecFromHex( sHexBlue );
+}
+
+function putHexText( f )
+{
+	f.HexText.value = "#" + sHexRed + sHexGreen + sHexBlue;
+}
+
+function putText( f )
+{
+	putDecText( f );
+	putHexText( f );
+}
+
+function updateRedCells()
+{
+	putColorCell( "RedBox00", "00", sHexGreen, sHexBlue );
+	putColorCell( "RedBox33", "33", sHexGreen, sHexBlue );
+	putColorCell( "RedBox66", "66", sHexGreen, sHexBlue );
+	putColorCell( "RedBox99", "99", sHexGreen, sHexBlue );
+	putColorCell( "RedBoxCC", "CC", sHexGreen, sHexBlue );
+	putColorCell( "RedBoxFF", "FF", sHexGreen, sHexBlue );
+}
+
+function updateGreenCells()
+{
+	putColorCell( "GreenBox00", sHexRed, "00", sHexBlue );
+	putColorCell( "GreenBox33", sHexRed, "33", sHexBlue );
+	putColorCell( "GreenBox66", sHexRed, "66", sHexBlue );
+	putColorCell( "GreenBox99", sHexRed, "99", sHexBlue );
+	putColorCell( "GreenBoxCC", sHexRed, "CC", sHexBlue );
+	putColorCell( "GreenBoxFF", sHexRed, "FF", sHexBlue );
+}
+
+function updateBlueCells()
+{
+	putColorCell( "BlueBox00", sHexRed, sHexGreen, "00" );
+	putColorCell( "BlueBox33", sHexRed, sHexGreen, "33" );
+	putColorCell( "BlueBox66", sHexRed, sHexGreen, "66" );
+	putColorCell( "BlueBox99", sHexRed, sHexGreen, "99" );
+	putColorCell( "BlueBoxCC", sHexRed, sHexGreen, "CC" );
+	putColorCell( "BlueBoxFF", sHexRed, sHexGreen, "FF" );
+}
+
+function setBorder( sBoxName, vOld, vNew )
+{
+	sOld = sBoxName + vOld;
+	sNew = sBoxName + vNew;
+	if ( document.layers )
+	{
+		box = document.all[sOld];
+		box.borderColor = "#FFFFFF";
+		box = document.all[sNew];
+		box.borderColor = "#000000";
+	}
+	else
+	{
+		box = document.all[sOld];
+		box.style.borderColor = "#FFFFFF";
+		box = document.all[sNew];
+		box.style.borderColor = "#000000";
+	}
+}
+
+function selectRed( v )
+{
+	setBorder( "RedBox", sHexRed, v );
+	sHexRed = v;
+	putRGBCell( sHexRed, sHexGreen, sHexBlue );
+	f = document.DisplayText;
+	putText( f );
+	updateBlueCells();
+	updateGreenCells();
+}
+
+function selectGreen( v )
+{
+	setBorder( "GreenBox", sHexGreen, v );
+	sHexGreen = v;
+	putRGBCell( sHexRed, sHexGreen, sHexBlue );
+	f = document.DisplayText;
+	putText( f );
+	updateRedCells();
+	updateBlueCells();
+}
+
+function selectBlue( v )
+{
+	setBorder( "BlueBox", sHexBlue, v );
+	sHexBlue = v;
+	putRGBCell( sHexRed, sHexGreen, sHexBlue );
+	f = document.DisplayText;
+	putText( f );
+	updateRedCells();
+	updateGreenCells();
+}
+
+
+//--></script>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </body>
+</html>

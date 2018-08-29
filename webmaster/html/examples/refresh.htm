@@ -1,0 +1,121 @@
+<!-- BEGIN HIDE -->
+<html>
+
+<!-- END HIDE -->
+<head>
+<!-- BEGIN HIDE -->
+<title>meta-Refresh Example</title>
+<meta name="ROBOTS" content="noindex">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<script language="JavaScript">
+<!--
+function fetchDocumentCookie( oDoc, sName )
+{
+	var sValue = "";
+	var index = 0;
+
+	if( oDoc.cookie )
+		index = oDoc.cookie.indexOf( sName + "=" );
+	else
+		index = -1;
+
+	if ( index < 0 )
+	{
+		sValue = "";
+	}
+	else
+	{
+		var countbegin = (oDoc.cookie.indexOf( "=", index ) + 1);
+		if ( 0 < countbegin )
+		{
+			var countend = oDoc.cookie.indexOf( ";", countbegin );
+			if ( countend < 0 )
+				countend = oDoc.cookie.length;
+			sValue = oDoc.cookie.substring( countbegin, countend );
+		}
+		else
+		{
+			sValue = "";
+		}
+	}
+	return sValue;
+}
+
+function fetchNamedCookie( sName )
+{
+	return fetchDocumentCookie( document, sName );
+}
+
+var gStopped = false;
+function limitRefresh()
+{
+	var nCount;
+	var s;
+	var n;
+	
+	s = fetchNamedCookie( "refreshcount" );
+	if ( 0 < s.length )
+	{
+		n = new Number(s);
+		nCount = 0 + n.valueOf();
+	}
+	else
+		nCount = 0;
+	window.status = "refresh count = " + nCount;
+	nCount = nCount + 1;
+	if ( 15 < nCount )
+	{
+		gStopped = true;
+		//return true;
+	}
+	else
+	{
+		var	expDate = new Date();
+		// set the expiration for five seconds
+		expDate.setTime( expDate.getTime() + 5*1000 );
+
+		document.cookie = "refreshcount=" + nCount + "; expires=" + expDate.toGMTString();
+		//return false;
+	}
+
+}
+limitRefresh();
+//-->
+</script>
+
+<!-- END HIDE -->
+<!--
+	The "refresh" meta-tag's content identifies the number of
+	seconds to delay before refreshing the current document.
+	Notice that the URL tag is not specified, indicating that
+	the current document will be refreshed.
+-->
+<meta http-equiv="refresh" content="2">
+</head>
+<!-- BEGIN HIDE -->
+
+<body>
+
+<script language="JavaScript">
+<!--
+	// we put this here so we can see something change
+	document.write((new Date).toLocaleString());
+//-->
+</script>
+
+<p>Notice that the time updates every couple of seconds.</p>
+<script language="JavaScript">
+<!--
+	var n = history.length;
+	if ( 15 < n  ||  gStopped )
+		window.location.href = "refresh_stopped.htm";
+	else
+		document.writeln("<p>The browser history contains " + n + " pages</p>");
+//-->
+</script>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </body>
+
+</html>
+<!-- END HIDE -->

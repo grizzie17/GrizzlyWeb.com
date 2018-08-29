@@ -1,0 +1,567 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>Style Guide - Generic - Declarations</title>
+</head>
+
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td valign="top"><table border="0">
+      <tr>
+        <td colspan="3"><font size="2">Coding Guidelines</font></td>
+      </tr>
+      <tr>
+        <td width="20"></td>
+        <td colspan="2"><b>Generic Guidelines</b></td>
+      </tr>
+      <tr>
+        <td width="20"></td>
+        <td width="20"></td>
+        <td><font size="6"><strong>Declarations and Definitions</strong></font></td>
+      </tr>
+    </table>
+    </td>
+    <td align="right" valign="top"><table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><a href="c_comment.htm" target><img src="images/b-left.gif" alt="&lt;-" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="c_1.htm" target><img src="images/b-up.gif" alt="^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="c_const.htm" target><img src="images/b-right.gif" alt="-&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+      </tr>
+      <tr>
+        <td><a href="0std.htm" target><img src="images/b-left2.gif" alt="&lt;&lt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="0std.htm" target><img src="images/b-top.gif" alt="^^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+        <td><a href="cpp_1.htm" target><img src="images/b-right2.gif" alt="&gt;&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<ul>
+  <li><a href="#Naming">Naming</a><ul>
+      <li><a href="#General naming guidelines">General naming guidelines</a></li>
+      <li><a href="#Structure names">Structure, typedef and class names</a></li>
+      <li><a href="#Variable Names">Variable Names</a></li>
+    </ul>
+  </li>
+  <li><a href="#Declarations">Declarations</a><ul>
+      <li><a href="#Non-Hardware Dependent Declarations">Non-Hardware Dependent
+        Declarations</a></li>
+      <li><a href="#Global Variable Declarations">Global Variable Declarations</a></li>
+      <li><a href="#Function Declarations">Function Declarations</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h1><a name="Naming"></a>Naming</h1>
+
+<p>The names that are used for constants, variables, functions, etc. are critically
+important to good maintainable code. Names should always be descriptive. Avoid using terse
+and non-obvious names. Conversely don't be overly verbose with your names. Public names
+are the most critical since other programmers are likely to use them.</p>
+
+<h2><a name="General naming guidelines"></a>General naming guidelines</h2>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><b><i>Use descriptive names</i></b>
+    </td>
+    <td valign="top" bgcolor="#DDDDDD" width="67%">Make identifier names descriptive of their contents.
+    Avoid terse names that have little or no meaning.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><b><i>Limit names to 32
+    characters</i></b> </td>
+    <td valign="top" bgcolor="#DDDDDD" width="67%">Generally names and identifiers should be less than 33
+    characters long. They must be unique within 31 characters.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#99CCFF"><i>Avoid names that differ <strong>only</strong>
+    in case</i></td>
+    <td valign="top" bgcolor="#DDDDDD" width="67%">Names that differ only by case should be strictly
+    avoided. This especially true of public/global names.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Avoid names that look like
+    each other</td>
+    <td valign="top" bgcolor="#DDDDDD" width="67%">Names that are ambiguous to the human reader should be
+    strictly avoided. For instance: &quot;l&quot; (lower-case L) and &quot;1&quot; (numeric
+    digit one) can be easily confused or &quot;O&quot; (upper-case letter O) and &quot;0&quot;
+    (numeric digit zero). Similarly, avoid differences like &quot;foobar&quot; and
+    &quot;foo_bar&quot;, the potential for confusion is considerable.</td>
+  </tr>
+</table>
+
+<h2><a name="Structure names"></a>Structure, typedef and class names</h2>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><b><i>Begin typedef names
+    with a capital letter</i></b> </td>
+    <td valign="top" bgcolor="#DDDDDD" width="67%">The typedef name should always <b>begin with a capital
+    letter</b>. Typically, if a typedef's name includes more than one word, each word is
+    capitalized and concatenated. <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>typedef struct StringCounted  StringCounted;</pre>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Use the same name for the
+    structure tag and the typedef name </td>
+    <td valign="top" bgcolor="#DDDDDD" width="67%">If a structure tag name is used it should be identical
+    to the typedef name. Another consideration is that the typedef name should be such that
+    collision with a typedef that is in a system include file on any of the (many) systems we
+    support is unlikely. For this reason, avoid a typedef name like <i>Rect</i>. A better name
+    would be <i>DeptRectangle </i>(&quot;Dept&quot; indicating a department abbreviation) or
+    something else that is unlikely to collide. There are some cases where this guideline has
+    not been followed in the past, and eventually it is going to cause us problems. Let's make
+    sure we do not create any more. <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>typedef struct Point2d
+{
+    long    x;
+    long    y;
+} Point2d;</pre>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Avoid underscores in typedef
+    names</td>
+    <td valign="top" bgcolor="#DDDDDD" width="67%">Underscore characters should be strictly avoided when
+    creating new typedef names. </td>
+  </tr>
+</table>
+
+<h2><a name="Variable Names"></a>Variable Names</h2>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><b><i>Begin variable and
+    parameter names with a lowercase letter</i></b> </td>
+    <td valign="top" bgcolor="#DDDDDD" width="67%">There are two forms of variables in 'C', local (or
+    private) and global (or public). Both should always begin with a <b>lowercase letter</b>.
+    Each subsequent &quot;word&quot; in the name should be capitalized and concatenated to the
+    previous word. It is important to use variable names that have clear and non-ambiguous
+    meanings. <p>In general functions should be kept relatively small, so the need for long
+    descriptive local variable names is limited. The important consideration is that all
+    functions within a file should have consistency between them.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Simplified Hungarian notation
+    for variable names</td>
+    <td valign="top" bgcolor="#DDDDDD" width="67%">Some Companies, most notably Microsoft, have
+    standardized on the Hungarian Notation. In Hungarian Notation, variables are to be
+    prefixed with lowercase tags followed by the variable name &quot;words&quot; each
+    beginning with a capital letter. <p>An example: </p>
+    <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre><tt>double* pdLength;</tt> </pre>
+        </td>
+      </tr>
+    </table>
+    <p>Which indicates pointer to double. In most cases there will be a single or double
+    character prefix. The complete Hungarian Notation is highly complex, however the following
+    is a simplified form of the prefixes and their corresponding meanings. </p>
+    <table border="1" cellpadding="3" cellspacing="0">
+      <tr>
+        <th align="left" colspan="2">Characters</th>
+      </tr>
+      <tr>
+        <td>c</td>
+        <td>char</td>
+      </tr>
+      <tr>
+        <td>s</td>
+        <td>string (char* or char [])</td>
+      </tr>
+      <tr>
+        <td>sz</td>
+        <td>string - zero terminated (synonym for 's')</td>
+      </tr>
+      <tr>
+        <td>sc</td>
+        <td>string - counted (first byte contains character count)</td>
+      </tr>
+      <tr>
+        <td>sw</td>
+        <td>wide-character string</td>
+      </tr>
+      <tr>
+        <th align="left" colspan="2">Integers</th>
+      </tr>
+      <tr>
+        <td>i</td>
+        <td>int</td>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>int or long-int</td>
+      </tr>
+      <tr>
+        <td>u</td>
+        <td>unsigned</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>word (unsigned short)</td>
+      </tr>
+      <tr>
+        <th align="left" colspan="2">Floating point</th>
+      </tr>
+      <tr>
+        <td>f</td>
+        <td>float</td>
+      </tr>
+      <tr>
+        <td>d</td>
+        <td>double</td>
+      </tr>
+      <tr>
+        <td>r</td>
+        <td>real (probably double)</td>
+      </tr>
+      <tr>
+        <th align="left" colspan="2">Enumerations</th>
+      </tr>
+      <tr>
+        <td>e</td>
+        <td>enum</td>
+      </tr>
+      <tr>
+        <th align="left" colspan="2">Boolean (true or false)</th>
+      </tr>
+      <tr>
+        <td>b</td>
+        <td>boolean (true or false)</td>
+      </tr>
+      <tr>
+        <th align="left" colspan="2">Structures (typedef)</th>
+      </tr>
+      <tr>
+        <td>t</td>
+        <td>tag (typedef or struct)</td>
+      </tr>
+      <tr>
+        <th align="left" colspan="2">Other general prefixes</th>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td>array</td>
+      </tr>
+      <tr>
+        <td>p</td>
+        <td>pointer</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>handle (pointer to pointer)</td>
+      </tr>
+      <tr>
+        <td>k</td>
+        <td>constant</td>
+      </tr>
+      <tr>
+        <td>g</td>
+        <td>global variable</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<h3>Public (Global) Variable Names</h3>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#99CCFF"><i>Prefix global variable
+    names with &quot;g&quot;</i> </td>
+    <td valign="top" bgcolor="#DDDDDD">It is important that public variables be descriptive
+    enough that collision with variables or functions in the name space of one of the (many)
+    systems our products run on do not occur. For example a public variable called 'error' is
+    a poor idea, since it is almost sure to conflict on some system. A possible solution is to
+    precede the name with an indication that it is global, for example a lower case 'g'. <p>There
+    are several special considerations that need to be observed when dealing with variables
+    that have public scope. Please remember that non-static variables defined outside of a
+    function are public names. </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Don't count on capitalization
+    to differentiate names</td>
+    <td valign="top" bgcolor="#DDDDDD">Don't count on case sensitivity to make ANY public
+    names (functions or global variables) unique. Some systems or development environments
+    convert all public names to a single case for the link process. </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Limit the number of global
+    variables</td>
+    <td valign="top" bgcolor="#DDDDDD">Some machines or linkers have a limited number of
+    global variables. If you must use global variables, cluster the variables into logical
+    structures and then define the structures global. </td>
+  </tr>
+</table>
+
+<hr>
+
+<h1><a name="Declarations"></a>Declarations</h1>
+
+<p>Public declarations should be kept to the absolute minimum required. If the function is
+only referenced from within the source file, define it as <i>static</i>. When creating a
+new function, the natural tendency should be to make it <i>static</i>. Since the scope for
+static functions and variables is limited to the source file that defined them, if one is
+changed, it is not necessary to search outside of the current source file to resolve
+references.</p>
+
+<h2><a name="Non-Hardware Dependent Declarations"></a>Non-Hardware Dependent Declarations</h2>
+
+<p>Even if code is destined for only one machine, the data sizes should not be assumed.</p>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#99CCFF">The '<b><tt>int</tt></b>'
+    data type should be treated as a '<b><tt>short</tt></b>' data type</td>
+    <td valign="top" bgcolor="#DDDDDD"><b>int </b>is defined to be the natural size of an
+    integer on the hardware. Since an <b>int </b>on some systems is the size of a <b>short </b>an
+    <b>int </b>should always be assumed to be no larger than a <b>short</b>. Another way to
+    think about it is that an <b>int </b>should never hold more data than a <b>short </b>but
+    may occupy the memory of a <b>long</b>. </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Never assume the sizes of
+    data types</td>
+    <td valign="top" bgcolor="#DDDDDD">You should never depend on the size of types int,
+    double or pointers. Some programmers assume that an int and a long and a pointer are all
+    the same size. Or that a double is always going to be 8 bytes. These are bad and dangerous
+    assumptions, especially as they relate to structures. <table border="1" cellpadding="3" cellspacing="0">
+      <tr>
+        <th>type</th>
+        <td>80x86</td>
+        <td>680x0</td>
+        <td>Clipper</td>
+        <td>Cray-2</td>
+        <td>Unisys 1100</td>
+      </tr>
+      <tr>
+        <td>char</td>
+        <td>8</td>
+        <td>8</td>
+        <td>8</td>
+        <td>8</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>short</td>
+        <td>16</td>
+        <td>16</td>
+        <td>16</td>
+        <td>64(32)</td>
+        <td>18</td>
+      </tr>
+      <tr>
+        <td>int</td>
+        <td>16/32</td>
+        <td>16/32</td>
+        <td>32</td>
+        <td>64(32)</td>
+        <td>36</td>
+      </tr>
+      <tr>
+        <td>long</td>
+        <td>32</td>
+        <td>32</td>
+        <td>32</td>
+        <td>64</td>
+        <td>36</td>
+      </tr>
+      <tr>
+        <td>char*</td>
+        <td>16/32/48</td>
+        <td>32</td>
+        <td>32</td>
+        <td>64</td>
+        <td>72</td>
+      </tr>
+      <tr>
+        <td>int*</td>
+        <td>16/32/48</td>
+        <td>32</td>
+        <td>32</td>
+        <td>64(24)</td>
+        <td>72</td>
+      </tr>
+      <tr>
+        <td>int (*)()</td>
+        <td>16/32/48</td>
+        <td>32</td>
+        <td>32</td>
+        <td>64</td>
+        <td>72</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Use typedefs to create
+    predictable data sizes</td>
+    <td valign="top" bgcolor="#DDDDDD">If a predictable datum size is needed then a typedef
+    should be declared and used for definitions. This will allow the typedef to be
+    conditionally declared based on machine/system sizes.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Be careful about the range
+    and precision for floating point</td>
+    <td valign="top" bgcolor="#DDDDDD">It is dangerous to assume that when a floating point
+    value allocates a given number of bits that the range or precision are always completely
+    allocated.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Avoid assumptions concerning
+    memory alignment</td>
+    <td valign="top" bgcolor="#DDDDDD">Some machines require data types to be aligned in
+    memory based on their elemental sizes. This can cause unused holes in memory. This is
+    especially obvious when dealing with heterogeneous structures.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Avoid assumptions concerning
+    memory order</td>
+    <td valign="top" bgcolor="#DDDDDD">Some machines organize memory such that bytes of a word
+    are of increasing significance with increasing address (little-endian), or of decreasing
+    significance with increasing address (big-endian).</td>
+  </tr>
+</table>
+
+<h2><a name="Global Variable Declarations"></a>Global Variable Declarations</h2>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#CCCCCC">Limit the number of global
+    variables</td>
+    <td valign="top" bgcolor="#DDDDDD">Global variables should be avoided when possible.
+    However, if global variables are necessary, pack them inside of a structure and only
+    declare that structure as a global. This also helps avoid collision with system names
+    (which otherwise is quite possible in this example): <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>extern int  fmode;      /* file modes */
+extern char version[];  /* file version number */</pre>
+        </td>
+      </tr>
+    </table>
+    <p>instead try using: </p>
+    <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>typedef struct FileProperties
+{
+    int     fmode;       /* file modes */
+    char    version[20]; /* file version (string) */
+} FileProperties;
+
+extern FileProperties* gpFileProperties; </pre>
+        </td>
+      </tr>
+    </table>
+    <p>The second construct illustrates another factor that should be considered when using
+    global variables. Some of the platforms that we develop on have a fixed and limited amount
+    of static variable space. If the technique of packing &quot;global&quot; variables in a
+    single structure is used, then the structure can be malloc'ed instead of allocating it
+    statically and accessed via a pointer. </td>
+  </tr>
+</table>
+
+<h2><a name="Function Declarations"></a>Function Declarations</h2>
+
+<table border="0" cellpadding="4" width="620">
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#FFFF66"><b><i>Declare all public
+    functions in header files</i></b></td>
+    <td valign="top" bgcolor="#DDDDDD">All functions that are not explicitly declared as
+    static should be declared in a header file.</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="33%" bgcolor="#99CCFF"><i>Declare each function
+    argument on individual lines</i></td>
+    <td valign="top" bgcolor="#DDDDDD">ANSI declarations are used for all functions. Each
+    argument should be listed on a separate line. Each argument should be accompanied by a
+    comment that identifies whether the argument is input (IN), output (OUT), or updated (I/O)
+    and an explanation of how it is used. The argument names should be lined up vertically. <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>int     somePackage_someFunction
+        (                  // RTN: status of operation
+        Rect*      pRect,  // OUT: enclosing rectangle
+        MSWindow*  pMsWin, // IN: &quot;moused&quot; window
+        IconMenu*  pIcm,   // IN: &quot;moused&quot; icon cmd menu
+        Handle     hItem   // IN: handle to item
+        );</pre>
+        </td>
+      </tr>
+    </table>
+    <p>Functions that have no arguments should be declared like: </p>
+    <table border="0" cellpadding="8" cellspacing="0">
+      <tr>
+        <td bgcolor="#CCFFCC"><pre>void    somePackage_functionWithNoArgs
+        (
+        void
+        );</pre>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><a href="c_comment.htm" target><img src="images/b-left.gif" alt="&lt;-" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="c_1.htm" target><img src="images/b-up.gif" alt="^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="c_const.htm" target><img src="images/b-right.gif" alt="-&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+  </tr>
+  <tr>
+    <td><a href="0std.htm" target><img src="images/b-left2.gif" alt="&lt;&lt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="0std.htm" target><img src="images/b-top.gif" alt="^^" border="0" WIDTH="32" HEIGHT="32"></a></td>
+    <td><a href="cpp_1.htm" target><img src="images/b-right2.gif" alt="&gt;&gt;" border="0" WIDTH="32" HEIGHT="32"></a></td>
+  </tr>
+</table>
+<!--webbot bot="Include" U-Include="../_private/change.htm" TAG="BODY" startspan -->
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="12"></td>
+  </tr>
+  <tr>
+    <td align="right"><font face="Arial" size="1" color="#999999" style="font-family: sans-serif; font-size: 10px">Last modified: 
+	25 May 2009</font><br>
+    <a style="text-decoration: none" target="_self" href="../9copyright.htm"><font face="Arial" size="1" color="#CCCCCC" style="font-family: sans-serif; font-size: 9px">copyright
+    2004 Bear Consulting Group</font></a></td>
+  </tr>
+</table>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right">
+	
+
+<script language="JavaScript" src="../../javascript/remotelog.js"></script>
+
+
+
+</td>
+  </tr>
+</table>
+<!--webbot bot="Include" endspan i-checksum="38072" -->
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </body>
+</html>
